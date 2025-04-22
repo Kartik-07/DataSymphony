@@ -1,0 +1,98 @@
+import os
+import logging
+from pathlib import Path # Import Path
+from pydantic_settings import BaseSettings
+from dotenv import load_dotenv
+
+# Load .env file before defining settings
+load_dotenv()
+logger = logging.getLogger(__name__)
+
+# --- Determine Base Directory ---
+# Assumes config.py is in the Backend directory
+BASE_DIR = Path(__file__).parent.resolve()
+
+class Settings(BaseSettings):
+    # --- Core Settings ---
+    # LangSmith
+    langchain_tracing_v2: str = os.getenv("LANGCHAIN_TRACING_V2", "false")
+    langchain_endpoint: str | None = os.getenv("LANGCHAIN_ENDPOINT")
+    langchain_api_key: str | None = os.getenv("LANGCHAIN_API_KEY")
+
+    # LLM/Embedding Providers
+    google_api_key: str = os.getenv("GOOGLE_API_KEY", "default_google_key")
+    cohere_api_key: str | None = os.getenv("COHERE_API_KEY")
+
+    # --- Database ---
+    # URL for Vector Store and main RAG DB operations
+    postgres_url: str = os.getenv("POSTGRES_URL", "postgresql+psycopg://postgres:password@localhost:5432/RAG_DB")
+    # URL for storing uploaded structured data (e.g., CSV/XLSX tables)
+    postgres_uploads_url: str = os.getenv("POSTGRES_UPLOADS_URL", "postgresql+psycopg://postgres:password@localhost:5432/RAG_DB_UPLOADS")
+    vector_store_driver: str = os.getenv("VECTOR_STORE_DRIVER", "psycopg2") # Often inferred, but can be set
+
+    # --- Models & Behavior ---
+    embedding_model_name: str = os.getenv("EMBEDDING_MODEL_NAME", "sentence-transformers/all-mpnet-base-v2")
+    embedding_dimension: int = int(os.getenv("EMBEDDING_DIMENSION", 768)) # Defaulting to mpnet dimension
+    llm_model_name: str = os.getenv("LLM_MODEL_NAME", "gemini-1.5-pro") # Main model for generation/SQL
+    light_llm_model_name: str = os.getenv("LIGHT_LLM_MODEL_NAME", "gemini-1.5-flash") # LLM for Summarization, Titles, Suggestions
+    collection_name: str = os.getenv("COLLECTION_NAME", "rag_collection") # PGVector collection
+    chunk_size: int = int(os.getenv("CHUNK_SIZE", 1000))
+    chunk_overlap: int = int(os.getenv("CHUNK_OVERLAP", 200))
+    retriever_k: int = int(os.getenv("RETRIEVER_K", 10)) # Initial K for retriever
+    reranker_top_n: int = int(os.getenv("RERANKER_TOP_N", 3)) # Final N after reranking
+    use_cohere_rerank: bool = os.getenv("USE_COHERE_RERANK", "True").lower() == "true"
+
+    # --- File Paths & Directories ---
+    # Default chat history directory relative to this config file (i.e., inside Backend)
+    # Can be overridden by setting CHAT_HISTORY_DIR environment variable
+    chat_history_dir: Path = Path(os.getenv("CHAT_HISTORY_DIR", BASE_DIR / "Chat_History"))
+
+    class Config:
+        env_file = '.env'
+        env_file_encoding = 'utf-8'
+        extra = 'ignore' # Ignore extra environment variables
+
+# Instantiate settings
+settings = Settings()
+
+# --- Environment Variable Setup & Validation ---
+if not settings.google_api_key or settings.google_api_key == "default_google_key":
+    # Make Google API Key strictly required
+    raise ValueError("GOOGLE_API_KEY must be set in the .env file or environment variables.")
+
+if "dummy" in settings.postgres_url or not settings.postgres_url:
+     logger.warning("POSTGRES_URL is not properly configured or uses a dummy value.")
+     # Decide if this should be fatal
+     # raise ValueError("POSTGRES_URL must be configured.")
+
+default_uploads_url = "postgresql+psycopg://postgres:password@localhost:5432/RAG_DB_UPLOADS"
+if not settings.postgres_uploads_url or settings.postgres_uploads_url == default_uploads_url:
+     logger.warning(f"POSTGRES_UPLOADS_URL not explicitly set or uses the default. Ensure correct configuration if uploading structured data.")
+
+if settings.use_cohere_rerank and not settings.cohere_api_key:
+    logger.warning("USE_COHERE_RERANK is True but COHERE_API_KEY is not set. Reranking will be disabled.")
+    settings.use_cohere_rerank = False # Disable if key is missing
+
+# Set environment variables for LangChain/SDKs that might read them directly
+os.environ['GOOGLE_API_KEY'] = settings.google_api_key
+if settings.langchain_api_key:
+    os.environ['LANGCHAIN_TRACING_V2'] = settings.langchain_tracing_v2
+    os.environ['LANGCHAIN_ENDPOINT'] = str(settings.langchain_endpoint)
+    os.environ['LANGCHAIN_API_KEY'] = settings.langchain_api_key
+if settings.cohere_api_key and settings.use_cohere_rerank:
+     os.environ['COHERE_API_KEY'] = settings.cohere_api_key
+
+# Log key settings on startup
+logger.info(f"Loaded settings: Main LLM={settings.llm_model_name}, Light LLM={settings.light_llm_model_name}, Embedding={settings.embedding_model_name}")
+logger.info(f"Vector Store DB URL (POSTGRES_URL): {settings.postgres_url}")
+logger.info(f"Uploads DB URL (POSTGRES_UPLOADS_URL): {settings.postgres_uploads_url}")
+logger.info(f"Vector Store Collection: {settings.collection_name}, Reranker Enabled: {settings.use_cohere_rerank}")
+logger.info(f"Chat History Directory: {settings.chat_history_dir.resolve()}") # Log the absolute path
+
+# --- Ensure Chat History Directory Exists ---
+try:
+    settings.chat_history_dir.mkdir(parents=True, exist_ok=True)
+    logger.info(f"Chat history directory checked/created at: {settings.chat_history_dir}")
+except Exception as e:
+    logger.error(f"Failed to create chat history directory '{settings.chat_history_dir}': {e}", exc_info=True)
+    # Decide if this is fatal, maybe fallback to a temp dir? For now, just log the error.

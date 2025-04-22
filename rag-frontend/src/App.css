@@ -1,0 +1,1053 @@
+/* src/App.css */
+
+/* --- Base Styles & Variables --- */
+:root {
+  /* --- Primary Colors --- */
+  --color-primary-blue: #0052FF;
+  --color-primary-purple: #8000FF;
+  /* Gradient: Use linear-gradient(to right, var(--color-primary-blue), var(--color-primary-purple)); */
+
+  /* --- Neutral Colors --- */
+  --neutral-50: #F8F8FB;
+  --neutral-100: #EFEFF5;
+  --neutral-200: #E2E1EB;
+  --neutral-400: #BDBBCF;
+  --neutral-500: #9D9CB0;
+  --neutral-600: #6C6A87;
+  --neutral-700: #4F4F81;
+  --neutral-800: #1F202E;
+  --neutral-900: #403E63;
+
+  /* --- Accent Colors --- */
+  /* Blue */
+  --color-accent-blue-light: #E0EBFF;
+  --color-accent-blue: #4C82F7;
+  --color-accent-blue-dark: #0258E8;
+  /* Purple */
+  --color-accent-purple-light: #F9E8FF;
+  --color-accent-purple: #B050F7;
+  --color-accent-purple-dark: #6600CC;
+  /* Green */
+  --color-accent-green-light: #E0FBF2;
+  --color-accent-green: #03D88B;
+  --color-accent-green-dark: #009960;
+  /* Yellow */
+  --color-accent-yellow-light: #FFF8E0;
+  --color-accent-yellow: #F7C34C;
+  --color-accent-yellow-dark: #8D6A00;
+  /* Red */
+  --color-accent-red-light: #FFEAE6;
+  --color-accent-red: #F76D4C;
+  --color-accent-red-dark: #D13515;
+
+  /* --- Semantic Colors --- */
+  --color-success: #00CC88;
+  --color-warning: #FFB800;
+  --color-error: #FF4D4D; /* Used for upload errors too */
+  --color-info: #4091F7;
+
+  /* --- Mapping to Application Variables --- */
+  /* Base layout & text */
+  --background-primary: var(--neutral-50);
+  --background-secondary: var(--neutral-100);
+  --background-tertiary: var(--neutral-200);
+  --text-primary: var(--neutral-800);
+  --text-secondary: var(--neutral-700);
+  --text-tertiary: var(--neutral-500);
+  --border-primary: var(--neutral-200);
+  --border-secondary: var(--neutral-400);
+
+  /* Interactive elements */
+  --accent-primary: var(--color-primary-blue);
+  --accent-primary-hover: var(--color-accent-blue-dark);
+  --focus-ring-color: var(--accent-primary);
+
+  /* Specific Components */
+  --user-bubble-background: var(--accent-primary);
+  --user-bubble-text: #FFFFFF;
+  --ai-bubble-background: var(--background-secondary);
+  --ai-bubble-text: var(--text-primary);
+  --input-background: var(--background-secondary); /* Updated: Input area BG */
+  --input-border-color: var(--border-primary);
+  --input-focus-border-color: var(--accent-primary);
+  --button-text-color: #FFFFFF;
+  --icon-color: var(--neutral-600);
+  --upload-status-bg: var(--neutral-100);
+  --upload-status-text: var(--text-secondary);
+  --upload-error-text: var(--color-error); /* Use semantic error color */
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-default: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0,0,0,0.05);
+  --shadow-none: none;
+
+  /* --- Animation Durations --- */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  /* --- Animation Easing Functions --- */
+  --easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  /* Font & Base */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Layout Variables */
+  --sidebar-width: 260px;
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 12px;
+  --border-radius-extralarge: 16px;
+  --border-radius-round: 50%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background-primary);
+}
+
+#root {
+  max-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+
+/* --- App Layout (Chat Interface) --- */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--background-primary);
+}
+
+/* --- Sidebar Styles (Unchanged) --- */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--background-secondary);
+  border-right: 1px solid var(--border-primary);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 120px; /* Space for buttons at the bottom */
+  flex-shrink: 0;
+}
+
+.sidebar-conversation-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px 0;
+}
+
+.sidebar-title {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  padding: 10px 20px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.sidebar-empty {
+  color: var(--text-secondary);
+  padding: 15px 20px;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.sidebar-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-primary);
+  transition: background-color var(--duration-normal) var(--easing-ease-out);
+  overflow: hidden;
+  min-height: 44px; /* Ensure items are easily clickable */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar-item:hover {
+  background-color: var(--background-tertiary);
+}
+
+.sidebar-item.active {
+  background-color: var(--accent-primary);
+  color: var(--button-text-color);
+}
+
+.sidebar-item.active .sidebar-item-title {
+  color: var(--button-text-color);
+  font-weight: 600;
+}
+
+.sidebar-item.active .sidebar-item-time {
+  color: var(--neutral-100); /* Lighter time text on active background */
+}
+
+.sidebar-item-title {
+  display: block;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+
+.sidebar-item-time {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.new-chat-button,
+.logout-button {
+  display: block;
+  box-sizing: border-box;
+  width: calc(100% - 20px); /* Full width minus margin */
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: var(--border-radius-medium);
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color var(--duration-normal) var(--easing-ease-out),
+              box-shadow var(--duration-fast) var(--easing-ease-out),
+              color var(--duration-fast) var(--easing-ease-out),
+              border-color var(--duration-fast) var(--easing-ease-out);
+  position: absolute; /* Position relative to sidebar */
+  left: 0;
+  min-height: 44px; /* Accessibility */
+}
+
+.new-chat-button {
+  background-color: var(--accent-primary);
+  color: var(--button-text-color);
+  bottom: 10px; /* Position at the very bottom */
+}
+
+.new-chat-button:hover:not(:disabled) {
+  background-color: var(--accent-primary-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.logout-button {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-primary);
+  bottom: 60px; /* Position above the New Chat button */
+}
+
+.logout-button:hover:not(:disabled) {
+  background-color: var(--background-tertiary);
+  border-color: var(--border-secondary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* --- Chat Area Styles (Unchanged) --- */
+.chat-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  background-color: var(--background-primary);
+  overflow: hidden; /* Prevent chat area itself from scrolling */
+}
+
+/* --- Chat Header Styles (Unchanged) --- */
+.chat-header {
+  padding: 15px 25px;
+  border-bottom: 1px solid var(--border-primary);
+  background-color: var(--background-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.chat-header h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.chat-header span {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* --- Message List Styles (Unchanged) --- */
+.message-list {
+  flex-grow: 1; /* Take remaining vertical space */
+  overflow-y: auto; /* Enable scrolling for messages */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.message-list-empty { /* Style for when no messages are present */
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.message-container {
+  display: flex;
+  gap: 10px;
+  max-width: 85%; /* Limit message width */
+}
+
+.message-container.user {
+  align-self: flex-end; /* Align user messages to the right */
+  flex-direction: row-reverse; /* Reverse order for icon */
+}
+
+.message-container.ai {
+  align-self: flex-start; /* Align AI messages to the left */
+}
+
+/* --- Icon Styles (Unchanged) --- */
+.ai-icon-container {
+  width: 50px; /* Match image size */
+  height: 50px;
+  display: flex;
+  align-items: center; /* Vertically center icon */
+  justify-content: center; /* Horizontally center icon */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  margin-top: 0; /* Align icon with top of bubble */
+}
+.ai-icon-container img {
+  display: block; /* Remove extra space below image */
+}
+
+.user-icon-container {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-round);
+  background-color: var(--accent-primary);
+  color: var(--user-bubble-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 2px; /* Slight adjustment */
+}
+
+/* --- Message Bubble Styles (Unchanged) --- */
+.message-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(100% - 50px); /* Ensure bubble doesn't overlap icon */
+}
+
+.message-bubble {
+  padding: 10px 15px;
+  border-radius: var(--border-radius-large);
+  max-width: fit-content; /* Bubble width fits content */
+  word-wrap: break-word; /* Break long words */
+  white-space: pre-wrap; /* Preserve whitespace and wrap */
+}
+
+.message-bubble.ai {
+  background-color: var(--ai-bubble-background);
+  color: var(--ai-bubble-text);
+  border-bottom-left-radius: var(--border-radius-small); /* Different corner for visual cue */
+  align-self: flex-start; /* Align bubble to the start */
+}
+
+.message-bubble.user {
+  background-color: var(--user-bubble-background);
+  color: var(--user-bubble-text);
+  border-bottom-right-radius: var(--border-radius-small); /* Different corner */
+  align-self: flex-end; /* Align bubble to the end */
+}
+
+.message-bubble.error {
+  background-color: var(--color-accent-red-light);
+  color: var(--color-accent-red-dark);
+  border: 1px solid var(--color-error);
+  border-radius: var(--border-radius-large); /* Keep consistent radius */
+  align-self: flex-start; /* Align error like AI message */
+}
+
+/* --- Sources Styles (Unchanged) --- */
+.sources-section {
+  margin-top: 8px; /* Space above sources */
+  padding-left: 5px; /* Indent slightly */
+  max-width: 100%;
+}
+
+.sources-title {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin: 0 0 4px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.source-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allow sources to wrap */
+  gap: 5px; /* Space between source items */
+}
+
+.source-item {
+  display: flex;
+  align-items: center;
+  background-color: var(--background-tertiary);
+  color: var(--text-secondary);
+  padding: 2px 6px;
+  border-radius: var(--border-radius-small);
+  font-size: 0.75rem;
+  border: 1px solid var(--border-primary);
+  max-width: 200px; /* Limit width for text sources */
+  overflow: hidden; /* Hide overflow */
+  box-sizing: border-box; /* Include padding/border in width */
+}
+
+.source-item svg {
+   fill: var(--icon-color);
+   margin-right: 4px;
+   flex-shrink: 0;
+}
+
+.source-item.source-item-internal {
+  background-color: var(--neutral-200);
+  color: var(--neutral-700);
+  font-style: italic;
+  border-color: var(--neutral-400);
+}
+
+/* --- Plot Styles (Unchanged) --- */
+.plot-display {
+     /* Style the container div around the plot image */
+     margin-top: 8px; /* Space above plot */
+     padding: 5px; /* Optional padding around the image */
+     border: 1px solid var(--border-primary); /* Optional border */
+     border-radius: var(--border-radius-medium); /* Slightly larger radius */
+     background-color: white; /* Optional white background for the plot */
+     max-width: 450px; /* Or desired max plot width */
+     overflow: hidden; /* Ensure image respects container */
+     align-self: flex-start; /* Align like AI bubble */
+}
+
+.plot-display img {
+     /* Style the image itself */
+     display: block; /* Remove extra space below image */
+     max-width: 100%; /* Ensure image scales down */
+     height: auto; /* Maintain aspect ratio */
+     border-radius: var(--border-radius-small); /* Match container radius */
+}
+
+
+/* --- Suggested Actions Styles (Unchanged) --- */
+.suggested-actions {
+  padding: 10px 20px 0px 60px; /* Align roughly with AI message content */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.try-asking-label {
+   font-size: 0.85rem;
+   color: var(--text-secondary);
+   margin-right: 8px;
+   font-weight: 500;
+}
+
+.suggested-actions button {
+  background-color: transparent;
+  color: var(--accent-primary);
+  border: 1px solid var(--border-secondary);
+  padding: 6px 12px;
+  border-radius: var(--border-radius-large); /* Pill shape */
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color var(--duration-fast) var(--easing-ease-out),
+              border-color var(--duration-fast) var(--easing-ease-out),
+              color var(--duration-fast) var(--easing-ease-out);
+  min-height: 36px; /* Slightly smaller than main buttons */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.suggested-actions button:hover:not(:disabled) {
+  background-color: var(--color-accent-blue-light);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary-hover);
+}
+.suggested-actions button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+/* --- Input Area Wrapper & Controls (UPDATED) --- */
+.input-area-wrapper {
+    padding: 0px 20px 15px 20px; /* Padding around the input area */
+    flex-shrink: 0; /* Prevent shrinking */
+    margin-top: auto; /* Push to bottom if message list is short */
+}
+
+/* Container for the actual input controls (textarea + buttons) */
+.input-area {
+  display: flex;
+  align-items: flex-end; /* Align items to bottom (useful if textarea grows) */
+  padding: 8px; /* Padding inside the border */
+  border-radius: var(--border-radius-large);
+  background-color: var(--input-background);
+  border: 1px solid var(--input-border-color);
+  gap: 8px; /* Space between textarea and buttons */
+  box-shadow: var(--shadow-sm);
+}
+
+.input-area:focus-within { /* Style when textarea or buttons inside are focused */
+   border-color: var(--input-focus-border-color);
+   box-shadow: 0 0 0 3px var(--color-accent-blue-light); /* Focus ring effect */
+}
+
+/* Specific class for the textarea */
+.chat-textarea {
+  flex-grow: 1; /* Take available space */
+  resize: none; /* Disable manual resize */
+  overflow-y: auto; /* Allow scrolling if content exceeds max-height */
+  max-height: 150px; /* Limit growth */
+  min-height: 24px; /* Minimum height for one line */
+  padding: 8px 12px; /* Padding inside textarea */
+  border: none; /* Remove default border */
+  background-color: transparent; /* Inherit background */
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  box-sizing: border-box;
+  box-shadow: none; /* Remove default shadow/outline */
+  outline: none; /* Remove default outline */
+}
+
+.chat-textarea::placeholder {
+   color: var(--text-tertiary);
+}
+
+.chat-textarea:disabled {
+  background-color: transparent;
+  cursor: not-allowed;
+  color: var(--text-tertiary);
+}
+
+/* --- Upload Button Styles (UPDATED) --- */
+.upload-button {
+  background-color: transparent; /* REMOVED background */
+  color: var(--icon-color); /* Use standard icon color */
+  border: none; /* REMOVED border */
+  border-radius: var(--border-radius-medium); /* Keep radius for focus */
+  padding: 8px; /* Adjust padding for icon size */
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent shrinking */
+  font-size: 1.2em; /* Adjust icon size */
+  height: 40px; /* Match send button height */
+  width: 40px; /* Make it square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--duration-fast) var(--easing-ease-out),
+              background-color var(--duration-fast) var(--easing-ease-out); /* Added background transition */
+}
+
+.upload-button:hover:not(:disabled) {
+  color: var(--text-primary); /* Darken icon on hover */
+  background-color: var(--neutral-200); /* ADD subtle background on hover */
+}
+
+.upload-button:disabled {
+  color: var(--neutral-400); /* Dim disabled color */
+  cursor: not-allowed;
+  background-color: transparent; /* Ensure no background when disabled */
+}
+
+/* Send Button Styles (UPDATED) */
+.send-button {
+  background: linear-gradient(to right, var(--color-primary-blue), var(--color-primary-purple));
+  color: var(--button-text-color);
+  border: none;
+  border-radius: var(--border-radius-medium);
+  padding: 8px 12px 8px 16px; /* Adjust padding L/R for text+icon */
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent shrinking */
+  font-weight: 500;
+  font-size: 0.9rem; /* Font size for "Send" text */
+  height: 40px; /* Fixed height */
+  width: auto; /* Allow width to adjust to content */
+  min-height: auto; /* Override previous min-height */
+  display: flex; /* Use flex to align text and icon */
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* Space between "Send" text and icon */
+  transition: opacity var(--duration-fast) var(--easing-ease-out),
+              box-shadow var(--duration-fast) var(--easing-ease-out);
+}
+/* Style for the icon inside the send button */
+.send-button svg {
+    width: 1em; /* Adjust icon size relative to text */
+    height: 1em;
+}
+
+.send-button:hover:not(:disabled) {
+  opacity: 0.9;
+  box-shadow: var(--shadow-md);
+}
+
+.send-button:disabled {
+  background: var(--neutral-200);
+  color: var(--neutral-500);
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+/* --- Upload Status/Error Styles (Unchanged) --- */
+.upload-status, .upload-error {
+    font-size: 0.85em;
+    padding: 4px 8px; /* Smaller padding */
+    margin-bottom: 5px; /* Space below status, above input */
+    border-radius: var(--border-radius-small);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes cancel button to the right */
+}
+
+.upload-status {
+    background-color: var(--upload-status-bg);
+    color: var(--upload-status-text);
+    border: 1px solid var(--border-primary);
+}
+
+.upload-error {
+    color: var(--upload-error-text);
+    background-color: var(--color-accent-red-light); /* Light red background for error */
+    border: 1px solid var(--color-error);
+}
+
+.cancel-upload-button {
+    background: none;
+    border: none;
+    color: var(--color-error); /* Red color for cancel */
+    cursor: pointer;
+    padding: 0 0 0 8px; /* Padding left of the icon */
+    margin-left: auto; /* Push to the far right */
+    font-size: 1.1em; /* Icon size */
+    line-height: 1; /* Ensure icon aligns well */
+    flex-shrink: 0;
+}
+
+.cancel-upload-button:hover {
+    color: var(--color-accent-red-dark); /* Darker red on hover */
+}
+
+
+/* --- Loading Indicator (Unchanged) --- */
+.loading-indicator {
+  text-align: center;
+  padding: 10px 20px 5px 60px; /* Align with AI messages */
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+
+/* --- Styles for Auth Page (Login/Register) (Unchanged) --- */
+.auth-page-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background: radial-gradient(ellipse at center, #0085FF, #003465); /* Gradient background */
+}
+
+.auth-background-container {
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  backdrop-filter: blur(20px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--border-radius-extralarge, 16px);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  box-shadow: var(--shadow-lg); /* Add shadow */
+  padding: 6px; /* Padding around the inner card */
+  max-width: 1250px; /* Max width of the blurred container */
+  width: 90%; /* Responsive width */
+}
+
+.auth-card {
+  display: flex;
+  width: 100%;
+  max-width: none; /* Take full width of parent */
+  min-height: 700px; /* Adjusted height */
+  background-color: transparent; /* Card itself is transparent */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  border-radius: var(--border-radius-large, 12px); /* Match inner radius */
+  overflow: hidden; /* Clip corners */
+}
+
+.auth-left-column {
+  flex-basis: 60%; /* Left column takes more space */
+  background-color: #003465; /* Solid background for image contrast */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-top-left-radius: inherit; /* Inherit radius */
+  border-bottom-left-radius: inherit;
+}
+
+.auth-left-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the area */
+  border-top-left-radius: inherit; /* Inherit radius */
+  border-bottom-left-radius: inherit;
+}
+
+.auth-right-column {
+  flex-basis: 40%; /* Right column takes less space */
+  background-color: #FFFFFF; /* Solid white background for form */
+  padding: 40px 50px; /* Padding inside form area */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center form vertically */
+  border-top-right-radius: inherit; /* Inherit radius */
+  border-bottom-right-radius: inherit;
+}
+
+.auth-logo-group {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   margin-bottom: 25px; /* Space below logo */
+}
+
+.auth-logo {
+   max-width: 40px; /* Logo size */
+   height: auto;
+}
+
+.auth-app-name {
+   font-size: 1.2rem;
+   font-weight: 600;
+   color: var(--neutral-900); /* Dark text for app name */
+   letter-spacing: 0.5px;
+}
+
+.auth-right-column h3 {
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.auth-subtitle {
+   color: var(--text-secondary);
+   font-size: 0.9rem;
+   margin-bottom: 30px; /* Space below subtitle */
+}
+
+.auth-actual-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px; /* Space between form fields */
+  width: 100%;
+}
+
+.auth-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.password-label-group {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+}
+
+.forgot-password-link {
+   font-size: 0.8rem;
+   color: var(--accent-primary);
+   text-decoration: none;
+   transition: color var(--duration-fast) var(--easing-ease-out);
+}
+.forgot-password-link:hover {
+   color: var(--accent-primary-hover);
+   text-decoration: underline;
+}
+
+
+.auth-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--border-radius-medium);
+  background-color: var(--neutral-50); /* Light background for input */
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: border-color var(--duration-fast) var(--easing-ease-out),
+              box-shadow var(--duration-fast) var(--easing-ease-out);
+}
+
+.auth-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.auth-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: var(--border-radius-medium);
+  background-color: var(--accent-primary);
+  color: var(--button-text-color);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px; /* Space above button */
+  min-height: 44px; /* Accessibility */
+  transition: background-color var(--duration-fast) var(--easing-ease-out),
+              box-shadow var(--duration-fast) var(--easing-ease-out);
+}
+
+.auth-button:hover:not(:disabled) {
+  background-color: var(--accent-primary-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.auth-button:disabled {
+  background-color: var(--neutral-200);
+  color: var(--neutral-500);
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+.toggle-auth-button {
+  background: none;
+  border: none;
+  color: var(--accent-primary);
+  margin-top: 25px; /* Space above toggle button */
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--easing-ease-out);
+  align-self: center; /* Center the toggle button */
+}
+
+.toggle-auth-button:hover:not(:disabled) {
+  color: var(--accent-primary-hover);
+  text-decoration: underline;
+}
+
+.toggle-auth-button:disabled {
+   color: var(--text-tertiary);
+   cursor: not-allowed;
+}
+
+.auth-error {
+  color: var(--color-error);
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: 15px; /* Space above error message */
+  margin-bottom: 0;
+  min-height: 1.2em; /* Prevent layout shift when error appears/disappears */
+}
+
+/* --- Fullscreen Loading Indicator Styles (Unchanged) --- */
+.loading-fullscreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
+
+.loading-fullscreen .auth-logo { /* Reuse auth logo style */
+  max-width: 150px;
+  width: 50%;
+  height: auto;
+  margin-bottom: 25px;
+}
+
+.loading-fullscreen p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+/* --- Accessibility Focus Styles (Unchanged) --- */
+button:focus-visible,
+a:focus-visible,
+.sidebar-item:focus-visible {
+  outline: 2px solid var(--focus-ring-color);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-small); /* Add radius to focus outline */
+}
+
+.auth-input:focus-visible {
+  outline: none; /* Remove default */
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--color-accent-blue-light); /* Custom focus ring */
+}
+
+/* Remove focus outline from textarea itself, apply to parent */
+.chat-textarea:focus-visible { /* Use specific class */
+     outline: none;
+}
+/* Apply focus to the wrapper div */
+.input-area:focus-within {
+   outline: 2px solid var(--focus-ring-color);
+   outline-offset: 1px; /* Closer offset */
+   border-color: transparent; /* Hide original border on focus */
+}
+
+
+/* --- Scrollbar Styles (Unchanged) --- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-100); /* Light track */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--neutral-400); /* Mid-tone thumb */
+  border-radius: 4px;
+  border: 2px solid var(--neutral-100); /* Track color border */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--neutral-500); /* Darker thumb on hover */
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neutral-400) var(--neutral-100);
+}
+
+/* --- Responsiveness for Auth Page (Unchanged) --- */
+@media (max-width: 900px) { /* Adjust breakpoint */
+   .auth-background-container {
+    padding: 0;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    max-width: 450px; /* Limit width on smaller screens */
+    width: 95%;
+  }
+
+  .auth-card {
+   flex-direction: column; /* Stack columns */
+   min-height: auto; /* Allow height to adjust */
+   border-radius: var(--border-radius-large);
+   box-shadow: var(--shadow-md); /* Add shadow to card */
+   background-color: #FFFFFF; /* Make card white */
+  }
+
+  .auth-left-column {
+    display: none; /* Hide image column */
+  }
+
+  .auth-right-column {
+   flex-basis: auto; /* Take full width */
+   padding: 30px 25px; /* Adjust padding */
+   justify-content: flex-start; /* Align content to top */
+   border-radius: inherit; /* Inherit radius */
+  }
+
+   .auth-logo-group {
+     justify-content: center; /* Center logo */
+   }
+}
+
+/* --- Responsiveness for Chat Interface (Unchanged) --- */
+@media (max-width: 768px) {
+    .sidebar {
+        /* Example: Hide sidebar on small screens or make it collapsible */
+        /* display: none; */
+        width: 200px; /* Or make it narrower */
+    }
+    .chat-area {
+        /* Take full width if sidebar is hidden */
+    }
+    .message-container {
+        max-width: 95%; /* Allow messages to take more width */
+    }
+    .input-area-wrapper {
+        padding: 0px 10px 10px 10px; /* Reduce padding */
+    }
+    .suggested-actions {
+        padding: 10px 10px 0px 10px; /* Adjust padding */
+    }
+    .chat-header h1 {
+        font-size: 1.1rem;
+    }
+}

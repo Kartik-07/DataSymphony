@@ -1,0 +1,32 @@
+# LangChain Core & Integrations
+langchain
+langchain-community
+langchainhub
+langchain-google-genai # Added for Gemini
+langchain-postgres     # Added for PGVector specific helpers if needed
+langchain-experimental
+
+# LLM & Embeddings
+google-generativeai    # Underlying Gemini SDK
+sentence-transformers  # For HuggingFace embeddings
+langchain-cohere       # For Cohere Reranker
+
+# Vector Store & DB
+psycopg[binary]
+psycopg2-binary        # Postgres driver (use psycopg2 if compiling)
+sqlalchemy             # Often used by LangChain DB integrations
+
+# API & Utilities
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic-settings
+tiktoken               # Still needed for text splitting
+beautifulsoup4
+lxml
+requests
+python-multipart
+
+# Dcoument Ingestion
+pdfplumber # for pdf ingestion
+docx2txt # for word ingestion

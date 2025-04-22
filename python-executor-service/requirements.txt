@@ -1,0 +1,11 @@
+# requirements.txt
+fastapi
+uvicorn[standard]>=0.15  # ASGI server for FastAPI
+pandas>=1.3
+numpy>=1.20
+matplotlib>=3.5 # For plotting (saving to files)
+scipy>=1.7
+tabulate
+sqlalchemy
+psycopg[binary]
+psycopg2-binary 

@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db:
+    image: pgvector/pgvector:pg17 # Use PostgreSQL 17 image with pgvector
+    container_name: rag_postgres_db
+    environment:
+      POSTGRES_DB: RAG_DB,RAG_DB_UPLOADS
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password # !!! CHANGE THIS PASSWORD !!!
+    ports:
+      - "5433:5432" # Map host port 5433 to container port 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local

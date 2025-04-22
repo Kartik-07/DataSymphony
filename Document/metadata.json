@@ -1,0 +1,2527 @@
+[
+    {
+        "id": "unstructured-AEPRE7.txt-f97eff6a",
+        "document": "The text discusses the dual nature of the internet, highlighting its revolutionary impact on various fields while acknowledging its negative consequences.  Excessive internet use leads to distractions, time wastage, health problems, and a decline in academic performance.  Easy access to information online also contributes to a loss of focus on traditional learning methods, reduced social interaction, and mental health issues.  Finally, the ease of copying content online raises concerns about plagiarism and copyright infringement.",
+        "metadata": {
+            "identifier": "AEPRE7.txt",
+            "data_type": "unstructured",
+            "source_type": "file",
+            "collection_time": "2025-04-15T17:08:10.369393+00:00",
+            "document_type": "txt",
+            "domain_themes": "Education",
+            "keywords": [
+                "internet",
+                "education",
+                "social media",
+                "plagiarism",
+                "copyright infringement",
+                "mental health",
+                "academic performance",
+                "online learning",
+                "distraction",
+                "time management"
+            ],
+            "author": "N/A",
+            "timestamp": "N/A",
+            "headings": [],
+            "llm_status": "success"
+        }
+    },
+    {
+        "id": "structured-Clinical_Programs_Mock_data.csv-ffabcfc4",
+        "document": "This dataset contains information about clinical programs, including interactions, attendees, products, and associated MSLs.",
+        "metadata": {
+            "identifier": "Clinical Programs Mock data.csv",
+            "data_type": "structured",
+            "source_type": "dataframe",
+            "collection_time": "2025-04-15T17:08:24.338227+00:00",
+            "row_count": 1107,
+            "column_count": 23,
+            "columns": [
+                {
+                    "column": "NAME",
+                    "num_unique_values": 840,
+                    "samples": [
+                        "WCT-418131",
+                        "WCT-419015",
+                        "WCT-418010"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the clinical program.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "PRODUCT_GROUP",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "Product 3",
+                        "Product 2",
+                        "Product 1"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Category or group of the product associated with the program.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CALL_ID",
+                    "num_unique_values": 971,
+                    "samples": [
+                        "v78TR98995YcvmtIYB",
+                        "v78TR98995YcwlZIYR",
+                        "v78TR98995Ycy6YIYR"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the interaction or call.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INTERACTION_MEDIUM",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "Email",
+                        "Virtual",
+                        "Live"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Medium used for the interaction (e.g., Email, Virtual, Live).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "TOTAL_ATTENDEES",
+                    "num_unique_values": 365,
+                    "samples": [
+                        44,
+                        212,
+                        27
+                    ],
+                    "semantic_type": "count",
+                    "description": "Total number of attendees at the interaction.",
+                    "dtype": "number",
+                    "std": 114.03742405922797,
+                    "min": 1.0,
+                    "max": 400.0,
+                    "mean": 198.17344173441734,
+                    "median": 195.0,
+                    "p25": 100.5,
+                    "p75": 297.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "VENUE_CATEGORY",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "RA",
+                        "Others",
+                        "PA"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Category of the venue where the interaction took place.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INTERACTION_DATE",
+                    "num_unique_values": 123,
+                    "samples": [
+                        "06-03-2024",
+                        "15-04-2024",
+                        "26-04-2024"
+                    ],
+                    "semantic_type": "timestamp",
+                    "description": "Date of the interaction.",
+                    "dtype": "datetime",
+                    "min": "2024-01-02T00:00:00",
+                    "max": "2024-12-04T00:00:00",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "IS_PARENT__C",
+                    "num_unique_values": 1,
+                    "samples": [
+                        true
+                    ],
+                    "semantic_type": "flag",
+                    "description": "Boolean flag indicating if it's a parent program.",
+                    "dtype": "boolean",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "RESIDENCY_PROGRAMME",
+                    "num_unique_values": 2,
+                    "samples": [
+                        true,
+                        false
+                    ],
+                    "semantic_type": "flag",
+                    "description": "Boolean flag indicating if it's a residency program.",
+                    "dtype": "boolean",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "MSL_ID",
+                    "num_unique_values": 23,
+                    "samples": [
+                        "1293Q881236XqXDIA0",
+                        "1293Q881236XqWhDIK",
+                        "1293Q881236XqeZDIS"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the Medical Science Liaison (MSL).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INTERACTION_VENUE",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "CP-P",
+                        "OS",
+                        "CP-R"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Category of the interaction venue.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "RESIDENCY_PROGRAMME_FLAG",
+                    "num_unique_values": 2,
+                    "samples": [
+                        0,
+                        1
+                    ],
+                    "semantic_type": "flag",
+                    "description": "Numeric flag indicating if it's a residency program (0 or 1).",
+                    "dtype": "number",
+                    "std": 0.12302300633135989,
+                    "min": 0.0,
+                    "max": 1.0,
+                    "mean": 0.015356820234869015,
+                    "median": 0.0,
+                    "p25": 0.0,
+                    "p75": 0.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INTERACTION_DETAIL_ID",
+                    "num_unique_values": 1107,
+                    "samples": [
+                        "e99FT111236d5CzIAI",
+                        "e99FT111236d4DDIAY",
+                        "e99FT111236sWC2IAM"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the interaction detail.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INITIATIVES",
+                    "num_unique_values": 12,
+                    "samples": [
+                        "Initiative 6",
+                        "Initiative 4",
+                        "Initiative 12"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Name of the initiative associated with the program.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "PRODUCT_NAME",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "Product 1",
+                        "Product 3",
+                        "Product 2"
+                    ],
+                    "semantic_type": "product",
+                    "description": "Name of the product associated with the program.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "PRODUCT_ID",
+                    "num_unique_values": 3,
+                    "samples": [
+                        1010,
+                        1016,
+                        2205
+                    ],
+                    "semantic_type": "product_id",
+                    "description": "Unique identifier for the product.",
+                    "dtype": "number",
+                    "std": 564.9892215246767,
+                    "min": 1010.0,
+                    "max": 2205.0,
+                    "mean": 1799.163504968383,
+                    "median": 2205.0,
+                    "p25": 1016.0,
+                    "p75": 2205.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INITIATIVE_CATEGORY",
+                    "num_unique_values": 5,
+                    "samples": [
+                        "ES",
+                        "SS",
+                        "BCP"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Category of the initiative.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INTERACTION_CATEGORY",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "Mail",
+                        "Call",
+                        "Face 2 Face"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Category of the interaction.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INTERACTION_NAME",
+                    "num_unique_values": 972,
+                    "samples": [
+                        "IJ165140",
+                        "IJ123622",
+                        "IJ168006"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Name or identifier for the interaction.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "MSL_NAME",
+                    "num_unique_values": 25,
+                    "samples": [
+                        3,
+                        12,
+                        2
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Identifier for the MSL.",
+                    "dtype": "number",
+                    "std": 7.113800261660954,
+                    "min": 1.0,
+                    "max": 25.0,
+                    "mean": 13.371273712737127,
+                    "median": 14.0,
+                    "p25": 7.0,
+                    "p75": 19.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "MONTH_YEAR",
+                    "num_unique_values": 5,
+                    "samples": [
+                        "Jan '24",
+                        "Mar '24",
+                        "May '24"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Month and year of the interaction.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "QUARTER_NAME",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "Q1",
+                        "Q2"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Quarter of the year.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "QUARTER_YEAR",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "Q2 '24",
+                        "Q1 '24"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Quarter and year.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                }
+            ],
+            "enrichment_status": "success",
+            "target_database": "RAG_DB_UPLOADS",
+            "target_table_name": "clinical_programs_mock_data"
+        }
+    },
+    {
+        "id": "structured-Content_Effectiveness_Mock_data.csv-5b78527f",
+        "document": "This dataset contains information about content effectiveness, including session details, presentation information, product details, and user activity.",
+        "metadata": {
+            "identifier": "Content Effectiveness Mock data.csv",
+            "data_type": "structured",
+            "source_type": "dataframe",
+            "collection_time": "2025-04-15T17:08:40.348600+00:00",
+            "row_count": 1549,
+            "column_count": 29,
+            "columns": [
+                {
+                    "column": "SESSION_ID",
+                    "num_unique_values": 1069,
+                    "samples": [
+                        4001292,
+                        4001305,
+                        4000914
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for each session.",
+                    "dtype": "number",
+                    "std": 568.495498199122,
+                    "min": 4000000.0,
+                    "max": 4002000.0,
+                    "mean": 4000994.2788896062,
+                    "median": 4000999.0,
+                    "p25": 4000521.0,
+                    "p75": 4001482.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "SESSION_DATE",
+                    "num_unique_values": 541,
+                    "samples": [
+                        "20-02-2024",
+                        "21-11-2023",
+                        "20-07-2024"
+                    ],
+                    "semantic_type": "date",
+                    "description": "Date of the session.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "SESSION_STARTED_TIME",
+                    "num_unique_values": 733,
+                    "samples": [
+                        "09:42:00.000",
+                        "09:33:00.000",
+                        "22:32:00.000"
+                    ],
+                    "semantic_type": "time",
+                    "description": "Time the session started.",
+                    "dtype": "datetime",
+                    "min": "2025-04-15T00:00:00",
+                    "max": "2025-04-15T23:55:00",
+                    "missing_values_count": 549,
+                    "missing_values_proportion": 0.35442220787604906
+                },
+                {
+                    "column": "SESSION_MODE",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "Practice",
+                        "Live"
+                    ],
+                    "semantic_type": "session_mode",
+                    "description": "Type of session (Practice or Live).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "SESSION_CLOSED_REMARK",
+                    "num_unique_values": 2,
+                    "samples": [
+                        false,
+                        true
+                    ],
+                    "semantic_type": "flag",
+                    "description": "Indicates if there was a remark when the session was closed.",
+                    "dtype": "boolean",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "PRESENTATION_ID",
+                    "num_unique_values": 1101,
+                    "samples": [
+                        40781,
+                        40544,
+                        40796
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the presentation.",
+                    "dtype": "number",
+                    "std": 581.6381159337479,
+                    "min": 40000.0,
+                    "max": 42000.0,
+                    "mean": 41027.79987088444,
+                    "median": 41055.0,
+                    "p25": 40535.0,
+                    "p75": 41532.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "PRESENTATION_NAME",
+                    "num_unique_values": 10,
+                    "samples": [
+                        7,
+                        5,
+                        2
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Identifier for the presentation name.",
+                    "dtype": "number",
+                    "std": 2.9097127498517588,
+                    "min": 1.0,
+                    "max": 10.0,
+                    "mean": 5.577146546158812,
+                    "median": 6.0,
+                    "p25": 3.0,
+                    "p75": 8.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "PRODUCT",
+                    "num_unique_values": 17,
+                    "samples": [
+                        "Product 1",
+                        "Product 15",
+                        "Product 4"
+                    ],
+                    "semantic_type": "product",
+                    "description": "Name of the product.",
+                    "dtype": "category",
+                    "missing_values_count": 275,
+                    "missing_values_proportion": 0.17753389283408652
+                },
+                {
+                    "column": "THERAPY_NAME",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "Therapy 2",
+                        "Therapy 1",
+                        "Therapy 3"
+                    ],
+                    "semantic_type": "therapy",
+                    "description": "Name of the therapy.",
+                    "dtype": "category",
+                    "missing_values_count": 2,
+                    "missing_values_proportion": 0.0012911555842479018
+                },
+                {
+                    "column": "RA_OR_PA",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "Proactive",
+                        "Reactive"
+                    ],
+                    "semantic_type": "approach",
+                    "description": "Indicates if the approach was proactive or reactive.",
+                    "dtype": "category",
+                    "missing_values_count": 2,
+                    "missing_values_proportion": 0.0012911555842479018
+                },
+                {
+                    "column": "PRESENTATION_MIX_TYPE",
+                    "num_unique_values": 6,
+                    "samples": [
+                        "Reactive-Poster",
+                        "Proactive",
+                        "Reactive"
+                    ],
+                    "semantic_type": "presentation_type",
+                    "description": "Type of presentation mix.",
+                    "dtype": "category",
+                    "missing_values_count": 2,
+                    "missing_values_proportion": 0.0012911555842479018
+                },
+                {
+                    "column": "SESSION_TYPE",
+                    "num_unique_values": 1,
+                    "samples": [
+                        "normal"
+                    ],
+                    "semantic_type": "session_type",
+                    "description": "Type of session.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "USER_NAME",
+                    "num_unique_values": 27,
+                    "samples": [
+                        7,
+                        22,
+                        6
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Identifier for the user.",
+                    "dtype": "number",
+                    "std": 7.303911498316627,
+                    "min": 1.0,
+                    "max": 32.0,
+                    "mean": 12.909619109102646,
+                    "median": 13.0,
+                    "p25": 7.0,
+                    "p75": 19.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "TIME_IN_HRS",
+                    "num_unique_values": 722,
+                    "samples": [
+                        0.001041667,
+                        0.030104167,
+                        0.029664352
+                    ],
+                    "semantic_type": "duration",
+                    "description": "Duration of the session in hours.",
+                    "dtype": "number",
+                    "std": 0.2564632768426351,
+                    "min": 0.000115741,
+                    "max": 7.960416667,
+                    "mean": 0.0175242614796643,
+                    "median": 0.00162037,
+                    "p25": 0.000497685,
+                    "p75": 0.006585648,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CALL_ID",
+                    "num_unique_values": 158,
+                    "samples": [
+                        "t65Cb24245ZwzYeIZJ",
+                        "t65Cb24245ZcvQKIZZ",
+                        "t65Cb24245ZcwuDIZR"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the call.",
+                    "dtype": "string",
+                    "missing_values_count": 1310,
+                    "missing_values_proportion": 0.8457069076823758
+                },
+                {
+                    "column": "ACC_ID",
+                    "num_unique_values": 37,
+                    "samples": [
+                        "1157t24245YQVPnZZP",
+                        "1157h00001wqp5CZZQ",
+                        "1157t24245hONifZZG"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Account identifier.",
+                    "dtype": "category",
+                    "missing_values_count": 1476,
+                    "missing_values_proportion": 0.9528728211749515
+                },
+                {
+                    "column": "H_ACC_NAME__C",
+                    "num_unique_values": 94,
+                    "samples": [
+                        "2278h24245g1VegZZE",
+                        "2278h24245g1NjJZZU",
+                        "2278h22221PQtUQZZ1"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Identifier for the account name.",
+                    "dtype": "string",
+                    "missing_values_count": 1399,
+                    "missing_values_proportion": 0.9031633311814073
+                },
+                {
+                    "column": "PRESENTATIONS_CUSTOMER_TYPE",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "OTH",
+                        "Other",
+                        "CO"
+                    ],
+                    "semantic_type": "customer_type",
+                    "description": "Type of customer for the presentation.",
+                    "dtype": "category",
+                    "missing_values_count": 1313,
+                    "missing_values_proportion": 0.8476436410587476
+                },
+                {
+                    "column": "ACC_RECORD_TYPE",
+                    "num_unique_values": 1,
+                    "samples": [
+                        "Prescriber"
+                    ],
+                    "semantic_type": "record_type",
+                    "description": "Record type of the account.",
+                    "dtype": "category",
+                    "missing_values_count": 1543,
+                    "missing_values_proportion": 0.9961265332472563
+                },
+                {
+                    "column": "ACC_CORE_TYPE",
+                    "num_unique_values": 1,
+                    "samples": [
+                        "Core"
+                    ],
+                    "semantic_type": "account_type",
+                    "description": "Core type of the account.",
+                    "dtype": "category",
+                    "missing_values_count": 1543,
+                    "missing_values_proportion": 0.9961265332472563
+                },
+                {
+                    "column": "TERRITORY",
+                    "num_unique_values": 26,
+                    "samples": [
+                        "9769-CTT_IN_T9704",
+                        "1975-CTT_IN_FA304",
+                        "9549-CTT_IN_T9109"
+                    ],
+                    "semantic_type": "territory",
+                    "description": "Territory associated with the session.",
+                    "dtype": "category",
+                    "missing_values_count": 802,
+                    "missing_values_proportion": 0.5177533892834086
+                },
+                {
+                    "column": "MLS_ID",
+                    "num_unique_values": 788,
+                    "samples": [
+                        5132,
+                        5379,
+                        5011
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "MLS identifier.",
+                    "dtype": "number",
+                    "std": 404.4500835027201,
+                    "min": 1968.0,
+                    "max": 5632.0,
+                    "mean": 4978.516462233699,
+                    "median": 4999.0,
+                    "p25": 4744.0,
+                    "p75": 5250.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "IS_ACTIVE",
+                    "num_unique_values": 1,
+                    "samples": [
+                        true
+                    ],
+                    "semantic_type": "flag",
+                    "description": "Indicates if the session is active.",
+                    "dtype": "boolean",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "THERAPY",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "Therapy 1",
+                        "Therapy 3",
+                        "Therapy 2"
+                    ],
+                    "semantic_type": "therapy",
+                    "description": "Name of the therapy.",
+                    "dtype": "category",
+                    "missing_values_count": 2,
+                    "missing_values_proportion": 0.0012911555842479018
+                },
+                {
+                    "column": "RESOURCE_FILETYPE",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "PDF",
+                        "Video",
+                        "PowerPoint"
+                    ],
+                    "semantic_type": "file_type",
+                    "description": "File type of the resource.",
+                    "dtype": "category",
+                    "missing_values_count": 2,
+                    "missing_values_proportion": 0.0012911555842479018
+                },
+                {
+                    "column": "POWERPOINT_TYPE",
+                    "num_unique_values": 12,
+                    "samples": [
+                        "Slide",
+                        "OPAP",
+                        "AP"
+                    ],
+                    "semantic_type": "powerpoint_type",
+                    "description": "Type of PowerPoint presentation.",
+                    "dtype": "category",
+                    "missing_values_count": 2,
+                    "missing_values_proportion": 0.0012911555842479018
+                },
+                {
+                    "column": "PRODUCTS",
+                    "num_unique_values": 17,
+                    "samples": [
+                        "Product 7",
+                        "Product 10",
+                        "Product 5"
+                    ],
+                    "semantic_type": "product",
+                    "description": "Name of the product.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CALL_STATUS",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "Unlinked",
+                        "Linked"
+                    ],
+                    "semantic_type": "call_status",
+                    "description": "Status of the call.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "MSL",
+                    "num_unique_values": 25,
+                    "samples": [
+                        "Edward",
+                        "Elvin",
+                        "Robin"
+                    ],
+                    "semantic_type": "person",
+                    "description": "Name of the MSL.",
+                    "dtype": "category",
+                    "missing_values_count": 2,
+                    "missing_values_proportion": 0.0012911555842479018
+                }
+            ],
+            "enrichment_status": "success",
+            "target_database": "RAG_DB_UPLOADS",
+            "target_table_name": "content_effectiveness_mock_data"
+        }
+    },
+    {
+        "id": "structured-Course_Completion.xlsx-55cf1dfd",
+        "document": "This dataset contains information on employee course completion, including course details, completion status, and dates.",
+        "metadata": {
+            "identifier": "Course_Completion.xlsx",
+            "data_type": "structured",
+            "source_type": "dataframe",
+            "collection_time": "2025-04-15T17:08:58.878425+00:00",
+            "row_count": 32292,
+            "column_count": 12,
+            "columns": [
+                {
+                    "column": "EmployeeID",
+                    "num_unique_values": 276,
+                    "samples": [
+                        "camila.cazerta@abbvie.com",
+                        "katsuhiko.tsuchida@abbvie.com",
+                        "carmen.escalona@abbvie.com"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for each employee, likely an email address.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "Name",
+                    "num_unique_values": 275,
+                    "samples": [
+                        "Gkritzapi, Sery",
+                        "Maltman, John",
+                        "Fanzio, Paolo"
+                    ],
+                    "semantic_type": "name",
+                    "description": "Full name of the employee.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "Region",
+                    "num_unique_values": 5,
+                    "samples": [
+                        "US",
+                        "GLOBAL",
+                        "LATAM"
+                    ],
+                    "semantic_type": "location",
+                    "description": "Geographic region of the employee.",
+                    "dtype": "category",
+                    "missing_values_count": 8190,
+                    "missing_values_proportion": 0.2536231884057971
+                },
+                {
+                    "column": "Curriculum Name",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "Voyager - Silver Certificate",
+                        "Voyager Bronze Certificate",
+                        "Voyager - Gold Certificate"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Name of the curriculum the course belongs to.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CoursePackName",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "Voyager Silver Certificate (VAT Program)",
+                        "Voyager - Bronze Certificate",
+                        "Voyager Gold Certificate (VMT Program)"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Name of the course pack.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CourseName",
+                    "num_unique_values": 116,
+                    "samples": [
+                        "Your Personal Brand",
+                        "Presentation Skills and Business Storytelling",
+                        "Virtual Team: Building Relationships"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Name of the course.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CourseCode",
+                    "num_unique_values": 116,
+                    "samples": [
+                        "51187",
+                        "Go1 - 5453177",
+                        "SIEM Success story - Shanna Ashley"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique code for the course.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CompletionStatus",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "Complete",
+                        "Not Complete"
+                    ],
+                    "semantic_type": "status",
+                    "description": "Indicates whether the course was completed.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "Status",
+                    "num_unique_values": 5,
+                    "samples": [
+                        "Passed",
+                        "In Progress",
+                        "Marked as Complete"
+                    ],
+                    "semantic_type": "status",
+                    "description": "Detailed status of course completion.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CourseType",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "Video",
+                        "Interactive"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Type of course delivery.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "AssignedDateUTC",
+                    "num_unique_values": 75,
+                    "samples": [
+                        "2024-05-16T10:00:07",
+                        "2024-05-29T10:00:08",
+                        "2024-01-12T11:00:08"
+                    ],
+                    "semantic_type": "timestamp",
+                    "description": "Date and time the course was assigned to the employee in UTC.",
+                    "dtype": "datetime",
+                    "min": "2022-10-28T10:00:13",
+                    "max": "2024-06-18T10:00:00",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "DateCompletedUTC",
+                    "num_unique_values": 2904,
+                    "samples": [
+                        "2023-10-18T03:25:48",
+                        "2023-03-27T14:14:17",
+                        "2023-03-31T17:30:10"
+                    ],
+                    "semantic_type": "timestamp",
+                    "description": "Date and time the course was completed in UTC.",
+                    "dtype": "datetime",
+                    "min": "2022-02-04T00:29:51",
+                    "max": "2024-06-28T08:55:47",
+                    "missing_values_count": 29357,
+                    "missing_values_proportion": 0.9091106156323547
+                }
+            ],
+            "enrichment_status": "success",
+            "target_database": "RAG_DB_UPLOADS",
+            "target_table_name": "course_completion"
+        }
+    },
+    {
+        "id": "structured-DPO_Details_Mock_data.csv-298a4874",
+        "document": "This dataset contains mock data about DPO (Details of Physician Outreach) interactions, including therapy types, compounds, categories, and HCP details.",
+        "metadata": {
+            "identifier": "DPO Details Mock data.csv",
+            "data_type": "structured",
+            "source_type": "dataframe",
+            "collection_time": "2025-04-15T17:09:10.565039+00:00",
+            "row_count": 1059,
+            "column_count": 18,
+            "columns": [
+                {
+                    "column": "THERAPY_TYPE",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "Therapy 1",
+                        "Therapy 3",
+                        "Therapy 2"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Type of therapy discussed in the interaction.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "NAME",
+                    "num_unique_values": 1036,
+                    "samples": [
+                        "Therapy-9244269",
+                        "Therapy-979541",
+                        "Therapy-977835"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Internal identifier for the therapy.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "COMPOUND__C",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "Compound 4",
+                        "Compound 3",
+                        "Compound 2"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Compound discussed in the interaction.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CATEGORIES",
+                    "num_unique_values": 6,
+                    "samples": [
+                        "Category 1",
+                        "Category 3",
+                        "Category 2"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Category of the interaction.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "HCP_ACC",
+                    "num_unique_values": 782,
+                    "samples": [
+                        "0029y00000h8KLMNO3",
+                        "0029y00000m5E85AAE",
+                        "0029y00000a1ABCDE6"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Healthcare professional account identifier.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INDICATIONS",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "Indication 4",
+                        "Indication 3",
+                        "Indication 1"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Indication discussed in the interaction.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CALL_ID",
+                    "num_unique_values": 904,
+                    "samples": [
+                        "v78TR98995YRxNIIYR",
+                        "v78TR98995YwR7XIYR",
+                        "v78TR98995YRwERIYJ"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the call.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "THERAPY_K_TOPIC",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "Topic 1",
+                        "Topic 2",
+                        "Topic 4"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Topic discussed regarding the therapy.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "THERAPY_TYPE_KEY_ASPECTS",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "Aspect 4",
+                        "Aspect 2",
+                        "Aspect 3"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Key aspects of the therapy type.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INTERACTION_NUMBER",
+                    "num_unique_values": 951,
+                    "samples": [
+                        "AL790186",
+                        "AL786928",
+                        "AL784214"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Interaction number or identifier.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INTERACTION_STAT",
+                    "num_unique_values": 1,
+                    "samples": [
+                        "Submitted"
+                    ],
+                    "semantic_type": "status",
+                    "description": "Status of the interaction.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INTERACTION_TYPE",
+                    "num_unique_values": 5,
+                    "samples": [
+                        "VC",
+                        "Digital",
+                        "Telephone"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Type of interaction (e.g., video call, digital, telephone).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "MSL_ID",
+                    "num_unique_values": 36,
+                    "samples": [
+                        "1293Q8812373uiFDIQ",
+                        "1293Q881236XqWYDI0",
+                        "889QC45452M3RlrIAF"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Medical Science Liaison (MSL) identifier.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "MSL_NAME",
+                    "num_unique_values": 30,
+                    "samples": [
+                        30,
+                        15,
+                        26
+                    ],
+                    "semantic_type": "count",
+                    "description": "Likely a numerical representation of the MSL, possibly an ID or code.",
+                    "dtype": "number",
+                    "std": 8.832475217051577,
+                    "min": 1.0,
+                    "max": 30.0,
+                    "mean": 15.203021718602455,
+                    "median": 15.0,
+                    "p25": 7.0,
+                    "p75": 22.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CREATED_DATE",
+                    "num_unique_values": 400,
+                    "samples": [
+                        "19.01.2024",
+                        "Thursday, September 21, 2023",
+                        "Monday, October 30, 2023"
+                    ],
+                    "semantic_type": "timestamp",
+                    "description": "Date and time the interaction was created.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "HCP_NUMBER",
+                    "num_unique_values": 1001,
+                    "samples": [
+                        "Ellary Ridings",
+                        "Jarred Lachaize",
+                        "Rozamond Ghidelli"
+                    ],
+                    "semantic_type": "name",
+                    "description": "Name of the Healthcare Professional.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "TL",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "Others",
+                        "TL"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Category likely representing a team lead (TL) or other designation.",
+                    "dtype": "category",
+                    "missing_values_count": 51,
+                    "missing_values_proportion": 0.04815864022662889
+                },
+                {
+                    "column": "NPI_NO__PC",
+                    "num_unique_values": 827,
+                    "samples": [
+                        247812119,
+                        328281407,
+                        233177134
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "National Provider Identifier (NPI) number.",
+                    "dtype": "number",
+                    "std": 28206183.022770457,
+                    "min": 222884996.0,
+                    "max": 336219372.0,
+                    "mean": 288865555.71293676,
+                    "median": 308791877.0,
+                    "p25": 267552910.0,
+                    "p75": 308792055.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                }
+            ],
+            "enrichment_status": "success",
+            "target_database": "RAG_DB_UPLOADS",
+            "target_table_name": "dpo_details_mock_data"
+        }
+    },
+    {
+        "id": "unstructured-fluid_dynamics.txt-e246270b",
+        "document": "This document comprehensively explores the fluid dynamics of a sphere oscillating rectilinearly within a fluid.  It details the principles governing this flow, including inertia, viscosity, Reynolds number, and boundary layer effects.  Different oscillation scenarios (low/high amplitude, varying frequency) and their impact on flow structure, vortex shedding, and fluid-structure interactions are analyzed.  The text also covers practical applications in various fields like underwater vehicles, particle transport, and aeroelasticity, along with the experimental and computational methods used for studying this phenomenon.",
+        "metadata": {
+            "identifier": "fluid dynamics.txt",
+            "data_type": "unstructured",
+            "source_type": "file",
+            "collection_time": "2025-04-15T17:09:13.217064+00:00",
+            "document_type": "txt",
+            "domain_themes": "Fluid Dynamics",
+            "keywords": [
+                "Rectilinear Oscillation",
+                "Sphere",
+                "Fluid Dynamics",
+                "Vortex Shedding",
+                "Boundary Layer",
+                "Reynolds Number",
+                "Fluid-Structure Interaction",
+                "Drag and Lift Forces",
+                "Computational Fluid Dynamics (CFD)",
+                "Particle Image Velocimetry (PIV)"
+            ],
+            "author": "N/A",
+            "timestamp": "N/A",
+            "headings": [
+                "I. Introduction",
+                "II. Principles of Flow Around an Oscillating Sphere",
+                "III. Flow Structure in Different Oscillation Scenarios",
+                "IV. Vortex Shedding",
+                "V. Boundary Layer Behavior",
+                "VI. Fluid-Structure Interaction",
+                "VII. Drag and Lift Forces",
+                "VIII. Applications and Practical Implications",
+                "IX. Experimental Techniques and Computational Simulations",
+                "X. Transition to Turbulence",
+                "XI. Conclusion"
+            ],
+            "llm_status": "success"
+        }
+    },
+    {
+        "id": "structured-HCP_Details_Mock_data.csv-32aa1ff7",
+        "document": "This dataset contains information about healthcare providers (HCPs), including their names, addresses, specialties, and identifiers.",
+        "metadata": {
+            "identifier": "HCP_Details Mock data.csv",
+            "data_type": "structured",
+            "source_type": "dataframe",
+            "collection_time": "2025-04-15T17:09:19.936745+00:00",
+            "row_count": 1000,
+            "column_count": 10,
+            "columns": [
+                {
+                    "column": "HCP_NAME",
+                    "num_unique_values": 1000,
+                    "samples": [
+                        "Clyve Desborough",
+                        "Dougie Charity",
+                        "Rhoda Meaddowcroft"
+                    ],
+                    "semantic_type": "name",
+                    "description": "The full name of the healthcare provider.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "RECORD_TYPE_NAME",
+                    "num_unique_values": 1,
+                    "samples": [
+                        "Prescriber"
+                    ],
+                    "semantic_type": "category",
+                    "description": "The type of record, in this case, indicating if the HCP is a prescriber.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CORE",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "Core",
+                        "Others"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Categorizes HCPs as either 'Core' or 'Others'.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "SHIPPING_ADDRESS_GLOBAL_SEARCH",
+                    "num_unique_values": 998,
+                    "samples": [
+                        "8 Roxbury Street",
+                        "01364 Summit Plaza",
+                        "58880 Butternut Pass"
+                    ],
+                    "semantic_type": "address",
+                    "description": "The street address of the HCP.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "SHIPPING_CITY",
+                    "num_unique_values": 290,
+                    "samples": [
+                        "Inglewood",
+                        "Fresno",
+                        "Asheville"
+                    ],
+                    "semantic_type": "city",
+                    "description": "The city where the HCP is located.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "SHIPPING_STATE",
+                    "num_unique_values": 47,
+                    "samples": [
+                        "Nevada",
+                        "North Carolina",
+                        "Kentucky"
+                    ],
+                    "semantic_type": "state",
+                    "description": "The state where the HCP is located.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "SHIPPING_COUNTRY",
+                    "num_unique_values": 1,
+                    "samples": [
+                        "United States"
+                    ],
+                    "semantic_type": "country",
+                    "description": "The country where the HCP is located.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "PRIMARY_SPECIALTY",
+                    "num_unique_values": 39,
+                    "samples": [
+                        "Emergency medicine",
+                        "Surgery",
+                        "Pediatrics"
+                    ],
+                    "semantic_type": "specialty",
+                    "description": "The primary medical specialty of the HCP.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "DESIGNATION",
+                    "num_unique_values": 13,
+                    "samples": [
+                        "UND",
+                        "OD",
+                        "EST"
+                    ],
+                    "semantic_type": "category",
+                    "description": "A designation or code associated with the HCP.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "HCP_ID",
+                    "num_unique_values": 1000,
+                    "samples": [
+                        "aa10jh9769T705714CvDZSMN",
+                        "aa10jh9465E699504CvDZSMN",
+                        "aa10jh9869M674282CvDZSMN"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "A unique identifier for the healthcare provider.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                }
+            ],
+            "enrichment_status": "success",
+            "target_database": "RAG_DB_UPLOADS",
+            "target_table_name": "hcp_details_mock_data"
+        }
+    },
+    {
+        "id": "unstructured-India.pdf-affa4aa1",
+        "document": "This extensive Wikipedia article provides a comprehensive overview of India, covering its history, geography, politics, economy, and culture.  The text details India's ancient civilizations, colonial past, and its journey as a democratic republic.  It also explores India's diverse geography, rich biodiversity, and significant socio-economic challenges.  Finally, the article delves into India's cultural landscape, including its music, dance, literature, and cuisine.",
+        "metadata": {
+            "identifier": "India.pdf",
+            "data_type": "unstructured",
+            "source_type": "file",
+            "collection_time": "2025-04-15T17:09:47.727232+00:00",
+            "document_type": "pdf",
+            "domain_themes": "Geography/History",
+            "keywords": [
+                "India",
+                "Bharat",
+                "Indus Valley Civilization",
+                "British Raj",
+                "democracy",
+                "Hinduism",
+                "geography",
+                "economy",
+                "culture",
+                "politics"
+            ],
+            "author": "N/A",
+            "timestamp": "N/A",
+            "headings": [
+                "India",
+                "Etymology",
+                "History",
+                "Ancient India",
+                "Medieval India",
+                "Early modern India",
+                "Modern India",
+                "Geography",
+                "Biodiversity",
+                "Politics and government",
+                "Politics",
+                "Government",
+                "Administrative divisions",
+                "States",
+                "Union territories",
+                "Foreign, economic, and strategic relations",
+                "Economy",
+                "Industries",
+                "Energy",
+                "Socio-economic challenges",
+                "Demographics, languages, and religion",
+                "Culture",
+                "Visual art",
+                "Architecture",
+                "Literature",
+                "Performing arts and media",
+                "Society",
+                "Education",
+                "Clothing",
+                "Cuisine",
+                "Sports and recreation",
+                "See also",
+                "Notes",
+                "References",
+                "External links"
+            ],
+            "llm_status": "success"
+        }
+    },
+    {
+        "id": "structured-Interactions_Mock_data.csv-de75fe7c",
+        "document": "This dataset contains information on various interactions, including their type, category, venue, date, and associated products and customers.",
+        "metadata": {
+            "identifier": "Interactions Mock data.csv",
+            "data_type": "structured",
+            "source_type": "dataframe",
+            "collection_time": "2025-04-15T17:10:02.944154+00:00",
+            "row_count": 3000,
+            "column_count": 24,
+            "columns": [
+                {
+                    "column": "INTERACTION_TYPE",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "Telephone",
+                        "Face to Face",
+                        "Video Conferencing"
+                    ],
+                    "semantic_type": "interaction_method",
+                    "description": "The method used for the interaction (e.g., Telephone, Face to Face, Video Conferencing).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INTERACTION_CATEGORY",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "Mail",
+                        "In-Person",
+                        "Call"
+                    ],
+                    "semantic_type": "interaction_category",
+                    "description": "A broader category classifying the interaction (e.g., Mail, In-Person, Call).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "VENUE",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "Proactive",
+                        "Reactive",
+                        "Other"
+                    ],
+                    "semantic_type": "interaction_proactiveness",
+                    "description": "Indicates whether the interaction was proactive, reactive, or other.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CREATE_DATE",
+                    "num_unique_values": 719,
+                    "samples": [
+                        "16-09-2023",
+                        "24-12-2024",
+                        "02-05-2023"
+                    ],
+                    "semantic_type": "date",
+                    "description": "The date the interaction was created.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INTERACTION_VENUE",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "Clinical Program Proactive",
+                        "Off-Site",
+                        "Clinical Program Reactive"
+                    ],
+                    "semantic_type": "interaction_location",
+                    "description": "Specific location or context of the interaction (e.g., Clinical Program, Off-Site).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "RESIDENCY_PROGRAM",
+                    "num_unique_values": 2,
+                    "samples": [
+                        true,
+                        false
+                    ],
+                    "semantic_type": "boolean",
+                    "description": "Indicates whether the interaction is related to a residency program.",
+                    "dtype": "boolean",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INITIATIVE",
+                    "num_unique_values": 12,
+                    "samples": [
+                        "Initiative 3",
+                        "Initiative 10",
+                        "Initiative 7"
+                    ],
+                    "semantic_type": "initiative",
+                    "description": "The specific initiative associated with the interaction.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "PRODUCT_NAME",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "Product 3",
+                        "Product 1",
+                        "Product 2"
+                    ],
+                    "semantic_type": "product_name",
+                    "description": "Name of the product discussed or involved in the interaction.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "PRODUCT__GROUP",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "Product Group 1",
+                        "Product Group 3",
+                        "Product Group 2"
+                    ],
+                    "semantic_type": "product_group",
+                    "description": "The product group to which the product belongs.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "DPO_COMPOUND",
+                    "num_unique_values": 5,
+                    "samples": [
+                        "Compound 5",
+                        "Compound 3",
+                        "Compound 1"
+                    ],
+                    "semantic_type": "compound",
+                    "description": "The specific compound related to the interaction.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "Customer Type",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "KOL",
+                        "Others"
+                    ],
+                    "semantic_type": "customer_type",
+                    "description": "Type of customer involved in the interaction (e.g., KOL, Others).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INITIATIVE__CATEGORY",
+                    "num_unique_values": 5,
+                    "samples": [
+                        "FAS BTX Differentiations",
+                        "Portfolio Management",
+                        "Study Support"
+                    ],
+                    "semantic_type": "initiative_category",
+                    "description": "Category of the initiative.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "MSL_ID",
+                    "num_unique_values": 3000,
+                    "samples": [
+                        "254E4077",
+                        "DD08DB28",
+                        "F9244BFB"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the Medical Science Liaison (MSL).",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "MSL",
+                    "num_unique_values": 25,
+                    "samples": [
+                        "Alyssa",
+                        "Elvin",
+                        "Merry"
+                    ],
+                    "semantic_type": "name",
+                    "description": "Name of the Medical Science Liaison (MSL).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CALL_ID",
+                    "num_unique_values": 3000,
+                    "samples": [
+                        "6761b0d4c8cc4f1cbb",
+                        "333fb9042c7c474abe",
+                        "3915ed0d56024b779b"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the call.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "THERAPY_NAME",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "THERAPY 2",
+                        "THERAPY 1",
+                        "THERAPY 3"
+                    ],
+                    "semantic_type": "therapy",
+                    "description": "Name of the therapy discussed in the interaction.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CUSTOMER_TYPE",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "KOL",
+                        "Non KOL",
+                        "NON-KOL"
+                    ],
+                    "semantic_type": "customer_type",
+                    "description": "Type of customer (KOL or Non-KOL).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "NAME",
+                    "num_unique_values": 947,
+                    "samples": [
+                        "WCT-410193",
+                        "WCT-410004",
+                        "WCT-410375"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the customer or interaction.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "TOTAL_CLINICAL_PROGRAM_ATTENDEES",
+                    "num_unique_values": 26,
+                    "samples": [
+                        12,
+                        2,
+                        9
+                    ],
+                    "semantic_type": "count",
+                    "description": "Total number of attendees at the clinical program.",
+                    "dtype": "number",
+                    "std": 7.61286386533198,
+                    "min": 0.0,
+                    "max": 25.0,
+                    "mean": 12.517,
+                    "median": 13.0,
+                    "p25": 6.0,
+                    "p75": 19.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "IS_PARENT__C",
+                    "num_unique_values": 2,
+                    "samples": [
+                        true,
+                        false
+                    ],
+                    "semantic_type": "boolean",
+                    "description": "Boolean indicating if it's a parent interaction.",
+                    "dtype": "boolean",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CLINICAL_INTERACTION_DETAIL_ID",
+                    "num_unique_values": 2993,
+                    "samples": [
+                        "e99FT488153",
+                        "e99FT359346",
+                        "e99FT168949"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the clinical interaction detail.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INITIATIVES",
+                    "num_unique_values": 12,
+                    "samples": [
+                        "Initiative 2",
+                        "Initiative 6",
+                        "Initiative 8"
+                    ],
+                    "semantic_type": "initiative",
+                    "description": "Initiatives related to the interaction.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INTERACTION_NAME",
+                    "num_unique_values": 2995,
+                    "samples": [
+                        "IJ661827",
+                        "IJ124067",
+                        "IJ374954"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the interaction.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "BIFURCATION",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "MED",
+                        "COMM"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Categorization of the interaction (e.g., MED, COMM).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                }
+            ],
+            "enrichment_status": "success",
+            "target_database": "RAG_DB_UPLOADS",
+            "target_table_name": "interactions_mock_data"
+        }
+    },
+    {
+        "id": "unstructured-Mount_Everest.pdf-36af99bf",
+        "document": "This extensive article provides a comprehensive overview of Mount Everest, encompassing its geographical features, history of climbing expeditions, environmental challenges, and cultural significance.  It details the various successful and unsuccessful attempts to summit the mountain, highlighting key figures and significant events.  The text also discusses the environmental impact of climbing, including waste management and the effects of climate change on the mountain's glaciers.  Finally, it explores the commercialization of Everest climbing and its ethical implications.",
+        "metadata": {
+            "identifier": "Mount_Everest.pdf",
+            "data_type": "unstructured",
+            "source_type": "file",
+            "collection_time": "2025-04-15T17:11:20.523488+00:00",
+            "document_type": "pdf",
+            "domain_themes": "Geography/Mountaineering",
+            "keywords": [
+                "Mount Everest",
+                "climbing expeditions",
+                "Sagarmatha",
+                "Qomolangma",
+                "death zone",
+                "altitude sickness",
+                "Himalayas",
+                "climate change",
+                "waste management",
+                "commercialization"
+            ],
+            "author": "N/A",
+            "timestamp": "N/A",
+            "headings": [
+                "Mount Everest",
+                "Aerial photo from the south, with Mount Everest",
+                "Highest point",
+                "Elevation",
+                "Ranked 1st",
+                "Prominence",
+                "Isolation",
+                "Listing",
+                "Country high point",
+                "Naming",
+                "Etymology",
+                "Native name",
+                "Geography",
+                "Other names",
+                "Surveys",
+                "Legend",
+                "Geology",
+                "IUGS geological heritage site",
+                "Flora and fauna",
+                "A yak at around 4,790 m (15,720 ft)",
+                "Conservation",
+                "Climate",
+                "Climate change",
+                "Meteorology",
+                "Expeditions",
+                "Climbers below the Geneva Spur",
+                "Early attempts",
+                "Reunion of the 1953 British team",
+                "First successful ascent by Tenzing and Hillary, 1953",
+                "1950s–1960s",
+                "1970s",
+                "1979/1980: Winter Himalaism",
+                "Lho La tragedy, 1989",
+                "1996 disaster",
+                "2006 mountaineering season",
+                "2006 fatalities",
+                "Small avalanche on Everest, 2006",
+                "Lincoln Hall rescue, 2006",
+                "2007",
+                "Ascent statistics up to 2010 season",
+                "Ascents of Mount Everest by year",
+                "2010s",
+                "Years in review summary",
+                "2014 avalanche and season",
+                "Mount Everest, 2014",
+                "2015 avalanche, earthquake, season",
+                "Everest, April 2015",
+                "2016 season",
+                "2017 season",
+                "2018",
+                "2019",
+                "Worldwide 2019 fatalities",
+                "2020s",
+                "Climbing",
+                "Typical Nepal Camp Altitudes",
+                "Permits",
+                "Commercial climbing",
+                "Top down view showing the location of the summit, and its three main faces/sides",
+                "Routes",
+                "Overview South Col route and North Col/Ridge route",
+                "Southeast ridge",
+                "Climber traversing Khumbu Icefall",
+                "North ridge route",
+                "Mount Everest north face from Rongbuk in Tibet",
+                "Summit",
+                "A view from the summit of Mount Everest in May 2013",
+                "Death zone",
+                "The summit of Mount Everest from the North side",
+                "From Kala Patthar, Nepal",
+                "Supplemental oxygen",
+                "Climber at the summit wearing an oxygen mask",
+                "Available oxygen at Everest",
+                "Autumn climbing",
+                "Mount Everest in the upper left",
+                "Snowboarding Mount Everest in 2001",
+                "Thefts and crime",
+                "Selected climbing records",
+                "The Khumbu Icefall in 2005",
+                "The Western Cwm (\"Coom\"), with Everest on the left and Lhotse to the right",
+                "Summiting with disabilities",
+                "Aviation",
+                "Photo of a Eurocopter AS350 B3 \"Squirrel\"",
+                "Religious significance",
+                "The Rongbuk Monastery, with Mount Everest in the background",
+                "Waste management",
+                "See also",
+                "Notes",
+                "References",
+                "Further reading",
+                "External links",
+                "External image"
+            ],
+            "llm_status": "success"
+        }
+    },
+    {
+        "id": "unstructured-NCRESE_2020_paper_35.pdf-fe8ff5b7",
+        "document": "This paper details the optimization of a systems development life cycle through automation using Ansible.  The authors demonstrate how Ansible can automate the setup of a Hadoop cluster for big data processing and an HAProxy server for load balancing, addressing common issues like server crashes and slow website access.  The methodology involves using Ansible playbooks written in YAML to configure and deploy these systems across multiple nodes.  The results show successful creation and operation of the automated systems, highlighting the efficiency gains from automation.",
+        "metadata": {
+            "identifier": "NCRESE_2020_paper_35.pdf",
+            "data_type": "unstructured",
+            "source_type": "file",
+            "collection_time": "2025-04-15T17:11:24.871635+00:00",
+            "document_type": "pdf",
+            "domain_themes": "Technology",
+            "keywords": [
+                "Ansible",
+                "Automation",
+                "Hadoop",
+                "HAProxy",
+                "DevOps",
+                "Big Data",
+                "YAML"
+            ],
+            "author": "Kartik Vadhera, Abhishek Deshwal, Amrendra Tripathi",
+            "timestamp": "N/A",
+            "headings": [
+                "Abstract",
+                "1 Introduction",
+                "2 Architecture of Hadoop and Ansible",
+                "3 METHODOLOGY:",
+                "3.1 Hadoop",
+                "3.2 HA Proxy",
+                "3.3 Web server and ftp server",
+                "4 RESULTS:",
+                "5 CONCLUSION:",
+                "References"
+            ],
+            "llm_status": "success"
+        }
+    },
+    {
+        "id": "structured-Scientific_Journey_Mock_data.csv-6681daf8",
+        "document": "This dataset contains information about scientific interactions, including customer type, account details, interaction type, meeting type, scores, KOL ratings, and call details.",
+        "metadata": {
+            "identifier": "Scientific Journey Mock data.csv",
+            "data_type": "structured",
+            "source_type": "dataframe",
+            "collection_time": "2025-04-15T17:11:36.632866+00:00",
+            "row_count": 1093,
+            "column_count": 20,
+            "columns": [
+                {
+                    "column": "CUSTOMER_TYPE",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "HCO",
+                        "HCP"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Type of customer (HCO or HCP).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "ACC_NAME",
+                    "num_unique_values": 1093,
+                    "samples": [
+                        "Ingamar Fannin",
+                        "Selene Cosbee",
+                        "Becki Oran"
+                    ],
+                    "semantic_type": "name",
+                    "description": "Name of the account.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "ACC_ID",
+                    "num_unique_values": 1093,
+                    "samples": [
+                        "aa10jh9793I763392CvDZSMN",
+                        "aa10jh9183R762548CvDZSMN",
+                        "aa10jh9987I774012CvDZSMN"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the account.",
+                    "dtype": "string",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "CORE_FLAG",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "Core OL",
+                        "Non Core OL"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Indicates whether the account is a core or non-core account.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "INTERACTIN_TYPE",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "Online",
+                        "Call",
+                        "Mail"
+                    ],
+                    "semantic_type": "interaction_type",
+                    "description": "Type of interaction with the account (Online, Call, or Mail).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "MEEING_TYPE",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "Congress",
+                        "MSL Commercial",
+                        "Ad Board"
+                    ],
+                    "semantic_type": "meeting_type",
+                    "description": "Type of meeting held with the account.",
+                    "dtype": "category",
+                    "missing_values_count": 86,
+                    "missing_values_proportion": 0.07868252516010979
+                },
+                {
+                    "column": "SCORE",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "Potential",
+                        "National",
+                        "International"
+                    ],
+                    "semantic_type": "category",
+                    "description": "Score indicating the potential of the account.",
+                    "dtype": "category",
+                    "missing_values_count": 604,
+                    "missing_values_proportion": 0.5526075022872827
+                },
+                {
+                    "column": "KOL_RATING",
+                    "num_unique_values": 489,
+                    "samples": [
+                        0.549611194,
+                        0.524448043,
+                        0.772023724
+                    ],
+                    "semantic_type": "rating",
+                    "description": "Rating of the Key Opinion Leader (KOL).",
+                    "dtype": "number",
+                    "std": 0.11808293610534441,
+                    "min": 0.40009543,
+                    "max": 0.799309481,
+                    "mean": 0.6041221565439673,
+                    "median": 0.602938196,
+                    "p25": 0.500517906,
+                    "p75": 0.70751986,
+                    "missing_values_count": 604,
+                    "missing_values_proportion": 0.5526075022872827
+                },
+                {
+                    "column": "CALL_STATUS",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "Planned",
+                        "Interacted"
+                    ],
+                    "semantic_type": "status",
+                    "description": "Status of the call (Planned or Interacted).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "ACTIVTY",
+                    "num_unique_values": 4,
+                    "samples": [
+                        "Scientific Priority 3",
+                        "Scientific Priority 4",
+                        "Scientific Priority 2"
+                    ],
+                    "semantic_type": "priority",
+                    "description": "Scientific priority level of the activity.",
+                    "dtype": "category",
+                    "missing_values_count": 93,
+                    "missing_values_proportion": 0.08508691674290943
+                },
+                {
+                    "column": "REGION",
+                    "num_unique_values": 1,
+                    "samples": [
+                        "US"
+                    ],
+                    "semantic_type": "region",
+                    "description": "Region of the account.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "THERAPY",
+                    "num_unique_values": 3,
+                    "samples": [
+                        "Therapy 3",
+                        "Therapy 1",
+                        "Therapy 2"
+                    ],
+                    "semantic_type": "therapy",
+                    "description": "Therapy area related to the account.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "MSL_DESIGNATION",
+                    "num_unique_values": 2,
+                    "samples": [
+                        "MSL Manager",
+                        "MSL"
+                    ],
+                    "semantic_type": "designation",
+                    "description": "Designation of the Medical Science Liaison (MSL).",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "MSL_NAME",
+                    "num_unique_values": 25,
+                    "samples": [
+                        "Glen",
+                        "Harry",
+                        "Meilena"
+                    ],
+                    "semantic_type": "name",
+                    "description": "Name of the MSL.",
+                    "dtype": "category",
+                    "missing_values_count": 2,
+                    "missing_values_proportion": 0.0018298261665141812
+                },
+                {
+                    "column": "MSL_ID",
+                    "num_unique_values": 25,
+                    "samples": [
+                        "1293Q881236LqelDIC",
+                        "1293Q881236XqikDIC",
+                        "1293Q881236LqRODI0"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the MSL.",
+                    "dtype": "category",
+                    "missing_values_count": 2,
+                    "missing_values_proportion": 0.0018298261665141812
+                },
+                {
+                    "column": "CALL_ID",
+                    "num_unique_values": 924,
+                    "samples": [
+                        "t77TS98995YSxqYIYS",
+                        "t77TS98995YSx8kIYE",
+                        "t77TS98995YSx8VIYS"
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for the call.",
+                    "dtype": "string",
+                    "missing_values_count": 32,
+                    "missing_values_proportion": 0.0292772186642269
+                },
+                {
+                    "column": "CREATE_DATE",
+                    "num_unique_values": 193,
+                    "samples": [
+                        "28-05-2024",
+                        "03-07-2024",
+                        "21-01-2024"
+                    ],
+                    "semantic_type": "timestamp",
+                    "description": "Date when the record was created.",
+                    "dtype": "datetime",
+                    "min": "2024-01-01T00:00:00",
+                    "max": "2024-07-14T00:00:00",
+                    "missing_values_count": 93,
+                    "missing_values_proportion": 0.08508691674290943
+                },
+                {
+                    "column": "ADDRESS",
+                    "num_unique_values": 998,
+                    "samples": [
+                        "13 Jenna Pass",
+                        "58212 Amoth Parkway",
+                        "95 Duke Crossing"
+                    ],
+                    "semantic_type": "address",
+                    "description": "Address of the account.",
+                    "dtype": "string",
+                    "missing_values_count": 93,
+                    "missing_values_proportion": 0.08508691674290943
+                },
+                {
+                    "column": "CITY",
+                    "num_unique_values": 290,
+                    "samples": [
+                        "Santa Ana",
+                        "Meridian",
+                        "New Haven"
+                    ],
+                    "semantic_type": "city",
+                    "description": "City of the account.",
+                    "dtype": "category",
+                    "missing_values_count": 93,
+                    "missing_values_proportion": 0.08508691674290943
+                },
+                {
+                    "column": "COUNTRY",
+                    "num_unique_values": 1,
+                    "samples": [
+                        "United States"
+                    ],
+                    "semantic_type": "country",
+                    "description": "Country of the account.",
+                    "dtype": "category",
+                    "missing_values_count": 93,
+                    "missing_values_proportion": 0.08508691674290943
+                }
+            ],
+            "enrichment_status": "success",
+            "target_database": "RAG_DB_UPLOADS",
+            "target_table_name": "scientific_journey_mock_data"
+        }
+    },
+    {
+        "id": "structured-stores_sales_dataset.csv-055f9d12",
+        "document": "This dataset contains weekly sales data for different departments in various stores, indicating whether a given week was a holiday week.",
+        "metadata": {
+            "identifier": "stores sales dataset.csv",
+            "data_type": "structured",
+            "source_type": "dataframe",
+            "collection_time": "2025-04-15T17:12:34.923415+00:00",
+            "row_count": 421570,
+            "column_count": 5,
+            "columns": [
+                {
+                    "column": "Store",
+                    "num_unique_values": 45,
+                    "samples": [
+                        4,
+                        45,
+                        23
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for each store.",
+                    "dtype": "number",
+                    "std": 12.78529738990299,
+                    "min": 1.0,
+                    "max": 45.0,
+                    "mean": 22.200545579619043,
+                    "median": 22.0,
+                    "p25": 11.0,
+                    "p75": 33.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "Dept",
+                    "num_unique_values": 81,
+                    "samples": [
+                        51,
+                        37,
+                        42
+                    ],
+                    "semantic_type": "identifier",
+                    "description": "Unique identifier for each department within a store.",
+                    "dtype": "number",
+                    "std": 30.492054015785836,
+                    "min": 1.0,
+                    "max": 99.0,
+                    "mean": 44.26031738501317,
+                    "median": 37.0,
+                    "p25": 18.0,
+                    "p75": 74.0,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "Date",
+                    "num_unique_values": 143,
+                    "samples": [
+                        "13-01-2012",
+                        "03-09-2010",
+                        "01-06-2012"
+                    ],
+                    "semantic_type": "timestamp",
+                    "description": "Date of the weekly sales data.",
+                    "dtype": "category",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "Weekly_Sales",
+                    "num_unique_values": 359464,
+                    "samples": [
+                        167.63,
+                        64216.88,
+                        3041.25
+                    ],
+                    "semantic_type": "measurement",
+                    "description": "Total sales for the department in the given week.",
+                    "dtype": "number",
+                    "std": 22711.183519163224,
+                    "min": -4988.94,
+                    "max": 693099.36,
+                    "mean": 15981.25812346704,
+                    "median": 7612.03,
+                    "p25": 2079.6499999999996,
+                    "p75": 20205.8525,
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                },
+                {
+                    "column": "IsHoliday",
+                    "num_unique_values": 2,
+                    "samples": [
+                        true,
+                        false
+                    ],
+                    "semantic_type": "boolean",
+                    "description": "Indicates whether the week was a holiday week.",
+                    "dtype": "boolean",
+                    "missing_values_count": 0,
+                    "missing_values_proportion": 0.0
+                }
+            ],
+            "enrichment_status": "success",
+            "target_database": "RAG_DB_UPLOADS",
+            "target_table_name": "stores_sales_dataset"
+        }
+    },
+    {
+        "id": "unstructured-Transforming_Medical_Affairs_with_Generative_AI.docx-d118a661",
+        "document": "This white paper explores the transformative potential of generative AI in Medical Affairs within the life sciences industry.  It highlights how AI can analyze vast amounts of data to generate actionable insights, improving strategic decision-making and patient outcomes. The authors emphasize the importance of a strategic approach to AI adoption, including robust data governance, change management, and ethical considerations.  The paper outlines a roadmap for implementation, focusing on key opportunities and challenges, and discusses the future direction of AI in Medical Affairs, including ethical governance and collaborative learning.",
+        "metadata": {
+            "identifier": "Transforming Medical Affairs with Generative AI.docx",
+            "data_type": "unstructured",
+            "source_type": "file",
+            "collection_time": "2025-04-15T17:12:37.650639+00:00",
+            "document_type": "docx",
+            "domain_themes": "Healthcare",
+            "keywords": [
+                "Generative AI",
+                "Medical Affairs",
+                "Life Sciences",
+                "Data Analysis",
+                "Strategic Insights",
+                "AI Adoption",
+                "Data Governance",
+                "Change Management"
+            ],
+            "author": "Sumit Batra, Kartik Vadhera, Rajdatt Vernekar",
+            "timestamp": "N/A",
+            "headings": [
+                "Introduction",
+                "The Evolving Role of Medical Affairs & Insights Management",
+                "Medical Affairs as the Central Insight Generator",
+                "Strategic Implementation of Insights Management",
+                "Leveraging AI in Medical Affairs: Key Opportunities and Considerations",
+                "Key Opportunities",
+                "Key Considerations for AI Adoption",
+                "Implementation Roadmap",
+                "Results and Strategic impact",
+                "Future Direction: Beyond AI Adoption",
+                "Conclusion",
+                "References"
+            ],
+            "llm_status": "success"
+        }
+    }
+]

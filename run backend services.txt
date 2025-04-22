@@ -1,0 +1,5 @@
+DB + Python executor: go inside backend folder -> docker compose up -d
+
+Front server: do inside frontend folder -> npm run dev
+
+Main backend server: go inside bakend folder -> run main.py

@@ -1,0 +1,1513 @@
+2025-04-15 22:27:08 - root - INFO - Logging configured.
+2025-04-15 22:27:08 - __main__ - INFO - --- Starting Data Loading, Metadata Generation, Chunking, and Indexing Process ---
+2025-04-15 22:27:08 - __main__ - INFO - Ensuring database (PGVector for RAG_DB) is set up...
+2025-04-15 22:27:08 - indexing - INFO - Checking for PGVector extension...
+2025-04-15 22:27:08 - indexing - INFO - PGVector extension check complete (created if not exists).
+2025-04-15 22:27:08 - __main__ - INFO - RAG_DB setup check complete.
+2025-04-15 22:27:08 - __main__ - INFO - Creating SQLAlchemy engine for Uploads DB: postgresql+psycopg://postgres:password@localhost:5432/RAG_DB_UPLOADS
+2025-04-15 22:27:08 - __main__ - INFO - Successfully connected to Uploads DB (RAG_DB_UPLOADS).
+2025-04-15 22:27:08 - __main__ - INFO - Initializing DB Utility for RAG_DB...
+2025-04-15 22:27:08 - __main__ - INFO - RAG_DB utility obtained successfully.
+2025-04-15 22:27:08 - __main__ - INFO - Initializing Indexer (for RAG_DB)...
+2025-04-15 22:27:20 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-04-15 22:27:23 - indexing - INFO - Initialized HuggingFaceEmbeddings with model: sentence-transformers/all-mpnet-base-v2 on device: cpu
+2025-04-15 22:27:23 - indexing - INFO - PGVector client initialized. Collection: rag_collection
+2025-04-15 22:27:23 - __main__ - INFO - Indexer initialized.
+2025-04-15 22:27:23 - __main__ - INFO - Initializing DataSummarizer (for metadata)...
+2025-04-15 22:27:23 - summarization - INFO - Summarizer Initialized (LLM: OK, DB Util: OK)
+2025-04-15 22:27:23 - __main__ - INFO - DataSummarizer initialized with model 'gemini-1.5-flash'.
+2025-04-15 22:27:23 - __main__ - INFO - Initializing TextProcessor...
+2025-04-15 22:27:24 - data_processing - INFO - Text splitter initialized with chunk_size=1000, chunk_overlap=200
+2025-04-15 22:27:24 - __main__ - INFO - TextProcessor initialized.
+2025-04-15 22:27:24 - __main__ - INFO - Target document folder: C:/Users/karti/OneDrive/Desktop/RAG/Document
+2025-04-15 22:27:24 - __main__ - INFO - Scanning folder for documents: C:/Users/karti/OneDrive/Desktop/RAG/Document
+2025-04-15 22:27:24 - __main__ - INFO - --- Processing file: AEPRE7.txt ---
+2025-04-15 22:27:24 - __main__ - INFO - Processing unstructured file type: .txt
+2025-04-15 22:27:24 - data_processing - INFO - Attempting to load TXT: C:/Users/karti/OneDrive/Desktop/RAG/Document\AEPRE7.txt
+2025-04-15 22:27:24 - data_processing - INFO - Loaded 1 document(s) from text file: AEPRE7.txt
+2025-04-15 22:27:24 - __main__ - INFO - Loaded 1 parts from: AEPRE7.txt
+2025-04-15 22:27:24 - summarization - INFO - Processing preloaded: 'AEPRE7.txt'.
+2025-04-15 22:27:24 - summarization - INFO - Generating LLM summary: AEPRE7.txt (len: 1983)
+2025-04-15 22:27:27 - summarization - INFO - Generated unstructured summary: AEPRE7.txt.
+2025-04-15 22:27:27 - summarization - INFO - Summarization complete: 'AEPRE7.txt'. ID: unstructured-AEPRE7.txt-581735e8
+2025-04-15 22:27:27 - __main__ - INFO - Generated summary and metadata for unstructured: AEPRE7.txt
+2025-04-15 22:27:27 - __main__ - INFO - Splitting content from AEPRE7.txt into chunks...
+2025-04-15 22:27:27 - data_processing - INFO - Split 1 documents into 1 chunks.
+2025-04-15 22:27:27 - __main__ - INFO - Created 1 chunks for: AEPRE7.txt
+2025-04-15 22:27:27 - __main__ - INFO - --- Processing file: Clinical Programs Mock data.csv ---
+2025-04-15 22:27:27 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:27:27 - __main__ - INFO - Loaded DataFrame from Clinical Programs Mock data.csv. Shape: (1107, 23)
+2025-04-15 22:27:27 - __main__ - INFO - Attempting to write DataFrame from 'Clinical Programs Mock data.csv' to table 'clinical_programs_mock_data' in RAG_DB_UPLOADS...
+2025-04-15 22:27:28 - __main__ - INFO - Successfully wrote 'Clinical Programs Mock data.csv' to DB table 'clinical_programs_mock_data'.
+2025-04-15 22:27:28 - summarization - INFO - Enriching structured: 'Clinical Programs Mock data.csv'
+2025-04-15 22:27:42 - summarization - INFO - Enriched structured: 'Clinical Programs Mock data.csv'.
+2025-04-15 22:27:42 - summarization - INFO - Summarization complete: 'Clinical Programs Mock data.csv'. ID: structured-Clinical_Programs_Mock_data.csv-93bbef6a
+2025-04-15 22:27:42 - __main__ - INFO - Generated metadata for structured file: Clinical Programs Mock data.csv
+2025-04-15 22:27:42 - __main__ - INFO - --- Processing file: Content Effectiveness Mock data.csv ---
+2025-04-15 22:27:42 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:27:42 - __main__ - INFO - Loaded DataFrame from Content Effectiveness Mock data.csv. Shape: (1549, 29)
+2025-04-15 22:27:42 - __main__ - INFO - Attempting to write DataFrame from 'Content Effectiveness Mock data.csv' to table 'content_effectiveness_mock_data' in RAG_DB_UPLOADS...
+2025-04-15 22:27:42 - __main__ - INFO - Successfully wrote 'Content Effectiveness Mock data.csv' to DB table 'content_effectiveness_mock_data'.
+2025-04-15 22:27:42 - summarization - INFO - Enriching structured: 'Content Effectiveness Mock data.csv'
+2025-04-15 22:27:58 - summarization - INFO - Enriched structured: 'Content Effectiveness Mock data.csv'.
+2025-04-15 22:27:58 - summarization - INFO - Summarization complete: 'Content Effectiveness Mock data.csv'. ID: structured-Content_Effectiveness_Mock_data.csv-f8f7568b
+2025-04-15 22:27:58 - __main__ - INFO - Generated metadata for structured file: Content Effectiveness Mock data.csv
+2025-04-15 22:27:58 - __main__ - INFO - --- Processing file: Course_Completion.xlsx ---
+2025-04-15 22:27:58 - __main__ - INFO - Processing structured file type: .xlsx
+2025-04-15 22:28:04 - __main__ - INFO - Loaded DataFrame from Course_Completion.xlsx. Shape: (32292, 12)
+2025-04-15 22:28:04 - __main__ - INFO - Attempting to write DataFrame from 'Course_Completion.xlsx' to table 'course_completion' in RAG_DB_UPLOADS...
+2025-04-15 22:28:07 - __main__ - INFO - Successfully wrote 'Course_Completion.xlsx' to DB table 'course_completion'.
+2025-04-15 22:28:07 - summarization - INFO - Enriching structured: 'Course_Completion.xlsx'
+2025-04-15 22:28:15 - summarization - INFO - Enriched structured: 'Course_Completion.xlsx'.
+2025-04-15 22:28:15 - summarization - INFO - Summarization complete: 'Course_Completion.xlsx'. ID: structured-Course_Completion.xlsx-d2bef5a3
+2025-04-15 22:28:15 - __main__ - INFO - Generated metadata for structured file: Course_Completion.xlsx
+2025-04-15 22:28:15 - __main__ - INFO - --- Processing file: DPO Details Mock data.csv ---
+2025-04-15 22:28:15 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:28:15 - __main__ - INFO - Loaded DataFrame from DPO Details Mock data.csv. Shape: (1059, 18)
+2025-04-15 22:28:15 - __main__ - INFO - Attempting to write DataFrame from 'DPO Details Mock data.csv' to table 'dpo_details_mock_data' in RAG_DB_UPLOADS...
+2025-04-15 22:28:15 - __main__ - INFO - Successfully wrote 'DPO Details Mock data.csv' to DB table 'dpo_details_mock_data'.
+2025-04-15 22:28:15 - summarization - INFO - Enriching structured: 'DPO Details Mock data.csv'
+2025-04-15 22:28:26 - summarization - INFO - Enriched structured: 'DPO Details Mock data.csv'.
+2025-04-15 22:28:26 - summarization - INFO - Summarization complete: 'DPO Details Mock data.csv'. ID: structured-DPO_Details_Mock_data.csv-a49fbf2f
+2025-04-15 22:28:26 - __main__ - INFO - Generated metadata for structured file: DPO Details Mock data.csv
+2025-04-15 22:28:26 - __main__ - INFO - --- Processing file: fluid dynamics.txt ---
+2025-04-15 22:28:26 - __main__ - INFO - Processing unstructured file type: .txt
+2025-04-15 22:28:26 - data_processing - INFO - Attempting to load TXT: C:/Users/karti/OneDrive/Desktop/RAG/Document\fluid dynamics.txt
+2025-04-15 22:28:26 - data_processing - INFO - Loaded 1 document(s) from text file: fluid dynamics.txt
+2025-04-15 22:28:26 - __main__ - INFO - Loaded 1 parts from: fluid dynamics.txt
+2025-04-15 22:28:26 - summarization - INFO - Processing preloaded: 'fluid dynamics.txt'.
+2025-04-15 22:28:26 - summarization - INFO - Generating LLM summary: fluid dynamics.txt (len: 7690)
+2025-04-15 22:28:29 - summarization - INFO - Generated unstructured summary: fluid dynamics.txt.
+2025-04-15 22:28:29 - summarization - INFO - Summarization complete: 'fluid dynamics.txt'. ID: unstructured-fluid_dynamics.txt-3d7e95b2
+2025-04-15 22:28:29 - __main__ - INFO - Generated summary and metadata for unstructured: fluid dynamics.txt
+2025-04-15 22:28:29 - __main__ - INFO - Splitting content from fluid dynamics.txt into chunks...
+2025-04-15 22:28:29 - data_processing - INFO - Split 1 documents into 2 chunks.
+2025-04-15 22:28:29 - __main__ - INFO - Created 2 chunks for: fluid dynamics.txt
+2025-04-15 22:28:29 - __main__ - INFO - --- Processing file: HCP_Details Mock data.csv ---
+2025-04-15 22:28:29 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:28:29 - __main__ - INFO - Loaded DataFrame from HCP_Details Mock data.csv. Shape: (1000, 10)
+2025-04-15 22:28:29 - __main__ - INFO - Attempting to write DataFrame from 'HCP_Details Mock data.csv' to table 'hcp_details_mock_data' in RAG_DB_UPLOADS...
+2025-04-15 22:28:29 - __main__ - INFO - Successfully wrote 'HCP_Details Mock data.csv' to DB table 'hcp_details_mock_data'.
+2025-04-15 22:28:29 - summarization - INFO - Enriching structured: 'HCP_Details Mock data.csv'
+2025-04-15 22:28:35 - summarization - INFO - Enriched structured: 'HCP_Details Mock data.csv'.
+2025-04-15 22:28:35 - summarization - INFO - Summarization complete: 'HCP_Details Mock data.csv'. ID: structured-HCP_Details_Mock_data.csv-b26269a6
+2025-04-15 22:28:35 - __main__ - INFO - Generated metadata for structured file: HCP_Details Mock data.csv
+2025-04-15 22:28:35 - __main__ - INFO - --- Processing file: India.pdf ---
+2025-04-15 22:28:35 - __main__ - INFO - Processing unstructured file type: .pdf
+2025-04-15 22:28:35 - data_processing - INFO - Attempting to load PDF: C:/Users/karti/OneDrive/Desktop/RAG/Document\India.pdf using PDFPlumber
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:36 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:28:53 - data_processing - INFO - Loaded 69 document(s) from PDF: India.pdf using PDFPlumber
+2025-04-15 22:28:53 - __main__ - INFO - Loaded 69 parts from: India.pdf
+2025-04-15 22:28:53 - summarization - INFO - Processing preloaded: 'India.pdf'.
+2025-04-15 22:28:53 - summarization - INFO - Generating LLM summary: India.pdf (len: 218725)
+2025-04-15 22:29:02 - summarization - INFO - Generated unstructured summary: India.pdf.
+2025-04-15 22:29:02 - summarization - INFO - Summarization complete: 'India.pdf'. ID: unstructured-India.pdf-9e681846
+2025-04-15 22:29:02 - __main__ - INFO - Generated summary and metadata for unstructured: India.pdf
+2025-04-15 22:29:02 - __main__ - INFO - Splitting content from India.pdf into chunks...
+2025-04-15 22:29:02 - data_processing - INFO - Split 69 documents into 99 chunks.
+2025-04-15 22:29:02 - __main__ - INFO - Created 99 chunks for: India.pdf
+2025-04-15 22:29:02 - __main__ - INFO - --- Processing file: Interactions Mock data.csv ---
+2025-04-15 22:29:02 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:29:02 - __main__ - INFO - Loaded DataFrame from Interactions Mock data.csv. Shape: (3000, 24)
+2025-04-15 22:29:02 - __main__ - INFO - Attempting to write DataFrame from 'Interactions Mock data.csv' to table 'interactions_mock_data' in RAG_DB_UPLOADS...
+2025-04-15 22:29:02 - __main__ - INFO - Successfully wrote 'Interactions Mock data.csv' to DB table 'interactions_mock_data'.
+2025-04-15 22:29:03 - summarization - INFO - Enriching structured: 'Interactions Mock data.csv'
+2025-04-15 22:29:17 - summarization - INFO - Enriched structured: 'Interactions Mock data.csv'.
+2025-04-15 22:29:17 - summarization - INFO - Summarization complete: 'Interactions Mock data.csv'. ID: structured-Interactions_Mock_data.csv-96b04fe9
+2025-04-15 22:29:17 - __main__ - INFO - Generated metadata for structured file: Interactions Mock data.csv
+2025-04-15 22:29:17 - __main__ - INFO - --- Processing file: Mount_Everest.pdf ---
+2025-04-15 22:29:17 - __main__ - INFO - Processing unstructured file type: .pdf
+2025-04-15 22:29:17 - data_processing - INFO - Attempting to load PDF: C:/Users/karti/OneDrive/Desktop/RAG/Document\Mount_Everest.pdf using PDFPlumber
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:17 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:35 - data_processing - INFO - Loaded 34 document(s) from PDF: Mount_Everest.pdf using PDFPlumber
+2025-04-15 22:29:35 - __main__ - INFO - Loaded 34 parts from: Mount_Everest.pdf
+2025-04-15 22:29:35 - summarization - INFO - Processing preloaded: 'Mount_Everest.pdf'.
+2025-04-15 22:29:35 - summarization - INFO - Generating LLM summary: Mount_Everest.pdf (len: 237532)
+2025-04-15 22:29:54 - summarization - INFO - Generated unstructured summary: Mount_Everest.pdf.
+2025-04-15 22:29:54 - summarization - INFO - Summarization complete: 'Mount_Everest.pdf'. ID: unstructured-Mount_Everest.pdf-8b013b95
+2025-04-15 22:29:54 - __main__ - INFO - Generated summary and metadata for unstructured: Mount_Everest.pdf
+2025-04-15 22:29:54 - __main__ - INFO - Splitting content from Mount_Everest.pdf into chunks...
+2025-04-15 22:29:55 - data_processing - INFO - Split 34 documents into 96 chunks.
+2025-04-15 22:29:55 - __main__ - INFO - Created 96 chunks for: Mount_Everest.pdf
+2025-04-15 22:29:55 - __main__ - INFO - --- Processing file: NCRESE_2020_paper_35.pdf ---
+2025-04-15 22:29:55 - __main__ - INFO - Processing unstructured file type: .pdf
+2025-04-15 22:29:55 - data_processing - INFO - Attempting to load PDF: C:/Users/karti/OneDrive/Desktop/RAG/Document\NCRESE_2020_paper_35.pdf using PDFPlumber
+2025-04-15 22:29:55 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:55 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:55 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:55 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:55 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:55 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:55 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:55 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:55 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:55 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:55 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:29:56 - data_processing - INFO - Loaded 11 document(s) from PDF: NCRESE_2020_paper_35.pdf using PDFPlumber
+2025-04-15 22:29:56 - __main__ - INFO - Loaded 11 parts from: NCRESE_2020_paper_35.pdf
+2025-04-15 22:29:56 - summarization - INFO - Processing preloaded: 'NCRESE_2020_paper_35.pdf'.
+2025-04-15 22:29:56 - summarization - INFO - Generating LLM summary: NCRESE_2020_paper_35.pdf (len: 16588)
+2025-04-15 22:29:58 - summarization - INFO - Generated unstructured summary: NCRESE_2020_paper_35.pdf.
+2025-04-15 22:29:58 - summarization - INFO - Summarization complete: 'NCRESE_2020_paper_35.pdf'. ID: unstructured-NCRESE_2020_paper_35.pdf-6fef037c
+2025-04-15 22:29:58 - __main__ - INFO - Generated summary and metadata for unstructured: NCRESE_2020_paper_35.pdf
+2025-04-15 22:29:58 - __main__ - INFO - Splitting content from NCRESE_2020_paper_35.pdf into chunks...
+2025-04-15 22:29:58 - data_processing - INFO - Split 11 documents into 11 chunks.
+2025-04-15 22:29:58 - __main__ - INFO - Created 11 chunks for: NCRESE_2020_paper_35.pdf
+2025-04-15 22:29:58 - __main__ - INFO - --- Processing file: Scientific Journey Mock data.csv ---
+2025-04-15 22:29:58 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:29:58 - __main__ - INFO - Loaded DataFrame from Scientific Journey Mock data.csv. Shape: (1093, 20)
+2025-04-15 22:29:58 - __main__ - INFO - Attempting to write DataFrame from 'Scientific Journey Mock data.csv' to table 'scientific_journey_mock_data' in RAG_DB_UPLOADS...
+2025-04-15 22:29:58 - __main__ - INFO - Successfully wrote 'Scientific Journey Mock data.csv' to DB table 'scientific_journey_mock_data'.
+2025-04-15 22:29:59 - summarization - INFO - Enriching structured: 'Scientific Journey Mock data.csv'
+2025-04-15 22:30:10 - summarization - INFO - Enriched structured: 'Scientific Journey Mock data.csv'.
+2025-04-15 22:30:10 - summarization - INFO - Summarization complete: 'Scientific Journey Mock data.csv'. ID: structured-Scientific_Journey_Mock_data.csv-f9b01197
+2025-04-15 22:30:10 - __main__ - INFO - Generated metadata for structured file: Scientific Journey Mock data.csv
+2025-04-15 22:30:10 - __main__ - INFO - --- Processing file: stores sales dataset.csv ---
+2025-04-15 22:30:10 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:30:10 - __main__ - INFO - Loaded DataFrame from stores sales dataset.csv. Shape: (421570, 5)
+2025-04-15 22:30:10 - __main__ - INFO - Attempting to write DataFrame from 'stores sales dataset.csv' to table 'stores_sales_dataset' in RAG_DB_UPLOADS...
+2025-04-15 22:30:37 - __main__ - INFO - Successfully wrote 'stores sales dataset.csv' to DB table 'stores_sales_dataset'.
+2025-04-15 22:30:38 - summarization - INFO - Enriching structured: 'stores sales dataset.csv'
+2025-04-15 22:30:41 - summarization - INFO - Enriched structured: 'stores sales dataset.csv'.
+2025-04-15 22:30:41 - summarization - INFO - Summarization complete: 'stores sales dataset.csv'. ID: structured-stores_sales_dataset.csv-af7e3c22
+2025-04-15 22:30:41 - __main__ - INFO - Generated metadata for structured file: stores sales dataset.csv
+2025-04-15 22:30:41 - __main__ - INFO - --- Processing file: Transforming Medical Affairs with Generative AI.docx ---
+2025-04-15 22:30:41 - __main__ - INFO - Processing unstructured file type: .docx
+2025-04-15 22:30:41 - data_processing - INFO - Attempting to load DOCX: C:/Users/karti/OneDrive/Desktop/RAG/Document\Transforming Medical Affairs with Generative AI.docx using Docx2txtLoader
+2025-04-15 22:30:42 - data_processing - INFO - Loaded 1 document(s) from DOCX: Transforming Medical Affairs with Generative AI.docx using Docx2txtLoader
+2025-04-15 22:30:42 - __main__ - INFO - Loaded 1 parts from: Transforming Medical Affairs with Generative AI.docx
+2025-04-15 22:30:42 - summarization - INFO - Processing preloaded: 'Transforming Medical Affairs with Generative AI.docx'.
+2025-04-15 22:30:42 - summarization - INFO - Generating LLM summary: Transforming Medical Affairs with Generative AI.docx (len: 15655)
+2025-04-15 22:30:44 - summarization - INFO - Generated unstructured summary: Transforming Medical Affairs with Generative AI.docx.
+2025-04-15 22:30:44 - summarization - INFO - Summarization complete: 'Transforming Medical Affairs with Generative AI.docx'. ID: unstructured-Transforming_Medical_Affairs_with_Generative_AI.docx-91c1a53e
+2025-04-15 22:30:44 - __main__ - INFO - Generated summary and metadata for unstructured: Transforming Medical Affairs with Generative AI.docx
+2025-04-15 22:30:44 - __main__ - INFO - Splitting content from Transforming Medical Affairs with Generative AI.docx into chunks...
+2025-04-15 22:30:44 - data_processing - INFO - Split 1 documents into 4 chunks.
+2025-04-15 22:30:44 - __main__ - INFO - Created 4 chunks for: Transforming Medical Affairs with Generative AI.docx
+2025-04-15 22:30:44 - __main__ - INFO - --- File Processing Complete ---
+2025-04-15 22:30:44 - __main__ - INFO - Successfully processed content/metadata for 14 files.
+2025-04-15 22:30:44 - __main__ - INFO - Successfully uploaded 8 CSV/XLSX files to RAG_DB_UPLOADS.
+2025-04-15 22:30:44 - __main__ - INFO - Prepared 213 text chunks for indexing in RAG_DB.
+2025-04-15 22:30:44 - __main__ - INFO - Prepared 8 metadata documents (CSV/XLSX/DB Tables) for indexing in RAG_DB.
+2025-04-15 22:30:44 - __main__ - INFO - --- Processing RAG_DB Database Tables for Metadata ---
+2025-04-15 22:30:44 - __main__ - INFO - Found 0 tables in RAG_DB to process: []
+2025-04-15 22:30:44 - __main__ - INFO - --- Writing Combined Metadata to: C:/Users/karti/OneDrive/Desktop/RAG/Document\metadata.json ---
+2025-04-15 22:30:44 - __main__ - INFO - Successfully wrote metadata for 14 items.
+2025-04-15 22:30:44 - __main__ - INFO - Attempting to index 221 total documents (text chunks + metadata summaries) into RAG_DB...
+2025-04-15 22:37:51 - root - INFO - Logging configured.
+2025-04-15 22:37:51 - __main__ - INFO - --- Starting Data Loading, Metadata Generation, Chunking, and Indexing Process ---
+2025-04-15 22:37:51 - __main__ - INFO - Ensuring database (PGVector for RAG_DB) is set up...
+2025-04-15 22:37:51 - indexing - INFO - Checking for PGVector extension...
+2025-04-15 22:37:51 - indexing - INFO - PGVector extension check complete (created if not exists).
+2025-04-15 22:37:51 - __main__ - INFO - RAG_DB setup check complete.
+2025-04-15 22:37:51 - __main__ - INFO - Creating SQLAlchemy engine for Uploads DB: postgresql+psycopg://postgres:password@localhost:5432/RAG_DB_UPLOADS
+2025-04-15 22:37:51 - __main__ - INFO - Successfully connected to Uploads DB (RAG_DB_UPLOADS).
+2025-04-15 22:37:51 - __main__ - INFO - Initializing DB Utility for RAG_DB...
+2025-04-15 22:37:51 - __main__ - INFO - RAG_DB utility obtained successfully.
+2025-04-15 22:37:51 - __main__ - INFO - Initializing Indexer (for RAG_DB)...
+2025-04-15 22:38:02 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-04-15 22:38:06 - indexing - INFO - Initialized HuggingFaceEmbeddings with model: sentence-transformers/all-mpnet-base-v2 on device: cpu
+2025-04-15 22:38:06 - indexing - INFO - PGVector client initialized. Collection: rag_collection
+2025-04-15 22:38:06 - __main__ - INFO - Indexer initialized.
+2025-04-15 22:38:06 - __main__ - INFO - Initializing DataSummarizer (for metadata)...
+2025-04-15 22:38:06 - summarization - INFO - Summarizer Initialized (LLM: OK, DB Util: OK)
+2025-04-15 22:38:06 - __main__ - INFO - DataSummarizer initialized with model 'gemini-1.5-flash'.
+2025-04-15 22:38:06 - __main__ - INFO - Initializing TextProcessor...
+2025-04-15 22:38:07 - data_processing - INFO - Text splitter initialized with chunk_size=1000, chunk_overlap=200
+2025-04-15 22:38:07 - __main__ - INFO - TextProcessor initialized.
+2025-04-15 22:38:07 - __main__ - INFO - Target document folder: C:/Users/karti/OneDrive/Desktop/RAG/Document
+2025-04-15 22:38:07 - __main__ - INFO - Scanning folder for documents: C:/Users/karti/OneDrive/Desktop/RAG/Document
+2025-04-15 22:38:07 - __main__ - INFO - --- Processing file: AEPRE7.txt ---
+2025-04-15 22:38:07 - __main__ - INFO - Processing unstructured file type: .txt
+2025-04-15 22:38:07 - data_processing - INFO - Attempting to load TXT: C:/Users/karti/OneDrive/Desktop/RAG/Document\AEPRE7.txt
+2025-04-15 22:38:07 - data_processing - INFO - Loaded 1 document(s) from text file: AEPRE7.txt
+2025-04-15 22:38:07 - __main__ - INFO - Loaded 1 parts from: AEPRE7.txt
+2025-04-15 22:38:07 - summarization - INFO - Processing preloaded: 'AEPRE7.txt'.
+2025-04-15 22:38:07 - summarization - INFO - Generating LLM summary: AEPRE7.txt (len: 1983)
+2025-04-15 22:38:10 - summarization - INFO - Generated unstructured summary: AEPRE7.txt.
+2025-04-15 22:38:10 - summarization - INFO - Summarization complete: 'AEPRE7.txt'. ID: unstructured-AEPRE7.txt-f97eff6a
+2025-04-15 22:38:10 - __main__ - INFO - Generated summary and metadata for unstructured: AEPRE7.txt
+2025-04-15 22:38:10 - __main__ - INFO - Splitting content from AEPRE7.txt into chunks...
+2025-04-15 22:38:10 - data_processing - INFO - Split 1 documents into 1 chunks.
+2025-04-15 22:38:10 - __main__ - INFO - Created 1 chunks for: AEPRE7.txt
+2025-04-15 22:38:10 - __main__ - INFO - --- Processing file: Clinical Programs Mock data.csv ---
+2025-04-15 22:38:10 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:38:10 - __main__ - INFO - Loaded DataFrame from Clinical Programs Mock data.csv. Shape: (1107, 23)
+2025-04-15 22:38:10 - __main__ - INFO - Attempting to write DataFrame from 'Clinical Programs Mock data.csv' to table 'clinical_programs_mock_data' in RAG_DB_UPLOADS...
+2025-04-15 22:38:10 - __main__ - INFO - Successfully wrote 'Clinical Programs Mock data.csv' to DB table 'clinical_programs_mock_data'.
+2025-04-15 22:38:10 - summarization - INFO - Enriching structured: 'Clinical Programs Mock data.csv'
+2025-04-15 22:38:24 - summarization - INFO - Enriched structured: 'Clinical Programs Mock data.csv'.
+2025-04-15 22:38:24 - summarization - INFO - Summarization complete: 'Clinical Programs Mock data.csv'. ID: structured-Clinical_Programs_Mock_data.csv-ffabcfc4
+2025-04-15 22:38:24 - __main__ - INFO - Generated metadata for structured file: Clinical Programs Mock data.csv
+2025-04-15 22:38:24 - __main__ - INFO - --- Processing file: Content Effectiveness Mock data.csv ---
+2025-04-15 22:38:24 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:38:24 - __main__ - INFO - Loaded DataFrame from Content Effectiveness Mock data.csv. Shape: (1549, 29)
+2025-04-15 22:38:24 - __main__ - INFO - Attempting to write DataFrame from 'Content Effectiveness Mock data.csv' to table 'content_effectiveness_mock_data' in RAG_DB_UPLOADS...
+2025-04-15 22:38:24 - __main__ - INFO - Successfully wrote 'Content Effectiveness Mock data.csv' to DB table 'content_effectiveness_mock_data'.
+2025-04-15 22:38:24 - summarization - INFO - Enriching structured: 'Content Effectiveness Mock data.csv'
+2025-04-15 22:38:40 - summarization - INFO - Enriched structured: 'Content Effectiveness Mock data.csv'.
+2025-04-15 22:38:40 - summarization - INFO - Summarization complete: 'Content Effectiveness Mock data.csv'. ID: structured-Content_Effectiveness_Mock_data.csv-5b78527f
+2025-04-15 22:38:40 - __main__ - INFO - Generated metadata for structured file: Content Effectiveness Mock data.csv
+2025-04-15 22:38:40 - __main__ - INFO - --- Processing file: Course_Completion.xlsx ---
+2025-04-15 22:38:40 - __main__ - INFO - Processing structured file type: .xlsx
+2025-04-15 22:38:45 - __main__ - INFO - Loaded DataFrame from Course_Completion.xlsx. Shape: (32292, 12)
+2025-04-15 22:38:45 - __main__ - INFO - Attempting to write DataFrame from 'Course_Completion.xlsx' to table 'course_completion' in RAG_DB_UPLOADS...
+2025-04-15 22:38:49 - __main__ - INFO - Successfully wrote 'Course_Completion.xlsx' to DB table 'course_completion'.
+2025-04-15 22:38:50 - summarization - INFO - Enriching structured: 'Course_Completion.xlsx'
+2025-04-15 22:38:58 - summarization - INFO - Enriched structured: 'Course_Completion.xlsx'.
+2025-04-15 22:38:58 - summarization - INFO - Summarization complete: 'Course_Completion.xlsx'. ID: structured-Course_Completion.xlsx-55cf1dfd
+2025-04-15 22:38:58 - __main__ - INFO - Generated metadata for structured file: Course_Completion.xlsx
+2025-04-15 22:38:58 - __main__ - INFO - --- Processing file: DPO Details Mock data.csv ---
+2025-04-15 22:38:58 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:38:58 - __main__ - INFO - Loaded DataFrame from DPO Details Mock data.csv. Shape: (1059, 18)
+2025-04-15 22:38:58 - __main__ - INFO - Attempting to write DataFrame from 'DPO Details Mock data.csv' to table 'dpo_details_mock_data' in RAG_DB_UPLOADS...
+2025-04-15 22:38:59 - __main__ - INFO - Successfully wrote 'DPO Details Mock data.csv' to DB table 'dpo_details_mock_data'.
+2025-04-15 22:38:59 - summarization - INFO - Enriching structured: 'DPO Details Mock data.csv'
+2025-04-15 22:39:10 - summarization - INFO - Enriched structured: 'DPO Details Mock data.csv'.
+2025-04-15 22:39:10 - summarization - INFO - Summarization complete: 'DPO Details Mock data.csv'. ID: structured-DPO_Details_Mock_data.csv-298a4874
+2025-04-15 22:39:10 - __main__ - INFO - Generated metadata for structured file: DPO Details Mock data.csv
+2025-04-15 22:39:10 - __main__ - INFO - --- Processing file: fluid dynamics.txt ---
+2025-04-15 22:39:10 - __main__ - INFO - Processing unstructured file type: .txt
+2025-04-15 22:39:10 - data_processing - INFO - Attempting to load TXT: C:/Users/karti/OneDrive/Desktop/RAG/Document\fluid dynamics.txt
+2025-04-15 22:39:10 - data_processing - INFO - Loaded 1 document(s) from text file: fluid dynamics.txt
+2025-04-15 22:39:10 - __main__ - INFO - Loaded 1 parts from: fluid dynamics.txt
+2025-04-15 22:39:10 - summarization - INFO - Processing preloaded: 'fluid dynamics.txt'.
+2025-04-15 22:39:10 - summarization - INFO - Generating LLM summary: fluid dynamics.txt (len: 7690)
+2025-04-15 22:39:13 - summarization - INFO - Generated unstructured summary: fluid dynamics.txt.
+2025-04-15 22:39:13 - summarization - INFO - Summarization complete: 'fluid dynamics.txt'. ID: unstructured-fluid_dynamics.txt-e246270b
+2025-04-15 22:39:13 - __main__ - INFO - Generated summary and metadata for unstructured: fluid dynamics.txt
+2025-04-15 22:39:13 - __main__ - INFO - Splitting content from fluid dynamics.txt into chunks...
+2025-04-15 22:39:13 - data_processing - INFO - Split 1 documents into 2 chunks.
+2025-04-15 22:39:13 - __main__ - INFO - Created 2 chunks for: fluid dynamics.txt
+2025-04-15 22:39:13 - __main__ - INFO - --- Processing file: HCP_Details Mock data.csv ---
+2025-04-15 22:39:13 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:39:13 - __main__ - INFO - Loaded DataFrame from HCP_Details Mock data.csv. Shape: (1000, 10)
+2025-04-15 22:39:13 - __main__ - INFO - Attempting to write DataFrame from 'HCP_Details Mock data.csv' to table 'hcp_details_mock_data' in RAG_DB_UPLOADS...
+2025-04-15 22:39:13 - __main__ - INFO - Successfully wrote 'HCP_Details Mock data.csv' to DB table 'hcp_details_mock_data'.
+2025-04-15 22:39:13 - summarization - INFO - Enriching structured: 'HCP_Details Mock data.csv'
+2025-04-15 22:39:19 - summarization - INFO - Enriched structured: 'HCP_Details Mock data.csv'.
+2025-04-15 22:39:19 - summarization - INFO - Summarization complete: 'HCP_Details Mock data.csv'. ID: structured-HCP_Details_Mock_data.csv-32aa1ff7
+2025-04-15 22:39:19 - __main__ - INFO - Generated metadata for structured file: HCP_Details Mock data.csv
+2025-04-15 22:39:19 - __main__ - INFO - --- Processing file: India.pdf ---
+2025-04-15 22:39:19 - __main__ - INFO - Processing unstructured file type: .pdf
+2025-04-15 22:39:19 - data_processing - INFO - Attempting to load PDF: C:/Users/karti/OneDrive/Desktop/RAG/Document\India.pdf using PDFPlumber
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:39:39 - data_processing - INFO - Loaded 69 document(s) from PDF: India.pdf using PDFPlumber
+2025-04-15 22:39:39 - __main__ - INFO - Loaded 69 parts from: India.pdf
+2025-04-15 22:39:39 - summarization - INFO - Processing preloaded: 'India.pdf'.
+2025-04-15 22:39:39 - summarization - INFO - Generating LLM summary: India.pdf (len: 218725)
+2025-04-15 22:39:47 - summarization - INFO - Generated unstructured summary: India.pdf.
+2025-04-15 22:39:47 - summarization - INFO - Summarization complete: 'India.pdf'. ID: unstructured-India.pdf-affa4aa1
+2025-04-15 22:39:47 - __main__ - INFO - Generated summary and metadata for unstructured: India.pdf
+2025-04-15 22:39:47 - __main__ - INFO - Splitting content from India.pdf into chunks...
+2025-04-15 22:39:47 - data_processing - INFO - Split 69 documents into 99 chunks.
+2025-04-15 22:39:47 - __main__ - INFO - Created 99 chunks for: India.pdf
+2025-04-15 22:39:47 - __main__ - INFO - --- Processing file: Interactions Mock data.csv ---
+2025-04-15 22:39:47 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:39:47 - __main__ - INFO - Loaded DataFrame from Interactions Mock data.csv. Shape: (3000, 24)
+2025-04-15 22:39:47 - __main__ - INFO - Attempting to write DataFrame from 'Interactions Mock data.csv' to table 'interactions_mock_data' in RAG_DB_UPLOADS...
+2025-04-15 22:39:48 - __main__ - INFO - Successfully wrote 'Interactions Mock data.csv' to DB table 'interactions_mock_data'.
+2025-04-15 22:39:48 - summarization - INFO - Enriching structured: 'Interactions Mock data.csv'
+2025-04-15 22:40:02 - summarization - INFO - Enriched structured: 'Interactions Mock data.csv'.
+2025-04-15 22:40:02 - summarization - INFO - Summarization complete: 'Interactions Mock data.csv'. ID: structured-Interactions_Mock_data.csv-de75fe7c
+2025-04-15 22:40:02 - __main__ - INFO - Generated metadata for structured file: Interactions Mock data.csv
+2025-04-15 22:40:02 - __main__ - INFO - --- Processing file: Mount_Everest.pdf ---
+2025-04-15 22:40:02 - __main__ - INFO - Processing unstructured file type: .pdf
+2025-04-15 22:40:02 - data_processing - INFO - Attempting to load PDF: C:/Users/karti/OneDrive/Desktop/RAG/Document\Mount_Everest.pdf using PDFPlumber
+2025-04-15 22:40:02 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:02 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:02 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:02 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:02 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:02 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:02 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:02 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:02 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:02 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:03 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:40:21 - data_processing - INFO - Loaded 34 document(s) from PDF: Mount_Everest.pdf using PDFPlumber
+2025-04-15 22:40:21 - __main__ - INFO - Loaded 34 parts from: Mount_Everest.pdf
+2025-04-15 22:40:21 - summarization - INFO - Processing preloaded: 'Mount_Everest.pdf'.
+2025-04-15 22:40:21 - summarization - INFO - Generating LLM summary: Mount_Everest.pdf (len: 237532)
+2025-04-15 22:41:20 - summarization - INFO - Generated unstructured summary: Mount_Everest.pdf.
+2025-04-15 22:41:20 - summarization - INFO - Summarization complete: 'Mount_Everest.pdf'. ID: unstructured-Mount_Everest.pdf-36af99bf
+2025-04-15 22:41:20 - __main__ - INFO - Generated summary and metadata for unstructured: Mount_Everest.pdf
+2025-04-15 22:41:20 - __main__ - INFO - Splitting content from Mount_Everest.pdf into chunks...
+2025-04-15 22:41:20 - data_processing - INFO - Split 34 documents into 96 chunks.
+2025-04-15 22:41:20 - __main__ - INFO - Created 96 chunks for: Mount_Everest.pdf
+2025-04-15 22:41:20 - __main__ - INFO - --- Processing file: NCRESE_2020_paper_35.pdf ---
+2025-04-15 22:41:20 - __main__ - INFO - Processing unstructured file type: .pdf
+2025-04-15 22:41:20 - data_processing - INFO - Attempting to load PDF: C:/Users/karti/OneDrive/Desktop/RAG/Document\NCRESE_2020_paper_35.pdf using PDFPlumber
+2025-04-15 22:41:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:41:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:41:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:41:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:41:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:41:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:41:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:41:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:41:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:41:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:41:20 - pdfminer.pdfpage - WARNING - CropBox missing from /Page, defaulting to MediaBox
+2025-04-15 22:41:22 - data_processing - INFO - Loaded 11 document(s) from PDF: NCRESE_2020_paper_35.pdf using PDFPlumber
+2025-04-15 22:41:22 - __main__ - INFO - Loaded 11 parts from: NCRESE_2020_paper_35.pdf
+2025-04-15 22:41:22 - summarization - INFO - Processing preloaded: 'NCRESE_2020_paper_35.pdf'.
+2025-04-15 22:41:22 - summarization - INFO - Generating LLM summary: NCRESE_2020_paper_35.pdf (len: 16588)
+2025-04-15 22:41:24 - summarization - INFO - Generated unstructured summary: NCRESE_2020_paper_35.pdf.
+2025-04-15 22:41:24 - summarization - INFO - Summarization complete: 'NCRESE_2020_paper_35.pdf'. ID: unstructured-NCRESE_2020_paper_35.pdf-fe8ff5b7
+2025-04-15 22:41:24 - __main__ - INFO - Generated summary and metadata for unstructured: NCRESE_2020_paper_35.pdf
+2025-04-15 22:41:24 - __main__ - INFO - Splitting content from NCRESE_2020_paper_35.pdf into chunks...
+2025-04-15 22:41:24 - data_processing - INFO - Split 11 documents into 11 chunks.
+2025-04-15 22:41:24 - __main__ - INFO - Created 11 chunks for: NCRESE_2020_paper_35.pdf
+2025-04-15 22:41:24 - __main__ - INFO - --- Processing file: Scientific Journey Mock data.csv ---
+2025-04-15 22:41:24 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:41:24 - __main__ - INFO - Loaded DataFrame from Scientific Journey Mock data.csv. Shape: (1093, 20)
+2025-04-15 22:41:24 - __main__ - INFO - Attempting to write DataFrame from 'Scientific Journey Mock data.csv' to table 'scientific_journey_mock_data' in RAG_DB_UPLOADS...
+2025-04-15 22:41:25 - __main__ - INFO - Successfully wrote 'Scientific Journey Mock data.csv' to DB table 'scientific_journey_mock_data'.
+2025-04-15 22:41:25 - summarization - INFO - Enriching structured: 'Scientific Journey Mock data.csv'
+2025-04-15 22:41:36 - summarization - INFO - Enriched structured: 'Scientific Journey Mock data.csv'.
+2025-04-15 22:41:36 - summarization - INFO - Summarization complete: 'Scientific Journey Mock data.csv'. ID: structured-Scientific_Journey_Mock_data.csv-6681daf8
+2025-04-15 22:41:36 - __main__ - INFO - Generated metadata for structured file: Scientific Journey Mock data.csv
+2025-04-15 22:41:36 - __main__ - INFO - --- Processing file: stores sales dataset.csv ---
+2025-04-15 22:41:36 - __main__ - INFO - Processing structured file type: .csv
+2025-04-15 22:41:36 - __main__ - INFO - Loaded DataFrame from stores sales dataset.csv. Shape: (421570, 5)
+2025-04-15 22:41:36 - __main__ - INFO - Attempting to write DataFrame from 'stores sales dataset.csv' to table 'stores_sales_dataset' in RAG_DB_UPLOADS...
+2025-04-15 22:42:30 - __main__ - INFO - Successfully wrote 'stores sales dataset.csv' to DB table 'stores_sales_dataset'.
+2025-04-15 22:42:31 - summarization - INFO - Enriching structured: 'stores sales dataset.csv'
+2025-04-15 22:42:34 - summarization - INFO - Enriched structured: 'stores sales dataset.csv'.
+2025-04-15 22:42:34 - summarization - INFO - Summarization complete: 'stores sales dataset.csv'. ID: structured-stores_sales_dataset.csv-055f9d12
+2025-04-15 22:42:34 - __main__ - INFO - Generated metadata for structured file: stores sales dataset.csv
+2025-04-15 22:42:34 - __main__ - INFO - --- Processing file: Transforming Medical Affairs with Generative AI.docx ---
+2025-04-15 22:42:34 - __main__ - INFO - Processing unstructured file type: .docx
+2025-04-15 22:42:34 - data_processing - INFO - Attempting to load DOCX: C:/Users/karti/OneDrive/Desktop/RAG/Document\Transforming Medical Affairs with Generative AI.docx using Docx2txtLoader
+2025-04-15 22:42:34 - data_processing - INFO - Loaded 1 document(s) from DOCX: Transforming Medical Affairs with Generative AI.docx using Docx2txtLoader
+2025-04-15 22:42:34 - __main__ - INFO - Loaded 1 parts from: Transforming Medical Affairs with Generative AI.docx
+2025-04-15 22:42:34 - summarization - INFO - Processing preloaded: 'Transforming Medical Affairs with Generative AI.docx'.
+2025-04-15 22:42:34 - summarization - INFO - Generating LLM summary: Transforming Medical Affairs with Generative AI.docx (len: 15655)
+2025-04-15 22:42:37 - summarization - INFO - Generated unstructured summary: Transforming Medical Affairs with Generative AI.docx.
+2025-04-15 22:42:37 - summarization - INFO - Summarization complete: 'Transforming Medical Affairs with Generative AI.docx'. ID: unstructured-Transforming_Medical_Affairs_with_Generative_AI.docx-d118a661
+2025-04-15 22:42:37 - __main__ - INFO - Generated summary and metadata for unstructured: Transforming Medical Affairs with Generative AI.docx
+2025-04-15 22:42:37 - __main__ - INFO - Splitting content from Transforming Medical Affairs with Generative AI.docx into chunks...
+2025-04-15 22:42:37 - data_processing - INFO - Split 1 documents into 4 chunks.
+2025-04-15 22:42:37 - __main__ - INFO - Created 4 chunks for: Transforming Medical Affairs with Generative AI.docx
+2025-04-15 22:42:37 - __main__ - INFO - --- File Processing Complete ---
+2025-04-15 22:42:37 - __main__ - INFO - Successfully processed content/metadata for 14 files.
+2025-04-15 22:42:37 - __main__ - INFO - Successfully uploaded 8 CSV/XLSX files to RAG_DB_UPLOADS.
+2025-04-15 22:42:37 - __main__ - INFO - Prepared 213 text chunks for indexing in RAG_DB.
+2025-04-15 22:42:37 - __main__ - INFO - Prepared 8 metadata documents (CSV/XLSX/DB Tables) for indexing in RAG_DB.
+2025-04-15 22:42:37 - __main__ - INFO - --- Processing RAG_DB Database Tables for Metadata ---
+2025-04-15 22:42:37 - __main__ - INFO - Found 0 tables in RAG_DB to process: []
+2025-04-15 22:42:37 - __main__ - INFO - --- Writing Combined Metadata to: C:/Users/karti/OneDrive/Desktop/RAG/Document\metadata.json ---
+2025-04-15 22:42:37 - __main__ - INFO - Successfully wrote metadata for 14 items.
+2025-04-15 22:42:37 - __main__ - INFO - Cleaning NUL bytes from document content before indexing...
+2025-04-15 22:42:37 - __main__ - INFO - Removed NUL ('\x00') bytes from content/metadata of 4 documents.
+2025-04-15 22:42:37 - __main__ - WARNING - NUL bytes were found in sources (or their metadata): C:/Users/karti/OneDrive/Desktop/RAG/Document\Mount_Everest.pdf
+2025-04-15 22:42:37 - __main__ - INFO - Attempting to index 221 total documents (text chunks + metadata summaries) into RAG_DB...
+2025-04-15 22:44:07 - indexing - INFO - Successfully added/updated 221 documents to PGVector collection 'rag_collection'. IDs (sample): ['034f8f42-0e45-4105-99ea-f2e3fc845958', 'dfd7fce8-88b4-4b21-b90d-66a83acb898d', '15d2165f-54dc-4030-84ea-e0eb3f68066d', '6e861678-db2a-4d87-aab5-49a3a56e4540', '2244a629-15df-4c8e-8834-a4d2925f71bb']...
+2025-04-15 22:44:07 - __main__ - INFO - --- Indexing Process Completed Successfully for 221 documents into RAG_DB ---
+2025-04-15 22:45:04 - root - INFO - Logging configured.
+2025-04-15 22:45:04 - __main__ - INFO - Starting RAG API server...
+2025-04-15 22:45:12 - root - INFO - Logging configured.
+2025-04-15 22:45:12 - api - INFO - API Startup: Initializing resources...
+2025-04-15 22:45:12 - api - INFO - Auth directory: C:\Users\karti\OneDrive\Desktop\RAG\Authentication
+2025-04-15 22:45:12 - api - INFO - User history base directory: C:\Users\karti\OneDrive\Desktop\RAG\Chat_History
+2025-04-15 22:45:12 - indexing - INFO - Checking for PGVector extension...
+2025-04-15 22:45:12 - indexing - INFO - PGVector extension check complete (created if not exists).
+2025-04-15 22:45:12 - api - INFO - PGVector setup check complete.
+2025-04-15 22:45:24 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-04-15 22:45:29 - indexing - INFO - Initialized HuggingFaceEmbeddings with model: sentence-transformers/all-mpnet-base-v2 on device: cpu
+2025-04-15 22:45:29 - indexing - INFO - PGVector client initialized. Collection: rag_collection
+2025-04-15 22:45:29 - api - INFO - Indexer initialized.
+2025-04-15 22:45:29 - summarization - INFO - Summarizer Initialized (LLM: OK, DB Util: OK)
+2025-04-15 22:45:29 - api - INFO - DataSummarizer initialized.
+2025-04-15 22:45:29 - indexing - INFO - PGVector retriever created with search_type=similarity, k=10
+2025-04-15 22:45:30 - retrieval - INFO - Cohere Reranker initialized. Will return top 3 documents.
+2025-04-15 22:45:30 - generation - INFO - Initialized main Generator LLM: gemini-1.5-pro
+2025-04-15 22:45:30 - generation - INFO - Initialized light Sufficiency Check LLM: gemini-1.5-flash
+2025-04-15 22:45:30 - rag_pipeline - INFO - Pipeline Light LLM (Routing/Suggestions) initialized: gemini-1.5-flash
+2025-04-15 22:45:30 - data_science_executor - INFO - DataScienceExecutor initialized for URL: http://localhost:8081/execute
+2025-04-15 22:45:30 - rag_pipeline - INFO - RAG Pipeline initialized.
+2025-04-15 22:45:30 - api - INFO - RAGPipeline initialized.
+2025-04-15 22:45:30 - api - INFO - Title LLM initialized (gemini-1.5-flash).
+2025-04-15 22:45:30 - api - INFO - API Startup: All components initialized successfully.
+2025-04-15 22:45:59 - api - WARNING - JWTError decoding token: Signature has expired.
+2025-04-15 22:45:59 - api - WARNING - JWTError decoding token: Signature has expired.
+2025-04-15 22:46:07 - api - INFO - Login attempt for username (email): kartik.vadhera@digtinctive.com
+2025-04-15 22:46:07 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\karti\OneDrive\Desktop\RAG\rag_env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-04-15 22:46:07 - auth_manager - INFO - User 'kartik.vadhera@digtinctive.com' authenticated successfully.
+2025-04-15 22:46:07 - api - INFO - Token issued for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:46:08 - api - INFO - Listing conversations for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:46:22 - api - INFO - Getting conversation de18e305-eb04-4a72-b961-43a13b92aa1c for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:46:24 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: de18e305-eb04-4a72-b961-43a13b92aa1c)
+2025-04-15 22:46:24 - api - INFO - Updating conversation de18e305-eb04-4a72-b961-43a13b92aa1c for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:46:24 - api - INFO - Conversation updated. ID: de18e305-eb04-4a72-b961-43a13b92aa1c, Title: 'Ansible Environment Components' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:46:24 - memory_manager - INFO - Saved conversation de18e305-eb04-4a72-b961-43a13b92aa1c for user kartik.vadhera@digtinctive.com to: de18e305-eb04-4a72-b961-43a13b92aa1c.json
+2025-04-15 22:46:24 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:46:29 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: None)
+2025-04-15 22:46:29 - api - INFO - Creating new conversation for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:46:29 - api - INFO - Generating title (sync) based on: 'what ansible environment is constituted of?...'
+2025-04-15 22:46:31 - api - INFO - Generated title (sync): 'Ansible Environment Components'
+2025-04-15 22:46:31 - api - INFO - New conversation created. ID: 7e7c718d-15b4-43a2-9948-bc16ac796f18, Title: 'Ansible Environment Components' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:46:31 - memory_manager - INFO - Saved conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user kartik.vadhera@digtinctive.com to: 7e7c718d-15b4-43a2-9948-bc16ac796f18.json
+2025-04-15 22:46:31 - api - INFO - Received query from user kartik.vadhera@digtinctive.com: 'what ansible environment is constituted of?...' (Conversation ID: 7e7c718d-15b4-43a2-9948-bc16ac796f18)
+2025-04-15 22:46:31 - api - INFO - Loaded 1 messages from conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for context.
+2025-04-15 22:46:31 - rag_pipeline - INFO - Processing query (sync): 'what ansible environment is constituted of?...' with 1 history messages
+2025-04-15 22:46:31 - rag_pipeline - INFO - Routing query (sync): 'what ansible environment is constituted of?...'
+2025-04-15 22:46:31 - watchfiles.main - INFO - 2 changes detected
+2025-04-15 22:46:33 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 7e7c718d-15b4-43a2-9948-bc16ac796f18)
+2025-04-15 22:46:33 - api - INFO - Updating conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:46:33 - api - INFO - Conversation updated. ID: 7e7c718d-15b4-43a2-9948-bc16ac796f18, Title: 'Ansible Environment Components' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:46:33 - memory_manager - INFO - Saved conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user kartik.vadhera@digtinctive.com to: 7e7c718d-15b4-43a2-9948-bc16ac796f18.json
+2025-04-15 22:46:33 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:46:33 - rag_pipeline - INFO - LLM Router Decision (sync, parsed): VECTOR_STORE
+2025-04-15 22:46:33 - rag_pipeline - INFO - Final routing decision: VECTOR_STORE
+2025-04-15 22:46:33 - rag_pipeline - INFO - LLM routed to Vector Store. Retrieving and checking scores...
+2025-04-15 22:46:33 - retrieval - INFO - Retrieving documents for query: 'what ansible environment is constituted of?...'
+2025-04-15 22:46:34 - httpx - INFO - HTTP Request: POST https://api.cohere.com/v2/rerank "HTTP/1.1 200 OK"
+2025-04-15 22:46:34 - retrieval - INFO - Retrieved 3 documents after processing/re-ranking.
+2025-04-15 22:46:39 - generation - INFO - Generated initial answer for query: 'what ansible environment is constituted of?...'
+2025-04-15 22:46:41 - generation - INFO - Sufficiency Check LLM Decision: 'SUFFICIENT'
+2025-04-15 22:46:41 - rag_pipeline - INFO - Generating suggestions (sync)...
+2025-04-15 22:46:41 - rag_pipeline - INFO - Query processing complete (sync): 'what ansible environment is constituted of?...'
+2025-04-15 22:46:41 - memory_manager - INFO - Saved conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user kartik.vadhera@digtinctive.com to: 7e7c718d-15b4-43a2-9948-bc16ac796f18.json
+2025-04-15 22:46:41 - api - INFO - Successfully appended interaction to conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user kartik.vadhera@digtinctive.com
+2025-04-15 22:46:41 - api - INFO - Sending RAG response to user kartik.vadhera@digtinctive.com for query: 'what ansible environment is constituted of?...'
+2025-04-15 22:46:41 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:46:43 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 7e7c718d-15b4-43a2-9948-bc16ac796f18)
+2025-04-15 22:46:43 - api - INFO - Updating conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:46:43 - api - INFO - Conversation updated. ID: 7e7c718d-15b4-43a2-9948-bc16ac796f18, Title: 'Ansible Environment Components' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:46:43 - memory_manager - INFO - Saved conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user kartik.vadhera@digtinctive.com to: 7e7c718d-15b4-43a2-9948-bc16ac796f18.json
+2025-04-15 22:46:43 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:46:44 - api - INFO - Getting conversation 428b0a75-d94b-4e7d-97a8-ebcf409a3f46 for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:46:46 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 428b0a75-d94b-4e7d-97a8-ebcf409a3f46)
+2025-04-15 22:46:46 - api - INFO - Updating conversation 428b0a75-d94b-4e7d-97a8-ebcf409a3f46 for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:46:46 - api - INFO - Conversation updated. ID: 428b0a75-d94b-4e7d-97a8-ebcf409a3f46, Title: 'Ansible Environment Components' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:46:46 - memory_manager - INFO - Saved conversation 428b0a75-d94b-4e7d-97a8-ebcf409a3f46 for user kartik.vadhera@digtinctive.com to: 428b0a75-d94b-4e7d-97a8-ebcf409a3f46.json
+2025-04-15 22:46:46 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:46:51 - api - INFO - Getting conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:46:52 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 7e7c718d-15b4-43a2-9948-bc16ac796f18)
+2025-04-15 22:46:52 - api - INFO - Updating conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:46:52 - api - INFO - Conversation updated. ID: 7e7c718d-15b4-43a2-9948-bc16ac796f18, Title: 'Ansible Environment Components' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:46:52 - memory_manager - INFO - Saved conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user kartik.vadhera@digtinctive.com to: 7e7c718d-15b4-43a2-9948-bc16ac796f18.json
+2025-04-15 22:46:52 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:46:53 - api - INFO - Received query from user kartik.vadhera@digtinctive.com: 'give me some common used module available in ansible...' (Conversation ID: 7e7c718d-15b4-43a2-9948-bc16ac796f18)
+2025-04-15 22:46:53 - api - INFO - Loaded 2 messages from conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for context.
+2025-04-15 22:46:53 - rag_pipeline - INFO - Processing query (sync): 'give me some common used module available in ansib...' with 2 history messages
+2025-04-15 22:46:53 - rag_pipeline - INFO - Routing query (sync): 'give me some common used module available in ansib...'
+2025-04-15 22:46:54 - rag_pipeline - INFO - LLM Router Decision (sync, parsed): VECTOR_STORE
+2025-04-15 22:46:54 - rag_pipeline - INFO - Final routing decision: VECTOR_STORE
+2025-04-15 22:46:54 - rag_pipeline - INFO - LLM routed to Vector Store. Retrieving and checking scores...
+2025-04-15 22:46:54 - retrieval - INFO - Retrieving documents for query: 'give me some common used module available in ansib...'
+2025-04-15 22:46:54 - httpx - INFO - HTTP Request: POST https://api.cohere.com/v2/rerank "HTTP/1.1 200 OK"
+2025-04-15 22:46:54 - retrieval - INFO - Retrieved 3 documents after processing/re-ranking.
+2025-04-15 22:46:55 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 7e7c718d-15b4-43a2-9948-bc16ac796f18)
+2025-04-15 22:46:55 - api - INFO - Updating conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:46:55 - api - INFO - Conversation updated. ID: 7e7c718d-15b4-43a2-9948-bc16ac796f18, Title: 'Ansible Environment Components' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:46:55 - memory_manager - INFO - Saved conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user kartik.vadhera@digtinctive.com to: 7e7c718d-15b4-43a2-9948-bc16ac796f18.json
+2025-04-15 22:46:55 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:46:56 - generation - INFO - Generated initial answer for query: 'give me some common used module available in ansib...'
+2025-04-15 22:46:57 - generation - INFO - Sufficiency Check LLM Decision: 'INSUFFICIENT'
+2025-04-15 22:46:57 - rag_pipeline - INFO - Executing supplemental fallback for query 'give me some common used module available in ansib...'
+2025-04-15 22:47:07 - rag_pipeline - INFO - Generating suggestions (sync)...
+2025-04-15 22:47:08 - rag_pipeline - INFO - Query processing complete (sync): 'give me some common used module available in ansib...'
+2025-04-15 22:47:08 - memory_manager - INFO - Saved conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user kartik.vadhera@digtinctive.com to: 7e7c718d-15b4-43a2-9948-bc16ac796f18.json
+2025-04-15 22:47:08 - api - INFO - Successfully appended interaction to conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user kartik.vadhera@digtinctive.com
+2025-04-15 22:47:08 - api - INFO - Sending RAG response to user kartik.vadhera@digtinctive.com for query: 'give me some common used module available in ansible...'
+2025-04-15 22:47:08 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:47:09 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 7e7c718d-15b4-43a2-9948-bc16ac796f18)
+2025-04-15 22:47:09 - api - INFO - Updating conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:47:10 - api - INFO - Conversation updated. ID: 7e7c718d-15b4-43a2-9948-bc16ac796f18, Title: 'Ansible Environment Components' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:47:10 - memory_manager - INFO - Saved conversation 7e7c718d-15b4-43a2-9948-bc16ac796f18 for user kartik.vadhera@digtinctive.com to: 7e7c718d-15b4-43a2-9948-bc16ac796f18.json
+2025-04-15 22:47:10 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:47:21 - api - INFO - Getting conversation 4ac5feb0-04c7-48ac-a0ec-19a199454fa8 for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:47:23 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 4ac5feb0-04c7-48ac-a0ec-19a199454fa8)
+2025-04-15 22:47:23 - api - INFO - Updating conversation 4ac5feb0-04c7-48ac-a0ec-19a199454fa8 for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:47:23 - api - INFO - Conversation updated. ID: 4ac5feb0-04c7-48ac-a0ec-19a199454fa8, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:47:23 - memory_manager - INFO - Saved conversation 4ac5feb0-04c7-48ac-a0ec-19a199454fa8 for user kartik.vadhera@digtinctive.com to: 4ac5feb0-04c7-48ac-a0ec-19a199454fa8.json
+2025-04-15 22:47:23 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:47:28 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: None)
+2025-04-15 22:47:28 - api - INFO - Creating new conversation for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:47:28 - api - INFO - Generating title (sync) based on: 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 22:47:29 - api - INFO - Generated title (sync): 'Revenue Trend Analysis'
+2025-04-15 22:47:29 - api - INFO - New conversation created. ID: 5733bb91-dc35-497c-81fe-c14d6d98048a, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:47:29 - memory_manager - INFO - Saved conversation 5733bb91-dc35-497c-81fe-c14d6d98048a for user kartik.vadhera@digtinctive.com to: 5733bb91-dc35-497c-81fe-c14d6d98048a.json
+2025-04-15 22:47:29 - api - INFO - Received query from user kartik.vadhera@digtinctive.com: 'Plot the monthly trend of total revenue/sales over time using the Date and Total Revenue columns. Ma...' (Conversation ID: 5733bb91-dc35-497c-81fe-c14d6d98048a)
+2025-04-15 22:47:29 - api - INFO - Loaded 1 messages from conversation 5733bb91-dc35-497c-81fe-c14d6d98048a for context.
+2025-04-15 22:47:29 - rag_pipeline - INFO - Processing query (sync): 'Plot the monthly trend of total revenue/sales over...' with 1 history messages
+2025-04-15 22:47:29 - rag_pipeline - INFO - Routing query (sync): 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 22:47:29 - watchfiles.main - INFO - 2 changes detected
+2025-04-15 22:47:30 - rag_pipeline - INFO - LLM Router Decision (sync, parsed): PYTHON_ANALYSIS:STORES SALES DATASET.CSV
+2025-04-15 22:47:30 - rag_pipeline - INFO - Final routing decision: PYTHON_ANALYSIS
+2025-04-15 22:47:30 - rag_pipeline - INFO - LLM routed to Python Analysis.
+2025-04-15 22:47:30 - rag_pipeline - INFO - Python route target identified: 'stores sales dataset.csv' (Type: structured)
+2025-04-15 22:47:30 - rag_pipeline - INFO - Constructed DB URL for executor (connecting to host host.docker.internal:5432): postgresql+psycopg://postgres:****@host.docker.internal:5432/RAG_DB_UPLOADS
+2025-04-15 22:47:31 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 5733bb91-dc35-497c-81fe-c14d6d98048a)
+2025-04-15 22:47:31 - api - INFO - Updating conversation 5733bb91-dc35-497c-81fe-c14d6d98048a for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:47:31 - api - INFO - Conversation updated. ID: 5733bb91-dc35-497c-81fe-c14d6d98048a, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:47:31 - memory_manager - INFO - Saved conversation 5733bb91-dc35-497c-81fe-c14d6d98048a for user kartik.vadhera@digtinctive.com to: 5733bb91-dc35-497c-81fe-c14d6d98048a.json
+2025-04-15 22:47:31 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:47:36 - data_science_executor - INFO - Sending code execution request to http://localhost:8081/execute
+2025-04-15 22:47:42 - data_science_executor - WARNING - Code execution reported failure by executor. Stderr: Traceback (most recent call last):
+  File "/tmp/tmpeqz0s37z.py", line 34, in <module>
+    df['Date'] = pd.to_datetime(df['Date'])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/core/tools/datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/core/tools/datetimes.py", ...
+2025-04-15 22:47:42 - rag_pipeline - INFO - Generating suggestions (sync)...
+2025-04-15 22:47:43 - rag_pipeline - INFO - Query processing complete (sync): 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 22:47:43 - memory_manager - INFO - Saved conversation 5733bb91-dc35-497c-81fe-c14d6d98048a for user kartik.vadhera@digtinctive.com to: 5733bb91-dc35-497c-81fe-c14d6d98048a.json
+2025-04-15 22:47:43 - api - INFO - Successfully appended interaction to conversation 5733bb91-dc35-497c-81fe-c14d6d98048a for user kartik.vadhera@digtinctive.com
+2025-04-15 22:47:43 - api - INFO - Sending RAG response to user kartik.vadhera@digtinctive.com for query: 'Plot the monthly trend of total revenue/sales over time using the Date and Total Revenue columns. Ma...'
+2025-04-15 22:47:43 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:47:44 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 5733bb91-dc35-497c-81fe-c14d6d98048a)
+2025-04-15 22:47:44 - api - INFO - Updating conversation 5733bb91-dc35-497c-81fe-c14d6d98048a for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:47:44 - api - INFO - Conversation updated. ID: 5733bb91-dc35-497c-81fe-c14d6d98048a, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:47:44 - memory_manager - INFO - Saved conversation 5733bb91-dc35-497c-81fe-c14d6d98048a for user kartik.vadhera@digtinctive.com to: 5733bb91-dc35-497c-81fe-c14d6d98048a.json
+2025-04-15 22:47:44 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:50:14 - api - WARNING - JWTError decoding token: Signature has expired.
+2025-04-15 22:50:14 - api - WARNING - JWTError decoding token: Signature has expired.
+2025-04-15 22:50:16 - api - INFO - Login attempt for username (email): kartik.vadhera@digtinctive.com
+2025-04-15 22:50:17 - auth_manager - INFO - User 'kartik.vadhera@digtinctive.com' authenticated successfully.
+2025-04-15 22:50:17 - api - INFO - Token issued for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:50:17 - api - INFO - Listing conversations for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:50:18 - api - INFO - Getting conversation 5733bb91-dc35-497c-81fe-c14d6d98048a for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:50:20 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 5733bb91-dc35-497c-81fe-c14d6d98048a)
+2025-04-15 22:50:20 - api - INFO - Updating conversation 5733bb91-dc35-497c-81fe-c14d6d98048a for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:50:20 - api - INFO - Conversation updated. ID: 5733bb91-dc35-497c-81fe-c14d6d98048a, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:50:20 - memory_manager - INFO - Saved conversation 5733bb91-dc35-497c-81fe-c14d6d98048a for user kartik.vadhera@digtinctive.com to: 5733bb91-dc35-497c-81fe-c14d6d98048a.json
+2025-04-15 22:50:20 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:56:07 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:58:28 - root - INFO - Logging configured.
+2025-04-15 22:58:28 - __main__ - INFO - Starting RAG API server...
+2025-04-15 22:58:35 - watchfiles.main - INFO - 5 changes detected
+2025-04-15 22:58:36 - root - INFO - Logging configured.
+2025-04-15 22:58:36 - api - INFO - API Startup: Initializing resources...
+2025-04-15 22:58:36 - api - INFO - Auth directory: C:\Users\karti\OneDrive\Desktop\RAG\Authentication
+2025-04-15 22:58:36 - api - INFO - User history base directory: C:\Users\karti\OneDrive\Desktop\RAG\Chat_History
+2025-04-15 22:58:36 - indexing - INFO - Checking for PGVector extension...
+2025-04-15 22:58:36 - indexing - INFO - PGVector extension check complete (created if not exists).
+2025-04-15 22:58:36 - api - INFO - PGVector setup check complete.
+2025-04-15 22:58:48 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-04-15 22:58:52 - indexing - INFO - Initialized HuggingFaceEmbeddings with model: sentence-transformers/all-mpnet-base-v2 on device: cpu
+2025-04-15 22:58:52 - indexing - INFO - PGVector client initialized. Collection: rag_collection
+2025-04-15 22:58:52 - api - INFO - Indexer initialized.
+2025-04-15 22:58:52 - summarization - INFO - Summarizer Initialized (LLM: OK, DB Util: OK)
+2025-04-15 22:58:52 - api - INFO - DataSummarizer initialized.
+2025-04-15 22:58:52 - indexing - INFO - PGVector retriever created with search_type=similarity, k=10
+2025-04-15 22:58:53 - retrieval - INFO - Cohere Reranker initialized. Will return top 3 documents.
+2025-04-15 22:58:53 - generation - INFO - Initialized main Generator LLM: gemini-1.5-pro
+2025-04-15 22:58:53 - generation - INFO - Initialized light Sufficiency Check LLM: gemini-1.5-flash
+2025-04-15 22:58:53 - rag_pipeline - INFO - Pipeline Light LLM (Routing/Suggestions) initialized: gemini-1.5-flash
+2025-04-15 22:58:53 - data_science_executor - INFO - DataScienceExecutor initialized for URL: http://localhost:8081/execute
+2025-04-15 22:58:53 - rag_pipeline - INFO - RAG Pipeline initialized.
+2025-04-15 22:58:53 - api - INFO - RAGPipeline initialized.
+2025-04-15 22:58:53 - api - INFO - Title LLM initialized (gemini-1.5-flash).
+2025-04-15 22:58:53 - api - INFO - API Startup: All components initialized successfully.
+2025-04-15 22:59:03 - api - INFO - Listing conversations for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:59:03 - api - INFO - Listing conversations for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:59:06 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: None)
+2025-04-15 22:59:06 - api - INFO - Creating new conversation for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:59:06 - api - INFO - Generating title (sync) based on: 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 22:59:08 - api - INFO - Generated title (sync): 'Revenue Trend Analysis'
+2025-04-15 22:59:08 - api - INFO - New conversation created. ID: 99de84e7-16bf-4a9f-8af6-f0435bd98664, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:59:08 - memory_manager - INFO - Saved conversation 99de84e7-16bf-4a9f-8af6-f0435bd98664 for user kartik.vadhera@digtinctive.com to: 99de84e7-16bf-4a9f-8af6-f0435bd98664.json
+2025-04-15 22:59:08 - api - INFO - Received query from user kartik.vadhera@digtinctive.com: 'Plot the monthly trend of total revenue/sales over time using the Date and Total Revenue columns. Ma...' (Conversation ID: 99de84e7-16bf-4a9f-8af6-f0435bd98664)
+2025-04-15 22:59:08 - api - INFO - Loaded 1 messages from conversation 99de84e7-16bf-4a9f-8af6-f0435bd98664 for context.
+2025-04-15 22:59:08 - rag_pipeline - INFO - Processing query (sync): 'Plot the monthly trend of total revenue/sales over...' with 1 history messages
+2025-04-15 22:59:08 - rag_pipeline - INFO - Routing query (sync): 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 22:59:08 - watchfiles.main - INFO - 2 changes detected
+2025-04-15 22:59:09 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 99de84e7-16bf-4a9f-8af6-f0435bd98664)
+2025-04-15 22:59:09 - api - INFO - Updating conversation 99de84e7-16bf-4a9f-8af6-f0435bd98664 for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:59:09 - api - INFO - Conversation updated. ID: 99de84e7-16bf-4a9f-8af6-f0435bd98664, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:59:09 - memory_manager - INFO - Saved conversation 99de84e7-16bf-4a9f-8af6-f0435bd98664 for user kartik.vadhera@digtinctive.com to: 99de84e7-16bf-4a9f-8af6-f0435bd98664.json
+2025-04-15 22:59:09 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:59:10 - rag_pipeline - INFO - LLM Router Decision (sync, parsed): PYTHON_ANALYSIS:STORES SALES DATASET.CSV
+2025-04-15 22:59:10 - rag_pipeline - INFO - Final routing decision: PYTHON_ANALYSIS
+2025-04-15 22:59:10 - rag_pipeline - INFO - LLM routed to Python Analysis.
+2025-04-15 22:59:10 - rag_pipeline - INFO - Python route target identified: 'stores sales dataset.csv' (Type: structured)
+2025-04-15 22:59:10 - rag_pipeline - INFO - Constructed DB URL for executor (connecting to host host.docker.internal:5432): postgresql+psycopg://postgres:****@host.docker.internal:5432/RAG_DB_UPLOADS
+2025-04-15 22:59:18 - data_science_executor - INFO - Sending code execution request to http://localhost:8081/execute
+2025-04-15 22:59:24 - data_science_executor - WARNING - Code execution reported failure by executor. Stderr: Traceback (most recent call last):
+  File "/tmp/tmpu4b4scrr.py", line 37, in <module>
+    monthly_revenue = df.groupby('month_year')['Total Revenue'].sum().reset_index()
+                      ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/core/groupby/generic.py", line 1951, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/core/base.py", line 244, in __ge...
+2025-04-15 22:59:24 - rag_pipeline - INFO - Generating suggestions (sync)...
+2025-04-15 22:59:25 - rag_pipeline - INFO - Query processing complete (sync): 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 22:59:25 - memory_manager - INFO - Saved conversation 99de84e7-16bf-4a9f-8af6-f0435bd98664 for user kartik.vadhera@digtinctive.com to: 99de84e7-16bf-4a9f-8af6-f0435bd98664.json
+2025-04-15 22:59:25 - api - INFO - Successfully appended interaction to conversation 99de84e7-16bf-4a9f-8af6-f0435bd98664 for user kartik.vadhera@digtinctive.com
+2025-04-15 22:59:25 - api - INFO - Sending RAG response to user kartik.vadhera@digtinctive.com for query: 'Plot the monthly trend of total revenue/sales over time using the Date and Total Revenue columns. Ma...'
+2025-04-15 22:59:25 - watchfiles.main - INFO - 1 change detected
+2025-04-15 22:59:26 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 99de84e7-16bf-4a9f-8af6-f0435bd98664)
+2025-04-15 22:59:26 - api - INFO - Updating conversation 99de84e7-16bf-4a9f-8af6-f0435bd98664 for user: kartik.vadhera@digtinctive.com
+2025-04-15 22:59:27 - api - INFO - Conversation updated. ID: 99de84e7-16bf-4a9f-8af6-f0435bd98664, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 22:59:27 - memory_manager - INFO - Saved conversation 99de84e7-16bf-4a9f-8af6-f0435bd98664 for user kartik.vadhera@digtinctive.com to: 99de84e7-16bf-4a9f-8af6-f0435bd98664.json
+2025-04-15 22:59:27 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:06:58 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:33:48 - root - INFO - Logging configured.
+2025-04-15 23:33:48 - __main__ - INFO - Starting RAG API server...
+2025-04-15 23:34:05 - watchfiles.main - INFO - 5 changes detected
+2025-04-15 23:34:24 - watchfiles.main - INFO - 5 changes detected
+2025-04-15 23:34:26 - root - INFO - Logging configured.
+2025-04-15 23:34:26 - api - INFO - API Startup: Initializing resources...
+2025-04-15 23:34:26 - api - INFO - Auth directory: C:\Users\karti\OneDrive\Desktop\RAG\Authentication
+2025-04-15 23:34:26 - api - INFO - User history base directory: C:\Users\karti\OneDrive\Desktop\RAG\Chat_History
+2025-04-15 23:34:26 - indexing - INFO - Checking for PGVector extension...
+2025-04-15 23:34:26 - indexing - INFO - PGVector extension check complete (created if not exists).
+2025-04-15 23:34:26 - api - INFO - PGVector setup check complete.
+2025-04-15 23:35:38 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-04-15 23:35:56 - indexing - INFO - Initialized HuggingFaceEmbeddings with model: sentence-transformers/all-mpnet-base-v2 on device: cpu
+2025-04-15 23:35:56 - indexing - INFO - PGVector client initialized. Collection: rag_collection
+2025-04-15 23:35:56 - api - INFO - Indexer initialized.
+2025-04-15 23:35:56 - summarization - INFO - Summarizer Initialized (LLM: OK, DB Util: OK)
+2025-04-15 23:35:56 - api - INFO - DataSummarizer initialized.
+2025-04-15 23:35:56 - indexing - INFO - PGVector retriever created with search_type=similarity, k=10
+2025-04-15 23:35:58 - retrieval - INFO - Cohere Reranker initialized. Will return top 3 documents.
+2025-04-15 23:35:58 - generation - INFO - Initialized main Generator LLM: gemini-1.5-pro
+2025-04-15 23:35:58 - generation - INFO - Initialized light Sufficiency Check LLM: gemini-1.5-flash
+2025-04-15 23:35:58 - rag_pipeline - INFO - Pipeline Light LLM (Routing/Suggestions) initialized: gemini-1.5-flash
+2025-04-15 23:35:58 - data_science_executor - INFO - DataScienceExecutor initialized for URL: http://localhost:8081/execute
+2025-04-15 23:35:58 - rag_pipeline - INFO - RAG Pipeline initialized.
+2025-04-15 23:35:58 - api - INFO - RAGPipeline initialized.
+2025-04-15 23:35:58 - api - INFO - Title LLM initialized (gemini-1.5-flash).
+2025-04-15 23:35:58 - api - INFO - API Startup: All components initialized successfully.
+2025-04-15 23:36:01 - api - WARNING - JWTError decoding token: Signature has expired.
+2025-04-15 23:36:01 - api - WARNING - JWTError decoding token: Signature has expired.
+2025-04-15 23:36:04 - api - INFO - Login attempt for username (email): kartik.vadhera@digtinctive.com
+2025-04-15 23:36:04 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\karti\OneDrive\Desktop\RAG\rag_env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-04-15 23:36:04 - auth_manager - INFO - User 'kartik.vadhera@digtinctive.com' authenticated successfully.
+2025-04-15 23:36:04 - api - INFO - Token issued for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:36:04 - api - INFO - Listing conversations for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:36:08 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: None)
+2025-04-15 23:36:08 - api - INFO - Creating new conversation for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:36:08 - api - INFO - Generating title (sync) based on: 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:36:10 - api - INFO - Generated title (sync): 'Revenue Trend Analysis'
+2025-04-15 23:36:10 - api - INFO - New conversation created. ID: 69ff5512-cd14-4e75-ad84-98b498e01efd, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 23:36:10 - memory_manager - INFO - Saved conversation 69ff5512-cd14-4e75-ad84-98b498e01efd for user kartik.vadhera@digtinctive.com to: 69ff5512-cd14-4e75-ad84-98b498e01efd.json
+2025-04-15 23:36:10 - api - INFO - Received query from user kartik.vadhera@digtinctive.com: 'Plot the monthly trend of total revenue/sales over time using the Date and Total Revenue columns. Ma...' (Conversation ID: 69ff5512-cd14-4e75-ad84-98b498e01efd)
+2025-04-15 23:36:10 - api - INFO - Loaded 1 messages from conversation 69ff5512-cd14-4e75-ad84-98b498e01efd for context.
+2025-04-15 23:36:10 - rag_pipeline - INFO - Processing query (sync): 'Plot the monthly trend of total revenue/sales over...' with 1 history messages
+2025-04-15 23:36:10 - rag_pipeline - INFO - Routing query (sync): 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:36:10 - watchfiles.main - INFO - 2 changes detected
+2025-04-15 23:36:12 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 69ff5512-cd14-4e75-ad84-98b498e01efd)
+2025-04-15 23:36:12 - api - INFO - Updating conversation 69ff5512-cd14-4e75-ad84-98b498e01efd for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:36:12 - api - INFO - Conversation updated. ID: 69ff5512-cd14-4e75-ad84-98b498e01efd, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 23:36:12 - memory_manager - INFO - Saved conversation 69ff5512-cd14-4e75-ad84-98b498e01efd for user kartik.vadhera@digtinctive.com to: 69ff5512-cd14-4e75-ad84-98b498e01efd.json
+2025-04-15 23:36:12 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:36:12 - rag_pipeline - INFO - LLM Router Decision (sync, raw): PYTHON_ANALYSIS:stores sales dataset.csv, Parsed: PYTHON_ANALYSIS:STORES SALES DATASET.CSV
+2025-04-15 23:36:12 - rag_pipeline - INFO - Routing identified target source: 'stores sales dataset.csv' based on LLM decision.
+2025-04-15 23:36:12 - rag_pipeline - INFO - Final routing decision: PYTHON_ANALYSIS
+2025-04-15 23:36:12 - rag_pipeline - INFO - LLM routed to Python Analysis.
+2025-04-15 23:36:12 - rag_pipeline - INFO - Python route target identified: 'stores sales dataset.csv' (Type: structured)
+2025-04-15 23:36:12 - rag_pipeline - INFO - Constructed DB URL for executor (connecting to host host.docker.internal:5432): postgresql+psycopg://postgres:****@host.docker.internal:5432/RAG_DB_UPLOADS
+2025-04-15 23:36:12 - rag_pipeline - ERROR - Error during 'PYTHON_ANALYSIS' execution phase: "Input to PromptTemplate is missing variables {'df.columns.tolist()'}.  Expected: ['chat_history', 'data_info', 'df.columns.tolist()', 'initialization_code', 'question', 'user_code_instructions'] Received: ['question', 'data_info', 'chat_history', 'initialization_code', 'user_code_instructions']\nNote: if you intended {df.columns.tolist()} to be part of the string and not a variable, please escape it with double curly braces like: '{{df.columns.tolist()}}'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT "
+Traceback (most recent call last):
+  File "c:\Users\karti\OneDrive\Desktop\RAG\Backend\rag_pipeline.py", line 473, in query
+    raw_python_code = code_gen_chain.invoke(code_gen_input)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\OneDrive\Desktop\RAG\rag_env\Lib\site-packages\langchain_core\runnables\base.py", line 3023, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\OneDrive\Desktop\RAG\rag_env\Lib\site-packages\langchain_core\prompts\base.py", line 210, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\OneDrive\Desktop\RAG\rag_env\Lib\site-packages\langchain_core\runnables\base.py", line 1925, in _call_with_config
+    context.run(
+  File "C:\Users\karti\OneDrive\Desktop\RAG\rag_env\Lib\site-packages\langchain_core\runnables\config.py", line 430, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\OneDrive\Desktop\RAG\rag_env\Lib\site-packages\langchain_core\prompts\base.py", line 184, in _format_prompt_with_error_handling
+    _inner_input = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\OneDrive\Desktop\RAG\rag_env\Lib\site-packages\langchain_core\prompts\base.py", line 178, in _validate_input
+    raise KeyError(
+KeyError: "Input to PromptTemplate is missing variables {'df.columns.tolist()'}.  Expected: ['chat_history', 'data_info', 'df.columns.tolist()', 'initialization_code', 'question', 'user_code_instructions'] Received: ['question', 'data_info', 'chat_history', 'initialization_code', 'user_code_instructions']\nNote: if you intended {df.columns.tolist()} to be part of the string and not a variable, please escape it with double curly braces like: '{{df.columns.tolist()}}'.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT "
+2025-04-15 23:36:12 - rag_pipeline - INFO - Executing direct fallback for query 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:36:15 - rag_pipeline - INFO - Generating suggestions (sync)...
+2025-04-15 23:36:16 - rag_pipeline - INFO - Query processing complete (sync): 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:36:16 - memory_manager - INFO - Saved conversation 69ff5512-cd14-4e75-ad84-98b498e01efd for user kartik.vadhera@digtinctive.com to: 69ff5512-cd14-4e75-ad84-98b498e01efd.json
+2025-04-15 23:36:16 - api - INFO - Successfully appended interaction to conversation 69ff5512-cd14-4e75-ad84-98b498e01efd for user kartik.vadhera@digtinctive.com
+2025-04-15 23:36:16 - api - INFO - Sending RAG response to user kartik.vadhera@digtinctive.com for query: 'Plot the monthly trend of total revenue/sales over time using the Date and Total Revenue columns. Ma...'
+2025-04-15 23:36:16 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:36:18 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 69ff5512-cd14-4e75-ad84-98b498e01efd)
+2025-04-15 23:36:18 - api - INFO - Updating conversation 69ff5512-cd14-4e75-ad84-98b498e01efd for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:36:18 - api - INFO - Conversation updated. ID: 69ff5512-cd14-4e75-ad84-98b498e01efd, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 23:36:18 - memory_manager - INFO - Saved conversation 69ff5512-cd14-4e75-ad84-98b498e01efd for user kartik.vadhera@digtinctive.com to: 69ff5512-cd14-4e75-ad84-98b498e01efd.json
+2025-04-15 23:36:18 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:40:28 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:41:26 - root - INFO - Logging configured.
+2025-04-15 23:41:26 - __main__ - INFO - Starting RAG API server...
+2025-04-15 23:41:34 - watchfiles.main - INFO - 5 changes detected
+2025-04-15 23:41:35 - root - INFO - Logging configured.
+2025-04-15 23:41:35 - api - INFO - API Startup: Initializing resources...
+2025-04-15 23:41:35 - api - INFO - Auth directory: C:\Users\karti\OneDrive\Desktop\RAG\Authentication
+2025-04-15 23:41:35 - api - INFO - User history base directory: C:\Users\karti\OneDrive\Desktop\RAG\Chat_History
+2025-04-15 23:41:35 - indexing - INFO - Checking for PGVector extension...
+2025-04-15 23:41:35 - indexing - INFO - PGVector extension check complete (created if not exists).
+2025-04-15 23:41:35 - api - INFO - PGVector setup check complete.
+2025-04-15 23:41:47 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-04-15 23:41:50 - indexing - INFO - Initialized HuggingFaceEmbeddings with model: sentence-transformers/all-mpnet-base-v2 on device: cpu
+2025-04-15 23:41:51 - indexing - INFO - PGVector client initialized. Collection: rag_collection
+2025-04-15 23:41:51 - api - INFO - Indexer initialized.
+2025-04-15 23:41:51 - summarization - INFO - Summarizer Initialized (LLM: OK, DB Util: OK)
+2025-04-15 23:41:51 - api - INFO - DataSummarizer initialized.
+2025-04-15 23:41:51 - indexing - INFO - PGVector retriever created with search_type=similarity, k=10
+2025-04-15 23:41:51 - retrieval - INFO - Cohere Reranker initialized. Will return top 3 documents.
+2025-04-15 23:41:51 - generation - INFO - Initialized main Generator LLM: gemini-1.5-pro
+2025-04-15 23:41:51 - generation - INFO - Initialized light Sufficiency Check LLM: gemini-1.5-flash
+2025-04-15 23:41:51 - rag_pipeline - INFO - Pipeline Light LLM (Routing/Suggestions) initialized: gemini-1.5-flash
+2025-04-15 23:41:51 - data_science_executor - INFO - DataScienceExecutor initialized for URL: http://localhost:8081/execute
+2025-04-15 23:41:51 - rag_pipeline - INFO - RAG Pipeline initialized.
+2025-04-15 23:41:51 - api - INFO - RAGPipeline initialized.
+2025-04-15 23:41:51 - api - INFO - Title LLM initialized (gemini-1.5-flash).
+2025-04-15 23:41:51 - api - INFO - API Startup: All components initialized successfully.
+2025-04-15 23:42:01 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: None)
+2025-04-15 23:42:01 - api - INFO - Creating new conversation for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:42:01 - api - INFO - Generating title (sync) based on: 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:42:03 - api - INFO - Generated title (sync): 'Revenue Trend Analysis'
+2025-04-15 23:42:03 - api - INFO - New conversation created. ID: 6c9eda89-0125-4ccb-9918-6d43c3edadea, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 23:42:03 - memory_manager - INFO - Saved conversation 6c9eda89-0125-4ccb-9918-6d43c3edadea for user kartik.vadhera@digtinctive.com to: 6c9eda89-0125-4ccb-9918-6d43c3edadea.json
+2025-04-15 23:42:03 - api - INFO - Received query from user kartik.vadhera@digtinctive.com: 'Plot the monthly trend of total revenue/sales over time using the Date and Total Revenue columns. Ma...' (Conversation ID: 6c9eda89-0125-4ccb-9918-6d43c3edadea)
+2025-04-15 23:42:03 - api - INFO - Loaded 1 messages from conversation 6c9eda89-0125-4ccb-9918-6d43c3edadea for context.
+2025-04-15 23:42:03 - rag_pipeline - INFO - Processing query (sync): 'Plot the monthly trend of total revenue/sales over...' with 1 history messages
+2025-04-15 23:42:03 - rag_pipeline - INFO - Routing query (sync): 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:42:03 - watchfiles.main - INFO - 2 changes detected
+2025-04-15 23:42:05 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 6c9eda89-0125-4ccb-9918-6d43c3edadea)
+2025-04-15 23:42:05 - api - INFO - Updating conversation 6c9eda89-0125-4ccb-9918-6d43c3edadea for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:42:05 - api - INFO - Conversation updated. ID: 6c9eda89-0125-4ccb-9918-6d43c3edadea, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 23:42:05 - memory_manager - INFO - Saved conversation 6c9eda89-0125-4ccb-9918-6d43c3edadea for user kartik.vadhera@digtinctive.com to: 6c9eda89-0125-4ccb-9918-6d43c3edadea.json
+2025-04-15 23:42:05 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:42:05 - rag_pipeline - INFO - LLM Router Decision (sync, raw): PYTHON_ANALYSIS:stores sales dataset.csv, Parsed: PYTHON_ANALYSIS:STORES SALES DATASET.CSV
+2025-04-15 23:42:05 - rag_pipeline - INFO - Routing identified target source: 'stores sales dataset.csv' based on LLM decision.
+2025-04-15 23:42:05 - rag_pipeline - INFO - Final routing decision: PYTHON_ANALYSIS
+2025-04-15 23:42:05 - rag_pipeline - INFO - LLM routed to Python Analysis.
+2025-04-15 23:42:05 - rag_pipeline - INFO - Python route target identified: 'stores sales dataset.csv' (Type: structured)
+2025-04-15 23:42:05 - rag_pipeline - INFO - Constructed DB URL for executor (connecting to host host.docker.internal:5432): postgresql+psycopg://postgres:****@host.docker.internal:5432/RAG_DB_UPLOADS
+2025-04-15 23:42:11 - rag_pipeline - INFO - Executing generated Python code...
+2025-04-15 23:42:11 - data_science_executor - INFO - Sending code execution request to http://localhost:8081/execute
+2025-04-15 23:42:14 - data_science_executor - WARNING - Code execution reported failure by executor. Stderr: Traceback (most recent call last):
+  File "/tmp/tmpcfa_j7fa.py", line 19, in <module>
+    if df is not None:
+       ^^
+NameError: name 'df' is not defined
+...
+2025-04-15 23:42:14 - rag_pipeline - WARNING - Python execution failed. Stderr:
+Traceback (most recent call last):
+  File "/tmp/tmpcfa_j7fa.py", line 19, in <module>
+    if df is not None:
+       ^^
+NameError: name 'df' is not defined
+
+2025-04-15 23:42:14 - rag_pipeline - INFO - Generating suggestions (sync)...
+2025-04-15 23:42:15 - rag_pipeline - INFO - Query processing complete (sync): 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:42:15 - memory_manager - INFO - Saved conversation 6c9eda89-0125-4ccb-9918-6d43c3edadea for user kartik.vadhera@digtinctive.com to: 6c9eda89-0125-4ccb-9918-6d43c3edadea.json
+2025-04-15 23:42:15 - api - INFO - Successfully appended interaction to conversation 6c9eda89-0125-4ccb-9918-6d43c3edadea for user kartik.vadhera@digtinctive.com
+2025-04-15 23:42:15 - api - INFO - Sending RAG response to user kartik.vadhera@digtinctive.com for query: 'Plot the monthly trend of total revenue/sales over time using the Date and Total Revenue columns. Ma...'
+2025-04-15 23:42:15 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:42:17 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 6c9eda89-0125-4ccb-9918-6d43c3edadea)
+2025-04-15 23:42:17 - api - INFO - Updating conversation 6c9eda89-0125-4ccb-9918-6d43c3edadea for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:42:17 - api - INFO - Conversation updated. ID: 6c9eda89-0125-4ccb-9918-6d43c3edadea, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 23:42:17 - memory_manager - INFO - Saved conversation 6c9eda89-0125-4ccb-9918-6d43c3edadea for user kartik.vadhera@digtinctive.com to: 6c9eda89-0125-4ccb-9918-6d43c3edadea.json
+2025-04-15 23:42:17 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:45:37 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:45:50 - api - INFO - API Shutdown: Cleaning up resources...
+2025-04-15 23:45:50 - api - INFO - API Shutdown: Cleanup complete.
+2025-04-15 23:45:54 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:45:58 - watchfiles.main - INFO - 5 changes detected
+2025-04-15 23:46:02 - root - INFO - Logging configured.
+2025-04-15 23:46:02 - api - INFO - API Startup: Initializing resources...
+2025-04-15 23:46:02 - api - INFO - Auth directory: C:\Users\karti\OneDrive\Desktop\RAG\Authentication
+2025-04-15 23:46:02 - api - INFO - User history base directory: C:\Users\karti\OneDrive\Desktop\RAG\Chat_History
+2025-04-15 23:46:02 - indexing - INFO - Checking for PGVector extension...
+2025-04-15 23:46:02 - indexing - INFO - PGVector extension check complete (created if not exists).
+2025-04-15 23:46:02 - api - INFO - PGVector setup check complete.
+2025-04-15 23:46:13 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-04-15 23:46:16 - indexing - INFO - Initialized HuggingFaceEmbeddings with model: sentence-transformers/all-mpnet-base-v2 on device: cpu
+2025-04-15 23:46:16 - indexing - INFO - PGVector client initialized. Collection: rag_collection
+2025-04-15 23:46:16 - api - INFO - Indexer initialized.
+2025-04-15 23:46:16 - summarization - INFO - Summarizer Initialized (LLM: OK, DB Util: OK)
+2025-04-15 23:46:16 - api - INFO - DataSummarizer initialized.
+2025-04-15 23:46:16 - indexing - INFO - PGVector retriever created with search_type=similarity, k=10
+2025-04-15 23:46:17 - retrieval - INFO - Cohere Reranker initialized. Will return top 3 documents.
+2025-04-15 23:46:17 - generation - INFO - Initialized main Generator LLM: gemini-1.5-pro
+2025-04-15 23:46:17 - generation - INFO - Initialized light Sufficiency Check LLM: gemini-1.5-flash
+2025-04-15 23:46:17 - rag_pipeline - INFO - Pipeline Light LLM (Routing/Suggestions) initialized: gemini-1.5-flash
+2025-04-15 23:46:17 - data_science_executor - INFO - DataScienceExecutor initialized for URL: http://localhost:8081/execute
+2025-04-15 23:46:17 - rag_pipeline - INFO - RAG Pipeline initialized.
+2025-04-15 23:46:17 - api - INFO - RAGPipeline initialized.
+2025-04-15 23:46:17 - api - INFO - Title LLM initialized (gemini-1.5-flash).
+2025-04-15 23:46:17 - api - INFO - API Startup: All components initialized successfully.
+2025-04-15 23:46:26 - api - INFO - Getting conversation 6c9eda89-0125-4ccb-9918-6d43c3edadea for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:46:27 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 6c9eda89-0125-4ccb-9918-6d43c3edadea)
+2025-04-15 23:46:27 - api - INFO - Updating conversation 6c9eda89-0125-4ccb-9918-6d43c3edadea for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:46:27 - api - INFO - Conversation updated. ID: 6c9eda89-0125-4ccb-9918-6d43c3edadea, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 23:46:27 - memory_manager - INFO - Saved conversation 6c9eda89-0125-4ccb-9918-6d43c3edadea for user kartik.vadhera@digtinctive.com to: 6c9eda89-0125-4ccb-9918-6d43c3edadea.json
+2025-04-15 23:46:27 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:46:30 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: None)
+2025-04-15 23:46:30 - api - INFO - Creating new conversation for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:46:30 - api - INFO - Generating title (sync) based on: 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:46:32 - api - INFO - Generated title (sync): 'Revenue Trend Analysis'
+2025-04-15 23:46:32 - api - INFO - New conversation created. ID: a841c378-347d-4cde-b52d-3179cc761f2e, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 23:46:32 - memory_manager - INFO - Saved conversation a841c378-347d-4cde-b52d-3179cc761f2e for user kartik.vadhera@digtinctive.com to: a841c378-347d-4cde-b52d-3179cc761f2e.json
+2025-04-15 23:46:32 - api - INFO - Received query from user kartik.vadhera@digtinctive.com: 'Plot the monthly trend of total revenue/sales over time using the Date and Total Revenue columns. Ma...' (Conversation ID: a841c378-347d-4cde-b52d-3179cc761f2e)
+2025-04-15 23:46:32 - api - INFO - Loaded 1 messages from conversation a841c378-347d-4cde-b52d-3179cc761f2e for context.
+2025-04-15 23:46:32 - rag_pipeline - INFO - Processing query (sync): 'Plot the monthly trend of total revenue/sales over...' with 1 history messages
+2025-04-15 23:46:32 - rag_pipeline - INFO - Routing query (sync): 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:46:32 - watchfiles.main - INFO - 2 changes detected
+2025-04-15 23:46:34 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: a841c378-347d-4cde-b52d-3179cc761f2e)
+2025-04-15 23:46:34 - api - INFO - Updating conversation a841c378-347d-4cde-b52d-3179cc761f2e for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:46:34 - api - INFO - Conversation updated. ID: a841c378-347d-4cde-b52d-3179cc761f2e, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 23:46:34 - memory_manager - INFO - Saved conversation a841c378-347d-4cde-b52d-3179cc761f2e for user kartik.vadhera@digtinctive.com to: a841c378-347d-4cde-b52d-3179cc761f2e.json
+2025-04-15 23:46:34 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:46:34 - rag_pipeline - INFO - LLM Router Decision (sync, raw): PYTHON_ANALYSIS:stores sales dataset.csv, Parsed: PYTHON_ANALYSIS:STORES SALES DATASET.CSV
+2025-04-15 23:46:34 - rag_pipeline - INFO - Routing identified target source: 'stores sales dataset.csv' based on LLM decision.
+2025-04-15 23:46:34 - rag_pipeline - INFO - Final routing decision: PYTHON_ANALYSIS
+2025-04-15 23:46:34 - rag_pipeline - INFO - LLM routed to Python Analysis.
+2025-04-15 23:46:34 - rag_pipeline - INFO - Python route target identified: 'stores sales dataset.csv' (Type: structured)
+2025-04-15 23:46:34 - rag_pipeline - INFO - Constructed DB URL for executor (connecting to host host.docker.internal:5432): postgresql+psycopg://postgres:****@host.docker.internal:5432/RAG_DB_UPLOADS
+2025-04-15 23:46:34 - rag_pipeline - ERROR - Error during 'PYTHON_ANALYSIS' execution phase: name 'df' is not defined
+Traceback (most recent call last):
+  File "c:\Users\karti\OneDrive\Desktop\RAG\Backend\rag_pipeline.py", line 415, in query
+    print(f"Columns: {df.columns.tolist()}") # Print actual columns
+                      ^^
+NameError: name 'df' is not defined
+2025-04-15 23:46:34 - rag_pipeline - INFO - Executing direct fallback for query 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:46:38 - rag_pipeline - INFO - Generating suggestions (sync)...
+2025-04-15 23:46:38 - rag_pipeline - INFO - Query processing complete (sync): 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:46:38 - memory_manager - INFO - Saved conversation a841c378-347d-4cde-b52d-3179cc761f2e for user kartik.vadhera@digtinctive.com to: a841c378-347d-4cde-b52d-3179cc761f2e.json
+2025-04-15 23:46:38 - api - INFO - Successfully appended interaction to conversation a841c378-347d-4cde-b52d-3179cc761f2e for user kartik.vadhera@digtinctive.com
+2025-04-15 23:46:38 - api - INFO - Sending RAG response to user kartik.vadhera@digtinctive.com for query: 'Plot the monthly trend of total revenue/sales over time using the Date and Total Revenue columns. Ma...'
+2025-04-15 23:46:39 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:46:40 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: a841c378-347d-4cde-b52d-3179cc761f2e)
+2025-04-15 23:46:40 - api - INFO - Updating conversation a841c378-347d-4cde-b52d-3179cc761f2e for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:46:40 - api - INFO - Conversation updated. ID: a841c378-347d-4cde-b52d-3179cc761f2e, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 23:46:40 - memory_manager - INFO - Saved conversation a841c378-347d-4cde-b52d-3179cc761f2e for user kartik.vadhera@digtinctive.com to: a841c378-347d-4cde-b52d-3179cc761f2e.json
+2025-04-15 23:46:40 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:47:00 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:47:26 - api - INFO - API Shutdown: Cleaning up resources...
+2025-04-15 23:47:26 - api - INFO - API Shutdown: Cleanup complete.
+2025-04-15 23:47:30 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:47:34 - watchfiles.main - INFO - 5 changes detected
+2025-04-15 23:47:38 - root - INFO - Logging configured.
+2025-04-15 23:47:38 - api - INFO - API Startup: Initializing resources...
+2025-04-15 23:47:38 - api - INFO - Auth directory: C:\Users\karti\OneDrive\Desktop\RAG\Authentication
+2025-04-15 23:47:38 - api - INFO - User history base directory: C:\Users\karti\OneDrive\Desktop\RAG\Chat_History
+2025-04-15 23:47:38 - indexing - INFO - Checking for PGVector extension...
+2025-04-15 23:47:38 - indexing - INFO - PGVector extension check complete (created if not exists).
+2025-04-15 23:47:38 - api - INFO - PGVector setup check complete.
+2025-04-15 23:47:49 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-04-15 23:47:53 - indexing - INFO - Initialized HuggingFaceEmbeddings with model: sentence-transformers/all-mpnet-base-v2 on device: cpu
+2025-04-15 23:47:53 - indexing - INFO - PGVector client initialized. Collection: rag_collection
+2025-04-15 23:47:53 - api - INFO - Indexer initialized.
+2025-04-15 23:47:53 - summarization - INFO - Summarizer Initialized (LLM: OK, DB Util: OK)
+2025-04-15 23:47:53 - api - INFO - DataSummarizer initialized.
+2025-04-15 23:47:53 - indexing - INFO - PGVector retriever created with search_type=similarity, k=10
+2025-04-15 23:47:54 - retrieval - INFO - Cohere Reranker initialized. Will return top 3 documents.
+2025-04-15 23:47:54 - generation - INFO - Initialized main Generator LLM: gemini-1.5-pro
+2025-04-15 23:47:54 - generation - INFO - Initialized light Sufficiency Check LLM: gemini-1.5-flash
+2025-04-15 23:47:54 - rag_pipeline - INFO - Pipeline Light LLM (Routing/Suggestions) initialized: gemini-1.5-flash
+2025-04-15 23:47:54 - data_science_executor - INFO - DataScienceExecutor initialized for URL: http://localhost:8081/execute
+2025-04-15 23:47:54 - rag_pipeline - INFO - RAG Pipeline initialized.
+2025-04-15 23:47:54 - api - INFO - RAGPipeline initialized.
+2025-04-15 23:47:54 - api - INFO - Title LLM initialized (gemini-1.5-flash).
+2025-04-15 23:47:54 - api - INFO - API Startup: All components initialized successfully.
+2025-04-15 23:55:32 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:56:27 - root - INFO - Logging configured.
+2025-04-15 23:56:27 - __main__ - INFO - Starting RAG API server...
+2025-04-15 23:56:32 - watchfiles.main - INFO - 5 changes detected
+2025-04-15 23:56:35 - root - INFO - Logging configured.
+2025-04-15 23:56:35 - api - INFO - API Startup: Initializing resources...
+2025-04-15 23:56:35 - api - INFO - Auth directory: C:\Users\karti\OneDrive\Desktop\RAG\Authentication
+2025-04-15 23:56:35 - api - INFO - User history base directory: C:\Users\karti\OneDrive\Desktop\RAG\Chat_History
+2025-04-15 23:56:35 - indexing - INFO - Checking for PGVector extension...
+2025-04-15 23:56:35 - indexing - INFO - PGVector extension check complete (created if not exists).
+2025-04-15 23:56:35 - api - INFO - PGVector setup check complete.
+2025-04-15 23:56:47 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-04-15 23:56:52 - indexing - INFO - Initialized HuggingFaceEmbeddings with model: sentence-transformers/all-mpnet-base-v2 on device: cpu
+2025-04-15 23:56:52 - indexing - INFO - PGVector client initialized. Collection: rag_collection
+2025-04-15 23:56:52 - api - INFO - Indexer initialized.
+2025-04-15 23:56:52 - summarization - INFO - Summarizer Initialized (LLM: OK, DB Util: OK)
+2025-04-15 23:56:52 - api - INFO - DataSummarizer initialized.
+2025-04-15 23:56:52 - indexing - INFO - PGVector retriever created with search_type=similarity, k=10
+2025-04-15 23:56:53 - retrieval - INFO - Cohere Reranker initialized. Will return top 3 documents.
+2025-04-15 23:56:53 - generation - INFO - Initialized main Generator LLM: gemini-1.5-pro
+2025-04-15 23:56:53 - generation - INFO - Initialized light Sufficiency Check LLM: gemini-1.5-flash
+2025-04-15 23:56:53 - rag_pipeline - INFO - Pipeline Light LLM (Routing/Suggestions) initialized: gemini-1.5-flash
+2025-04-15 23:56:53 - data_science_executor - INFO - DataScienceExecutor initialized for URL: http://localhost:8081/execute
+2025-04-15 23:56:53 - rag_pipeline - INFO - RAG Pipeline initialized.
+2025-04-15 23:56:53 - api - INFO - RAGPipeline initialized.
+2025-04-15 23:56:53 - api - INFO - Title LLM initialized (gemini-1.5-flash).
+2025-04-15 23:56:53 - api - INFO - API Startup: All components initialized successfully.
+2025-04-15 23:57:33 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: None)
+2025-04-15 23:57:33 - api - INFO - Creating new conversation for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:57:33 - api - INFO - Generating title (sync) based on: 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:57:36 - api - INFO - Generated title (sync): 'Revenue Trend Analysis'
+2025-04-15 23:57:36 - api - INFO - New conversation created. ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 23:57:36 - memory_manager - INFO - Saved conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com to: 34b2582a-239b-4827-b7f0-3bda8bce4b67.json
+2025-04-15 23:57:36 - api - INFO - Received query from user kartik.vadhera@digtinctive.com: 'Plot the monthly trend of total revenue/sales over time using the Date and Total Revenue columns. Ma...' (Conversation ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67)
+2025-04-15 23:57:36 - api - INFO - Loaded 1 messages from conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for context.
+2025-04-15 23:57:36 - rag_pipeline - INFO - Processing query (sync): 'Plot the monthly trend of total revenue/sales over...' with 1 history messages
+2025-04-15 23:57:36 - rag_pipeline - INFO - Routing query (sync): 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:57:36 - watchfiles.main - INFO - 2 changes detected
+2025-04-15 23:57:37 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67)
+2025-04-15 23:57:37 - api - INFO - Updating conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:57:37 - api - INFO - Conversation updated. ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 23:57:37 - memory_manager - INFO - Saved conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com to: 34b2582a-239b-4827-b7f0-3bda8bce4b67.json
+2025-04-15 23:57:37 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:57:38 - rag_pipeline - INFO - LLM Router Decision (sync, raw): PYTHON_ANALYSIS:stores sales dataset.csv, Parsed: PYTHON_ANALYSIS:STORES SALES DATASET.CSV
+2025-04-15 23:57:38 - rag_pipeline - INFO - Routing identified target source: 'stores sales dataset.csv' based on LLM decision.
+2025-04-15 23:57:38 - rag_pipeline - INFO - Final routing decision: PYTHON_ANALYSIS
+2025-04-15 23:57:38 - rag_pipeline - INFO - LLM routed to Python Analysis.
+2025-04-15 23:57:38 - rag_pipeline - INFO - Python route target identified: 'stores sales dataset.csv' (Type: structured)
+2025-04-15 23:57:38 - rag_pipeline - INFO - Constructed DB URL for executor (connecting to host host.docker.internal:5432): postgresql+psycopg://postgres:****@host.docker.internal:5432/RAG_DB_UPLOADS
+2025-04-15 23:57:49 - rag_pipeline - INFO - Executing generated Python code...
+2025-04-15 23:57:49 - data_science_executor - INFO - Sending code execution request to http://localhost:8081/execute
+2025-04-15 23:57:55 - rag_pipeline - INFO - Python execution successful.
+2025-04-15 23:57:55 - rag_pipeline - INFO - Plot generated during Python execution.
+2025-04-15 23:57:55 - rag_pipeline - INFO - Generating suggestions (sync)...
+2025-04-15 23:57:56 - rag_pipeline - INFO - Query processing complete (sync): 'Plot the monthly trend of total revenue/sales over...'
+2025-04-15 23:57:56 - memory_manager - INFO - Saved conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com to: 34b2582a-239b-4827-b7f0-3bda8bce4b67.json
+2025-04-15 23:57:56 - api - INFO - Successfully appended interaction to conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com
+2025-04-15 23:57:56 - api - INFO - Sending RAG response to user kartik.vadhera@digtinctive.com for query: 'Plot the monthly trend of total revenue/sales over time using the Date and Total Revenue columns. Ma...'
+2025-04-15 23:57:56 - watchfiles.main - INFO - 1 change detected
+2025-04-15 23:57:58 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67)
+2025-04-15 23:57:58 - api - INFO - Updating conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user: kartik.vadhera@digtinctive.com
+2025-04-15 23:57:58 - api - INFO - Conversation updated. ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-15 23:57:58 - memory_manager - INFO - Saved conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com to: 34b2582a-239b-4827-b7f0-3bda8bce4b67.json
+2025-04-15 23:57:58 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:02:05 - api - INFO - Getting conversation a841c378-347d-4cde-b52d-3179cc761f2e for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:02:07 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: a841c378-347d-4cde-b52d-3179cc761f2e)
+2025-04-16 00:02:07 - api - INFO - Updating conversation a841c378-347d-4cde-b52d-3179cc761f2e for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:02:07 - api - INFO - Conversation updated. ID: a841c378-347d-4cde-b52d-3179cc761f2e, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:02:07 - memory_manager - INFO - Saved conversation a841c378-347d-4cde-b52d-3179cc761f2e for user kartik.vadhera@digtinctive.com to: a841c378-347d-4cde-b52d-3179cc761f2e.json
+2025-04-16 00:02:07 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:02:08 - api - INFO - Getting conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:02:11 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67)
+2025-04-16 00:02:11 - api - INFO - Updating conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:02:11 - api - INFO - Conversation updated. ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:02:11 - memory_manager - INFO - Saved conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com to: 34b2582a-239b-4827-b7f0-3bda8bce4b67.json
+2025-04-16 00:02:11 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:12:18 - api - WARNING - JWTError decoding token: Signature has expired.
+2025-04-16 00:12:20 - api - WARNING - JWTError decoding token: Signature has expired.
+2025-04-16 00:12:26 - api - WARNING - JWTError decoding token: Signature has expired.
+2025-04-16 00:12:26 - api - WARNING - JWTError decoding token: Signature has expired.
+2025-04-16 00:12:28 - api - INFO - Login attempt for username (email): kartik.vadhera@digtinctive.com
+2025-04-16 00:12:28 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\karti\OneDrive\Desktop\RAG\rag_env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-04-16 00:12:28 - auth_manager - INFO - User 'kartik.vadhera@digtinctive.com' authenticated successfully.
+2025-04-16 00:12:28 - api - INFO - Token issued for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:12:28 - api - INFO - Listing conversations for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:12:30 - api - INFO - Getting conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:12:31 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67)
+2025-04-16 00:12:31 - api - INFO - Updating conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:12:31 - api - INFO - Conversation updated. ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:12:31 - memory_manager - INFO - Saved conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com to: 34b2582a-239b-4827-b7f0-3bda8bce4b67.json
+2025-04-16 00:12:32 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:12:34 - api - INFO - Received query from user kartik.vadhera@digtinctive.com: 'plot bar graph of each dept total sales...' (Conversation ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67)
+2025-04-16 00:12:34 - api - INFO - Loaded 2 messages from conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for context.
+2025-04-16 00:12:34 - rag_pipeline - INFO - Processing query (sync): 'plot bar graph of each dept total sales...' with 2 history messages
+2025-04-16 00:12:34 - rag_pipeline - INFO - Routing query (sync): 'plot bar graph of each dept total sales...'
+2025-04-16 00:12:35 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67)
+2025-04-16 00:12:35 - api - INFO - Updating conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:12:35 - api - INFO - Conversation updated. ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:12:35 - memory_manager - INFO - Saved conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com to: 34b2582a-239b-4827-b7f0-3bda8bce4b67.json
+2025-04-16 00:12:35 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:12:36 - rag_pipeline - INFO - LLM Router Decision (sync, raw): PYTHON_ANALYSIS:stores sales dataset.csv, Parsed: PYTHON_ANALYSIS:STORES SALES DATASET.CSV
+2025-04-16 00:12:36 - rag_pipeline - INFO - Routing identified target source: 'stores sales dataset.csv' based on LLM decision.
+2025-04-16 00:12:36 - rag_pipeline - INFO - Final routing decision: PYTHON_ANALYSIS
+2025-04-16 00:12:36 - rag_pipeline - INFO - LLM routed to Python Analysis.
+2025-04-16 00:12:36 - rag_pipeline - INFO - Python route target identified: 'stores sales dataset.csv' (Type: structured)
+2025-04-16 00:12:36 - rag_pipeline - INFO - Constructed DB URL for executor (connecting to host host.docker.internal:5432): postgresql+psycopg://postgres:****@host.docker.internal:5432/RAG_DB_UPLOADS
+2025-04-16 00:12:46 - rag_pipeline - INFO - Executing generated Python code...
+2025-04-16 00:12:46 - data_science_executor - INFO - Sending code execution request to http://localhost:8081/execute
+2025-04-16 00:12:52 - rag_pipeline - INFO - Python execution successful.
+2025-04-16 00:12:52 - rag_pipeline - INFO - Plot generated during Python execution.
+2025-04-16 00:12:52 - rag_pipeline - INFO - Generating suggestions (sync)...
+2025-04-16 00:12:53 - rag_pipeline - INFO - Query processing complete (sync): 'plot bar graph of each dept total sales...'
+2025-04-16 00:12:53 - memory_manager - INFO - Saved conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com to: 34b2582a-239b-4827-b7f0-3bda8bce4b67.json
+2025-04-16 00:12:53 - api - INFO - Successfully appended interaction to conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com
+2025-04-16 00:12:53 - api - INFO - Sending RAG response to user kartik.vadhera@digtinctive.com for query: 'plot bar graph of each dept total sales...'
+2025-04-16 00:12:53 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:12:55 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67)
+2025-04-16 00:12:55 - api - INFO - Updating conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:12:55 - api - INFO - Conversation updated. ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:12:55 - memory_manager - INFO - Saved conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com to: 34b2582a-239b-4827-b7f0-3bda8bce4b67.json
+2025-04-16 00:12:55 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:17:08 - api - INFO - Received query from user kartik.vadhera@digtinctive.com: 'sort them in descending order...' (Conversation ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67)
+2025-04-16 00:17:08 - api - INFO - Loaded 4 messages from conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for context.
+2025-04-16 00:17:08 - rag_pipeline - INFO - Processing query (sync): 'sort them in descending order...' with 4 history messages
+2025-04-16 00:17:08 - rag_pipeline - INFO - Routing query (sync): 'sort them in descending order...'
+2025-04-16 00:17:09 - rag_pipeline - INFO - LLM Router Decision (sync, raw): NONE, Parsed: NONE
+2025-04-16 00:17:09 - rag_pipeline - INFO - Final routing decision: NONE
+2025-04-16 00:17:09 - rag_pipeline - INFO - Executing direct fallback for query 'sort them in descending order...'
+2025-04-16 00:17:09 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67)
+2025-04-16 00:17:09 - api - INFO - Updating conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:17:10 - api - INFO - Conversation updated. ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:17:10 - memory_manager - INFO - Saved conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com to: 34b2582a-239b-4827-b7f0-3bda8bce4b67.json
+2025-04-16 00:17:10 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:17:14 - rag_pipeline - INFO - Generating suggestions (sync)...
+2025-04-16 00:17:15 - rag_pipeline - INFO - Query processing complete (sync): 'sort them in descending order...'
+2025-04-16 00:17:15 - memory_manager - INFO - Saved conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com to: 34b2582a-239b-4827-b7f0-3bda8bce4b67.json
+2025-04-16 00:17:15 - api - INFO - Successfully appended interaction to conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com
+2025-04-16 00:17:15 - api - INFO - Sending RAG response to user kartik.vadhera@digtinctive.com for query: 'sort them in descending order...'
+2025-04-16 00:17:15 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:17:17 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67)
+2025-04-16 00:17:17 - api - INFO - Updating conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:17:17 - api - INFO - Conversation updated. ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:17:17 - memory_manager - INFO - Saved conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com to: 34b2582a-239b-4827-b7f0-3bda8bce4b67.json
+2025-04-16 00:17:17 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:18:17 - api - INFO - Getting conversation a841c378-347d-4cde-b52d-3179cc761f2e for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:18:19 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: a841c378-347d-4cde-b52d-3179cc761f2e)
+2025-04-16 00:18:19 - api - INFO - Updating conversation a841c378-347d-4cde-b52d-3179cc761f2e for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:18:19 - api - INFO - Conversation updated. ID: a841c378-347d-4cde-b52d-3179cc761f2e, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:18:19 - memory_manager - INFO - Saved conversation a841c378-347d-4cde-b52d-3179cc761f2e for user kartik.vadhera@digtinctive.com to: a841c378-347d-4cde-b52d-3179cc761f2e.json
+2025-04-16 00:18:19 - api - INFO - Getting conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:18:19 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:18:20 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67)
+2025-04-16 00:18:20 - api - INFO - Updating conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:18:20 - api - INFO - Conversation updated. ID: 34b2582a-239b-4827-b7f0-3bda8bce4b67, Title: 'Revenue Trend Analysis' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:18:20 - memory_manager - INFO - Saved conversation 34b2582a-239b-4827-b7f0-3bda8bce4b67 for user kartik.vadhera@digtinctive.com to: 34b2582a-239b-4827-b7f0-3bda8bce4b67.json
+2025-04-16 00:18:20 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:19:06 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: None)
+2025-04-16 00:19:06 - api - INFO - Creating new conversation for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:19:06 - api - INFO - Generating title (sync) based on: 'plot bar graph of each dept total sales also make ...'
+2025-04-16 00:19:08 - api - INFO - Generated title (sync): 'Sales Data Visualization'
+2025-04-16 00:19:08 - api - INFO - New conversation created. ID: 213f906a-a140-48c2-bd2c-9afdb65d138b, Title: 'Sales Data Visualization' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:19:08 - memory_manager - INFO - Saved conversation 213f906a-a140-48c2-bd2c-9afdb65d138b for user kartik.vadhera@digtinctive.com to: 213f906a-a140-48c2-bd2c-9afdb65d138b.json
+2025-04-16 00:19:08 - api - INFO - Received query from user kartik.vadhera@digtinctive.com: 'plot bar graph of each dept total sales also make the plot look modern....' (Conversation ID: 213f906a-a140-48c2-bd2c-9afdb65d138b)
+2025-04-16 00:19:08 - api - INFO - Loaded 1 messages from conversation 213f906a-a140-48c2-bd2c-9afdb65d138b for context.
+2025-04-16 00:19:08 - rag_pipeline - INFO - Processing query (sync): 'plot bar graph of each dept total sales also make ...' with 1 history messages
+2025-04-16 00:19:08 - rag_pipeline - INFO - Routing query (sync): 'plot bar graph of each dept total sales also make ...'
+2025-04-16 00:19:08 - watchfiles.main - INFO - 2 changes detected
+2025-04-16 00:19:09 - rag_pipeline - INFO - LLM Router Decision (sync, raw): PYTHON_ANALYSIS:stores sales dataset.csv, Parsed: PYTHON_ANALYSIS:STORES SALES DATASET.CSV
+2025-04-16 00:19:09 - rag_pipeline - INFO - Routing identified target source: 'stores sales dataset.csv' based on LLM decision.
+2025-04-16 00:19:09 - rag_pipeline - INFO - Final routing decision: PYTHON_ANALYSIS
+2025-04-16 00:19:09 - rag_pipeline - INFO - LLM routed to Python Analysis.
+2025-04-16 00:19:09 - rag_pipeline - INFO - Python route target identified: 'stores sales dataset.csv' (Type: structured)
+2025-04-16 00:19:09 - rag_pipeline - INFO - Constructed DB URL for executor (connecting to host host.docker.internal:5432): postgresql+psycopg://postgres:****@host.docker.internal:5432/RAG_DB_UPLOADS
+2025-04-16 00:19:09 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 213f906a-a140-48c2-bd2c-9afdb65d138b)
+2025-04-16 00:19:09 - api - INFO - Updating conversation 213f906a-a140-48c2-bd2c-9afdb65d138b for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:19:09 - api - INFO - Conversation updated. ID: 213f906a-a140-48c2-bd2c-9afdb65d138b, Title: 'Sales Data Visualization' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:19:09 - memory_manager - INFO - Saved conversation 213f906a-a140-48c2-bd2c-9afdb65d138b for user kartik.vadhera@digtinctive.com to: 213f906a-a140-48c2-bd2c-9afdb65d138b.json
+2025-04-16 00:19:09 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:19:20 - rag_pipeline - INFO - Executing generated Python code...
+2025-04-16 00:19:20 - data_science_executor - INFO - Sending code execution request to http://localhost:8081/execute
+2025-04-16 00:19:24 - data_science_executor - ERROR - Could not connect to executor service at http://localhost:8081/execute: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: /execute (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028404E5A4E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-04-16 00:19:24 - rag_pipeline - ERROR - Executor client error: Connection Error
+2025-04-16 00:19:24 - rag_pipeline - INFO - Query processing complete (sync): 'plot bar graph of each dept total sales also make ...'
+2025-04-16 00:19:24 - memory_manager - INFO - Saved conversation 213f906a-a140-48c2-bd2c-9afdb65d138b for user kartik.vadhera@digtinctive.com to: 213f906a-a140-48c2-bd2c-9afdb65d138b.json
+2025-04-16 00:19:24 - api - INFO - Successfully appended interaction to conversation 213f906a-a140-48c2-bd2c-9afdb65d138b for user kartik.vadhera@digtinctive.com
+2025-04-16 00:19:24 - api - INFO - Sending RAG response to user kartik.vadhera@digtinctive.com for query: 'plot bar graph of each dept total sales also make the plot look modern....'
+2025-04-16 00:19:24 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:19:25 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 213f906a-a140-48c2-bd2c-9afdb65d138b)
+2025-04-16 00:19:25 - api - INFO - Updating conversation 213f906a-a140-48c2-bd2c-9afdb65d138b for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:19:25 - api - INFO - Conversation updated. ID: 213f906a-a140-48c2-bd2c-9afdb65d138b, Title: 'Sales Data Visualization' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:19:25 - memory_manager - INFO - Saved conversation 213f906a-a140-48c2-bd2c-9afdb65d138b for user kartik.vadhera@digtinctive.com to: 213f906a-a140-48c2-bd2c-9afdb65d138b.json
+2025-04-16 00:19:25 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:19:52 - api - INFO - Login attempt for username (email): kartik.vadhera@digtinctive.com
+2025-04-16 00:19:52 - auth_manager - INFO - User 'kartik.vadhera@digtinctive.com' authenticated successfully.
+2025-04-16 00:19:52 - api - INFO - Token issued for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:19:52 - api - INFO - Listing conversations for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:19:56 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: None)
+2025-04-16 00:19:56 - api - INFO - Creating new conversation for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:19:56 - api - INFO - Generating title (sync) based on: 'plot bar graph of each dept total sales also make ...'
+2025-04-16 00:19:56 - api - INFO - Generated title (sync): 'Sales Data Visualization'
+2025-04-16 00:19:56 - api - INFO - New conversation created. ID: ea3a6b83-27b1-4ef4-ab48-57ce272acd40, Title: 'Sales Data Visualization' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:19:56 - memory_manager - INFO - Saved conversation ea3a6b83-27b1-4ef4-ab48-57ce272acd40 for user kartik.vadhera@digtinctive.com to: ea3a6b83-27b1-4ef4-ab48-57ce272acd40.json
+2025-04-16 00:19:56 - api - INFO - Received query from user kartik.vadhera@digtinctive.com: 'plot bar graph of each dept total sales also make the plot look modern....' (Conversation ID: ea3a6b83-27b1-4ef4-ab48-57ce272acd40)
+2025-04-16 00:19:56 - api - INFO - Loaded 1 messages from conversation ea3a6b83-27b1-4ef4-ab48-57ce272acd40 for context.
+2025-04-16 00:19:56 - rag_pipeline - INFO - Processing query (sync): 'plot bar graph of each dept total sales also make ...' with 1 history messages
+2025-04-16 00:19:56 - rag_pipeline - INFO - Routing query (sync): 'plot bar graph of each dept total sales also make ...'
+2025-04-16 00:19:56 - watchfiles.main - INFO - 2 changes detected
+2025-04-16 00:19:57 - rag_pipeline - INFO - LLM Router Decision (sync, raw): PYTHON_ANALYSIS:stores sales dataset.csv, Parsed: PYTHON_ANALYSIS:STORES SALES DATASET.CSV
+2025-04-16 00:19:57 - rag_pipeline - INFO - Routing identified target source: 'stores sales dataset.csv' based on LLM decision.
+2025-04-16 00:19:57 - rag_pipeline - INFO - Final routing decision: PYTHON_ANALYSIS
+2025-04-16 00:19:57 - rag_pipeline - INFO - LLM routed to Python Analysis.
+2025-04-16 00:19:57 - rag_pipeline - INFO - Python route target identified: 'stores sales dataset.csv' (Type: structured)
+2025-04-16 00:19:57 - rag_pipeline - INFO - Constructed DB URL for executor (connecting to host host.docker.internal:5432): postgresql+psycopg://postgres:****@host.docker.internal:5432/RAG_DB_UPLOADS
+2025-04-16 00:19:58 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: ea3a6b83-27b1-4ef4-ab48-57ce272acd40)
+2025-04-16 00:19:58 - api - INFO - Updating conversation ea3a6b83-27b1-4ef4-ab48-57ce272acd40 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:19:58 - api - INFO - Conversation updated. ID: ea3a6b83-27b1-4ef4-ab48-57ce272acd40, Title: 'Sales Data Visualization' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:19:58 - memory_manager - INFO - Saved conversation ea3a6b83-27b1-4ef4-ab48-57ce272acd40 for user kartik.vadhera@digtinctive.com to: ea3a6b83-27b1-4ef4-ab48-57ce272acd40.json
+2025-04-16 00:19:58 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:20:06 - rag_pipeline - INFO - Executing generated Python code...
+2025-04-16 00:20:06 - data_science_executor - INFO - Sending code execution request to http://localhost:8081/execute
+2025-04-16 00:20:13 - rag_pipeline - INFO - Python execution successful.
+2025-04-16 00:20:13 - rag_pipeline - INFO - Plot generated during Python execution.
+2025-04-16 00:20:13 - rag_pipeline - INFO - Generating suggestions (sync)...
+2025-04-16 00:20:14 - rag_pipeline - INFO - Query processing complete (sync): 'plot bar graph of each dept total sales also make ...'
+2025-04-16 00:20:14 - memory_manager - INFO - Saved conversation ea3a6b83-27b1-4ef4-ab48-57ce272acd40 for user kartik.vadhera@digtinctive.com to: ea3a6b83-27b1-4ef4-ab48-57ce272acd40.json
+2025-04-16 00:20:14 - api - INFO - Successfully appended interaction to conversation ea3a6b83-27b1-4ef4-ab48-57ce272acd40 for user kartik.vadhera@digtinctive.com
+2025-04-16 00:20:14 - api - INFO - Sending RAG response to user kartik.vadhera@digtinctive.com for query: 'plot bar graph of each dept total sales also make the plot look modern....'
+2025-04-16 00:20:14 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:20:15 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: ea3a6b83-27b1-4ef4-ab48-57ce272acd40)
+2025-04-16 00:20:15 - api - INFO - Updating conversation ea3a6b83-27b1-4ef4-ab48-57ce272acd40 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:20:15 - api - INFO - Conversation updated. ID: ea3a6b83-27b1-4ef4-ab48-57ce272acd40, Title: 'Sales Data Visualization' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:20:15 - memory_manager - INFO - Saved conversation ea3a6b83-27b1-4ef4-ab48-57ce272acd40 for user kartik.vadhera@digtinctive.com to: ea3a6b83-27b1-4ef4-ab48-57ce272acd40.json
+2025-04-16 00:20:15 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:28:04 - watchfiles.main - INFO - 5 changes detected
+2025-04-16 00:29:48 - root - INFO - Logging configured.
+2025-04-16 00:29:48 - __main__ - INFO - Starting RAG API server...
+2025-04-16 00:29:53 - watchfiles.main - INFO - 5 changes detected
+2025-04-16 00:29:55 - watchfiles.main - INFO - 5 changes detected
+2025-04-16 00:29:57 - root - INFO - Logging configured.
+2025-04-16 00:29:57 - api - INFO - API Startup: Initializing resources...
+2025-04-16 00:29:57 - api - INFO - Auth directory: C:\Users\karti\OneDrive\Desktop\RAG\Authentication
+2025-04-16 00:29:57 - api - INFO - User history base directory: C:\Users\karti\OneDrive\Desktop\RAG\Chat_History
+2025-04-16 00:29:57 - indexing - INFO - Checking for PGVector extension...
+2025-04-16 00:29:57 - indexing - INFO - PGVector extension check complete (created if not exists).
+2025-04-16 00:29:57 - api - INFO - PGVector setup check complete.
+2025-04-16 00:30:10 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-04-16 00:30:17 - root - INFO - Logging configured.
+2025-04-16 00:30:17 - __main__ - INFO - Starting RAG API server...
+2025-04-16 00:30:24 - root - INFO - Logging configured.
+2025-04-16 00:30:25 - api - INFO - API Startup: Initializing resources...
+2025-04-16 00:30:25 - api - INFO - Auth directory: C:\Users\karti\OneDrive\Desktop\RAG\Authentication
+2025-04-16 00:30:25 - api - INFO - User history base directory: C:\Users\karti\OneDrive\Desktop\RAG\Chat_History
+2025-04-16 00:30:25 - indexing - INFO - Checking for PGVector extension...
+2025-04-16 00:30:25 - indexing - INFO - PGVector extension check complete (created if not exists).
+2025-04-16 00:30:25 - api - INFO - PGVector setup check complete.
+2025-04-16 00:30:37 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-04-16 00:30:41 - indexing - INFO - Initialized HuggingFaceEmbeddings with model: sentence-transformers/all-mpnet-base-v2 on device: cpu
+2025-04-16 00:30:41 - indexing - INFO - PGVector client initialized. Collection: rag_collection
+2025-04-16 00:30:41 - api - INFO - Indexer initialized.
+2025-04-16 00:30:41 - summarization - INFO - Summarizer Initialized (LLM: OK, DB Util: OK)
+2025-04-16 00:30:41 - api - INFO - DataSummarizer initialized.
+2025-04-16 00:30:41 - indexing - INFO - PGVector retriever created with search_type=similarity, k=10
+2025-04-16 00:30:42 - retrieval - INFO - Cohere Reranker initialized. Will return top 3 documents.
+2025-04-16 00:30:42 - generation - INFO - Initialized main Generator LLM: gemini-1.5-pro
+2025-04-16 00:30:42 - generation - INFO - Initialized light Sufficiency Check LLM: gemini-1.5-flash
+2025-04-16 00:30:42 - rag_pipeline - INFO - Pipeline Light LLM (Routing/Suggestions) initialized: gemini-1.5-flash
+2025-04-16 00:30:42 - data_science_executor - INFO - DataScienceExecutor initialized for URL: http://localhost:8081/execute
+2025-04-16 00:30:42 - rag_pipeline - INFO - RAG Pipeline initialized.
+2025-04-16 00:30:42 - api - INFO - RAGPipeline initialized.
+2025-04-16 00:30:42 - api - INFO - Title LLM initialized (gemini-1.5-flash).
+2025-04-16 00:30:42 - api - INFO - API Startup: All components initialized successfully.
+2025-04-16 00:30:50 - api - INFO - Listing conversations for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:30:50 - api - INFO - Listing conversations for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:30:51 - api - INFO - Getting conversation ea3a6b83-27b1-4ef4-ab48-57ce272acd40 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:30:53 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: ea3a6b83-27b1-4ef4-ab48-57ce272acd40)
+2025-04-16 00:30:53 - api - INFO - Updating conversation ea3a6b83-27b1-4ef4-ab48-57ce272acd40 for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:30:53 - api - INFO - Conversation updated. ID: ea3a6b83-27b1-4ef4-ab48-57ce272acd40, Title: 'Sales Data Visualization' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:30:53 - memory_manager - INFO - Saved conversation ea3a6b83-27b1-4ef4-ab48-57ce272acd40 for user kartik.vadhera@digtinctive.com to: ea3a6b83-27b1-4ef4-ab48-57ce272acd40.json
+2025-04-16 00:30:53 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:30:55 - api - INFO - Getting conversation 213f906a-a140-48c2-bd2c-9afdb65d138b for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:30:57 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: 213f906a-a140-48c2-bd2c-9afdb65d138b)
+2025-04-16 00:30:57 - api - INFO - Updating conversation 213f906a-a140-48c2-bd2c-9afdb65d138b for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:30:57 - api - INFO - Conversation updated. ID: 213f906a-a140-48c2-bd2c-9afdb65d138b, Title: 'Sales Data Visualization' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:30:57 - memory_manager - INFO - Saved conversation 213f906a-a140-48c2-bd2c-9afdb65d138b for user kartik.vadhera@digtinctive.com to: 213f906a-a140-48c2-bd2c-9afdb65d138b.json
+2025-04-16 00:30:57 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:31:09 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: None)
+2025-04-16 00:31:09 - api - INFO - Creating new conversation for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:31:09 - api - INFO - Generating title (sync) based on: 'plot bar graph of each dept total sales also make ...'
+2025-04-16 00:31:11 - api - INFO - Generated title (sync): 'Sales Data Visualization'
+2025-04-16 00:31:11 - api - INFO - New conversation created. ID: e08d0f6d-2db6-487a-b4db-6f99cf7a0fac, Title: 'Sales Data Visualization' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:31:11 - memory_manager - INFO - Saved conversation e08d0f6d-2db6-487a-b4db-6f99cf7a0fac for user kartik.vadhera@digtinctive.com to: e08d0f6d-2db6-487a-b4db-6f99cf7a0fac.json
+2025-04-16 00:31:11 - api - INFO - Received query from user kartik.vadhera@digtinctive.com: 'plot bar graph of each dept total sales also make the plot look modern with colors....' (Conversation ID: e08d0f6d-2db6-487a-b4db-6f99cf7a0fac)
+2025-04-16 00:31:11 - api - INFO - Loaded 1 messages from conversation e08d0f6d-2db6-487a-b4db-6f99cf7a0fac for context.
+2025-04-16 00:31:11 - rag_pipeline - INFO - Processing query (sync): 'plot bar graph of each dept total sales also make ...' with 1 history messages
+2025-04-16 00:31:11 - rag_pipeline - INFO - Routing query (sync): 'plot bar graph of each dept total sales also make ...'
+2025-04-16 00:31:11 - watchfiles.main - INFO - 2 changes detected
+2025-04-16 00:31:13 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: e08d0f6d-2db6-487a-b4db-6f99cf7a0fac)
+2025-04-16 00:31:13 - api - INFO - Updating conversation e08d0f6d-2db6-487a-b4db-6f99cf7a0fac for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:31:13 - api - INFO - Conversation updated. ID: e08d0f6d-2db6-487a-b4db-6f99cf7a0fac, Title: 'Sales Data Visualization' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:31:13 - memory_manager - INFO - Saved conversation e08d0f6d-2db6-487a-b4db-6f99cf7a0fac for user kartik.vadhera@digtinctive.com to: e08d0f6d-2db6-487a-b4db-6f99cf7a0fac.json
+2025-04-16 00:31:13 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:31:13 - rag_pipeline - INFO - LLM Router Decision (sync, raw): PYTHON_ANALYSIS:stores sales dataset.csv, Parsed: PYTHON_ANALYSIS:STORES SALES DATASET.CSV
+2025-04-16 00:31:13 - rag_pipeline - INFO - Routing identified target source: 'stores sales dataset.csv' based on LLM decision.
+2025-04-16 00:31:13 - rag_pipeline - INFO - Final routing decision: PYTHON_ANALYSIS
+2025-04-16 00:31:13 - rag_pipeline - INFO - LLM routed to Python Analysis.
+2025-04-16 00:31:13 - rag_pipeline - INFO - Python route target identified: 'stores sales dataset.csv' (Type: structured)
+2025-04-16 00:31:13 - rag_pipeline - INFO - Constructed DB URL for executor (connecting to host host.docker.internal:5432): postgresql+psycopg://postgres:****@host.docker.internal:5432/RAG_DB_UPLOADS
+2025-04-16 00:31:24 - rag_pipeline - INFO - Executing generated Python code...
+2025-04-16 00:31:24 - data_science_executor - INFO - Sending code execution request to http://localhost:8081/execute
+2025-04-16 00:31:31 - rag_pipeline - INFO - Python execution successful.
+2025-04-16 00:31:31 - rag_pipeline - INFO - Plot generated during Python execution.
+2025-04-16 00:31:31 - rag_pipeline - INFO - Generating suggestions (sync)...
+2025-04-16 00:31:32 - rag_pipeline - INFO - Query processing complete (sync): 'plot bar graph of each dept total sales also make ...'
+2025-04-16 00:31:32 - memory_manager - INFO - Saved conversation e08d0f6d-2db6-487a-b4db-6f99cf7a0fac for user kartik.vadhera@digtinctive.com to: e08d0f6d-2db6-487a-b4db-6f99cf7a0fac.json
+2025-04-16 00:31:32 - api - INFO - Successfully appended interaction to conversation e08d0f6d-2db6-487a-b4db-6f99cf7a0fac for user kartik.vadhera@digtinctive.com
+2025-04-16 00:31:32 - api - INFO - Sending RAG response to user kartik.vadhera@digtinctive.com for query: 'plot bar graph of each dept total sales also make the plot look modern with colors....'
+2025-04-16 00:31:32 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:31:34 - api - INFO - Save conversation request for user: kartik.vadhera@digtinctive.com (Incoming ID: e08d0f6d-2db6-487a-b4db-6f99cf7a0fac)
+2025-04-16 00:31:34 - api - INFO - Updating conversation e08d0f6d-2db6-487a-b4db-6f99cf7a0fac for user: kartik.vadhera@digtinctive.com
+2025-04-16 00:31:34 - api - INFO - Conversation updated. ID: e08d0f6d-2db6-487a-b4db-6f99cf7a0fac, Title: 'Sales Data Visualization' for user kartik.vadhera@digtinctive.com
+2025-04-16 00:31:34 - memory_manager - INFO - Saved conversation e08d0f6d-2db6-487a-b4db-6f99cf7a0fac for user kartik.vadhera@digtinctive.com to: e08d0f6d-2db6-487a-b4db-6f99cf7a0fac.json
+2025-04-16 00:31:34 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:32:41 - watchfiles.main - INFO - 39 changes detected
+2025-04-16 00:32:52 - api - INFO - API Shutdown: Cleaning up resources...
+2025-04-16 00:32:52 - api - INFO - API Shutdown: Cleanup complete.
+2025-04-16 00:32:56 - watchfiles.main - INFO - 5 changes detected
+2025-04-16 00:33:04 - root - INFO - Logging configured.
+2025-04-16 00:33:04 - api - INFO - API Startup: Initializing resources...
+2025-04-16 00:33:04 - api - INFO - Auth directory: C:\Users\karti\OneDrive\Desktop\RAG\Authentication
+2025-04-16 00:33:04 - api - INFO - User history base directory: C:\Users\karti\OneDrive\Desktop\RAG\Chat_History
+2025-04-16 00:33:04 - indexing - INFO - Checking for PGVector extension...
+2025-04-16 00:33:04 - indexing - INFO - PGVector extension check complete (created if not exists).
+2025-04-16 00:33:04 - api - INFO - PGVector setup check complete.
+2025-04-16 00:33:15 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-04-16 00:33:17 - watchfiles.main - INFO - 1 change detected
+2025-04-16 00:33:20 - indexing - INFO - Initialized HuggingFaceEmbeddings with model: sentence-transformers/all-mpnet-base-v2 on device: cpu
+2025-04-16 00:33:20 - indexing - INFO - PGVector client initialized. Collection: rag_collection
+2025-04-16 00:33:20 - api - INFO - Indexer initialized.
+2025-04-16 00:33:20 - summarization - INFO - Summarizer Initialized (LLM: OK, DB Util: OK)
+2025-04-16 00:33:20 - api - INFO - DataSummarizer initialized.
+2025-04-16 00:33:20 - indexing - INFO - PGVector retriever created with search_type=similarity, k=10
+2025-04-16 00:33:21 - retrieval - INFO - Cohere Reranker initialized. Will return top 3 documents.
+2025-04-16 00:33:21 - generation - INFO - Initialized main Generator LLM: gemini-1.5-pro
+2025-04-16 00:33:21 - generation - INFO - Initialized light Sufficiency Check LLM: gemini-1.5-flash
+2025-04-16 00:33:21 - rag_pipeline - INFO - Pipeline Light LLM (Routing/Suggestions) initialized: gemini-1.5-flash
+2025-04-16 00:33:21 - data_science_executor - INFO - DataScienceExecutor initialized for URL: http://localhost:8081/execute
+2025-04-16 00:33:21 - rag_pipeline - INFO - RAG Pipeline initialized.
+2025-04-16 00:33:21 - api - INFO - RAGPipeline initialized.
+2025-04-16 00:33:21 - api - INFO - Title LLM initialized (gemini-1.5-flash).
+2025-04-16 00:33:21 - api - INFO - API Startup: All components initialized successfully.
+2025-04-16 01:01:34 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:34 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:34 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:35 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:35 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:36 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:36 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:36 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:37 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:37 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:38 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:38 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:39 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:39 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:39 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:40 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:40 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:40 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:41 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:41 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:42 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:42 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:42 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:43 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:43 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:44 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:44 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:44 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:45 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:45 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:46 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:46 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:47 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:47 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:47 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:48 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:48 - watchfiles.main - INFO - 1 change detected
+2025-04-16 01:01:48 - watchfiles.main - INFO - 1 change detected

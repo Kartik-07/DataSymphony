@@ -1,0 +1,4 @@
+1. Added metadata for both structured and unstructured datasets using light LLM
+2. LLM-Powered Query Routing
+3. Persistent Chat History
+4. Dynamic "Try Asking" Suggestions

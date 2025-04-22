@@ -1,0 +1,47 @@
+# LangChain Core & Integrations
+langchain
+langchain-community
+langchainhub
+langchain-google-genai # Added for Gemini
+langchain-postgres     # Added for PGVector specific helpers if needed
+langchain-experimental
+
+# LLM & Embeddings
+google-generativeai    # Underlying Gemini SDK
+sentence-transformers  # For HuggingFace embeddings
+langchain-cohere       # For Cohere Reranker
+
+# Vector Store & DB
+psycopg[binary]
+psycopg2-binary        # Postgres driver (use psycopg2 if compiling)
+sqlalchemy             # Often used by LangChain DB integrations
+
+# API & Utilities
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic-settings
+tiktoken               # Still needed for text splitting
+beautifulsoup4
+lxml
+requests
+python-multipart
+pandas
+
+# Dcoument Ingestion
+pdfplumber # for pdf ingestion
+docx2txt # for word ingestion
+openpyxl
+
+# Add these to your existing requirements.txt
+
+# For password hashing
+passlib[bcrypt]
+
+# For JWT tokens (if using token-based auth) or session management
+python-jose[cryptography] # For JWT
+itsdangerous
+starlette-sessions
+
+# A FastAPI Login manager for session/token handling
+fastapi-login

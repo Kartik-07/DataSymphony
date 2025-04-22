@@ -1,0 +1,1 @@
+1. LLM’s internal knowledge fallback
